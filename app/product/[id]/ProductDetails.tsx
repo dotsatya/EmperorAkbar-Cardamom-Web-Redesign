@@ -83,7 +83,7 @@ export default function ProductDetails({
 
           {/* Right: Product Details */}
           <div className="w-full lg:w-1/2 flex flex-col font-sans pt-0 md:pt-4 lg:pl-4">
-            <h1 className="text-2xl sm:text-3xl md:text-[3rem] font-extrabold tracking-tight mb-3 md:mb-4 leading-[1.1] max-w-lg text-transparent bg-clip-text bg-gradient-to-r from-[#172d1f] to-[#5c7444] drop-shadow-sm">
+            <h1 className="text-2xl md:text-4xl font-bold tracking-tight mb-3 md:mb-4 leading-[1.1] max-w-lg text-transparent bg-clip-text bg-gradient-to-r from-[#172d1f] to-[#5c7444] drop-shadow-sm">
               {product.name.replace(" Cardamom", "\nCardamom")}
             </h1>
 
