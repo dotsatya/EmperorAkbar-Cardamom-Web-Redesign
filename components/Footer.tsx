@@ -1,10 +1,13 @@
+"use client";
 import { Photos } from "@/data/websiteData";
 import Image from "next/image";
 import Link from "next/link";
 import { MapPin, Phone, Mail, ExternalLink } from "lucide-react";
 import { SiFacebook, SiInstagram, SiYoutube } from "react-icons/si";
+import { useRouter } from "next/navigation";
 
 export default function Footer() {
+  const router = useRouter();
   return (
     <footer className="w-full bg-bg-tertiary text-stone-400 py-6 md:pb-6 md:pt-10 px-4 sm:px-6 flex flex-col justify-between relative overflow-hidden">
       {/* Huge background text */}
@@ -17,7 +20,12 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 lg:grid-cols-12 gap-x-6 gap-y-6 sm:gap-8 flex-1 relative z-10">
         {/* Brand Column */}
         <div className="col-span-1 sm:col-span-2 md:col-span-4 lg:col-span-3 flex flex-row md:flex-col items-center md:items-start text-left gap-4 md:gap-0">
-          <div className="relative shrink-0 flex items-center justify-center w-12 h-12 md:w-20 md:h-20 rounded-full bg-white shadow-[0_0_15px_rgba(251,191,36,0.15)] border-2 border-amber-500/30 overflow-hidden md:mb-5 p-2 md:p-3 transition-all duration-300 hover:scale-105 hover:border-amber-400">
+          <div
+            onClick={() => {
+              router.push("/  ");
+            }}
+            className="relative shrink-0 flex items-center justify-center w-12 h-12 md:w-20 md:h-20 rounded-full bg-white shadow-[0_0_15px_rgba(251,191,36,0.15)] border-2 border-amber-500/30 overflow-hidden md:mb-5 p-2 md:p-3 transition-all duration-300 hover:scale-105 hover:border-amber-400"
+          >
             <div className="absolute inset-0 rounded-full border border-white/20 bg-gradient-to-tr from-stone-100 to-white" />
             <Image
               src={Photos.logo}
@@ -27,7 +35,11 @@ export default function Footer() {
               className="relative z-10 object-contain aspect-square"
             />
           </div>
-          <div>
+          <div
+            onClick={() => {
+              router.push("/  ");
+            }}
+          >
             <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif text-[#f4f1ea] md:mb-3 leading-tight">
               The Green Gold <br className="hidden sm:block" />
               <span className="text-[#d4af37] italic">of India.</span>
@@ -157,7 +169,7 @@ export default function Footer() {
               <MapPin className="w-4 h-4 text-[#d4af37] shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
               <div className="leading-relaxed">
                 <a
-                  href="https://www.emperorakbar.com/pages/about#"
+                  href="https://www.google.com/maps/search/?api=1&query=201%2C+Sabari+Samriddhi%2C+V.N.+Purav+Marg%2C+Chembur%2C+Mumbai+400071"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group/link inline-block hover:text-white transition-colors"
@@ -169,7 +181,7 @@ export default function Footer() {
                   <span className="text-stone-400 text-xs block mt-0.5">
                     201, Sabari Samriddhi, V. N. Purav Marg,
                     <br className="hidden sm:inline" /> Chembur, Mumbai - 400
-                    071. India.
+                    071, India.
                   </span>
                 </a>
               </div>
