@@ -30,7 +30,7 @@ export default function RecipesSection({ recipeData }: { recipeData: RecipeData 
   return (
     <section className="bg-white py-12 sm:py-16 md:py-24 px-4 sm:px-6 border-t border-stone-200">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-6 gap-6">
           <div>
             <span className="text-[#d4af37] font-bold tracking-widest text-xs uppercase mb-2 block">
               FLAVOURS THAT BRING PEOPLE TOGETHER
