@@ -1520,7 +1520,7 @@ export const websiteData = {
             links: [
               {
                 label: "Shop Emperor Akbar Cardamom",
-                url: "/collections/cardamom-packs",
+                url: "/shop",
               },
             ],
           },
@@ -1631,7 +1631,7 @@ export const websiteData = {
             links: [
               {
                 label: "Shop Purple Grade Cardamom",
-                url: "https://www.emperorakbar.com/collections/cardamom-packs/products/aroma-lock-purple-grade-cardamom-packs?variant=40192476512454",
+                url: "/product/purple-grade"
               },
             ],
           },
@@ -1760,7 +1760,7 @@ export const websiteData = {
             links: [
               {
                 label: "Shop Cardamom",
-                url: "/collections/cardamom-packs",
+                url: "/shop",
               },
             ],
           },
@@ -1883,7 +1883,7 @@ export const websiteData = {
             links: [
               {
                 label: "Shop Purple Grade Cardamom",
-                url: "https://www.emperorakbar.com/collections/cardamom-packs/products/aroma-lock-purple-grade-cardamom-packs?variant=40192476512454",
+                url: "/product/purple-grade",
               },
             ],
           },
@@ -1969,8 +1969,8 @@ export const websiteData = {
               "Explore a distinctive Raksha Bandhan gift inspired by Indian heritage and crafted using cardamom pods.",
             links: [
               {
-                label: "Shop the Cardamom Rakhi",
-                url: "https://www.emperorakbar.com/collections/cardamom-packs/products/emperor-akbar-rakhi-exclusive-handcrafted-cardamom-rakhi-purple-grade-alleppey-green-cardamom-100g-pack",
+                label: "Shop the Cardamom",
+                url: "/shop",
               },
             ],
           },
@@ -1978,8 +1978,8 @@ export const websiteData = {
 
         relatedLinks: [
           {
-            label: "Shop the Handcrafted Cardamom Rakhi",
-            url: "https://www.emperorakbar.com/collections/cardamom-packs/products/emperor-akbar-rakhi-exclusive-handcrafted-cardamom-rakhi-purple-grade-alleppey-green-cardamom-100g-pack",
+            label: "Shop the Cardamom",
+            url: "/shop",
           },
         ],
       },
