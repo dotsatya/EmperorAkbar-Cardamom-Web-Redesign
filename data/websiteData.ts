@@ -5,7 +5,7 @@ import greenSeedDemo from "../public/images/Green_Cardamom.png";
 
 import akbarBg from "../public/images/akbarBg.png";
 
-import healthBG from "../public/images/Cardamom_Wellness_in_Nature.png"
+import healthBG from "../public/images/Cardamom_Wellness_in_Nature.png";
 
 // Purple grade
 import purple1 from "../public/purple/1.jpg";
@@ -412,21 +412,16 @@ export const websiteData = {
 
     tags: [
       "All",
-      "Arabic dessert",
       "cake",
-      "cheesecake",
       "dessert",
       "easy to cook",
       "festive recipe",
-      "flavoured yoghurt",
       "healthy",
-      "icecream",
       "indian dessert",
       "kheer",
       "milk",
       "recipe",
       "rice",
-      "yoghurt",
     ],
 
     items: [
@@ -1273,7 +1268,6 @@ export const websiteData = {
       "alleppey green cardamom",
       "buying cardamom",
       "cardamom",
-      "cardamom health benefit",
       "healthy",
       "spice",
       "wholesale",
@@ -2265,6 +2259,301 @@ export const websiteData = {
       cta: "Explore Cardamom",
       href: "/shop",
     },
+  },
+
+  returnPolicy: {
+    title: "Return Policy",
+    sections: [
+      {
+        heading: "",
+        paragraphs: [
+          "Our premium cardamom pods are a fresh spice - each one carefully handpicked to ensure unparalleled flavour and aroma. Due to its consumable nature, we are unable to accept returns or exchanges. We take the health, safety, and culinary satisfaction of our customers seriously. This policy guarantees that every single pod leaving our door is of the highest possible quality.",
+          "Your experience means the world to us. If your order didn't arrive in perfect condition, or if it didn't quite meet your expectations, please reach out to our care team at birbal@emperorakbar.com or +91 96991 96991. We are always here to make things right.",
+        ],
+      },
+      {
+        heading: "EU Right of Withdrawal",
+        paragraphs: [
+          "If you are located in the European Union, you have the right to withdraw from your purchase within 14 days of receiving your order, without giving any reason.",
+          "To exercise your right of withdrawal, you must notify us at birbal@emperorakbar.com within 14 days of receiving your order. You may initiate a return directly from your order status page, accessible via the link in your order confirmation email.",
+          "Exception: The right of withdrawal does not apply to sealed goods that are not suitable for return due to health protection or hygiene reasons, if the seal has been broken after delivery. Unopened, sealed cardamom products are eligible for return.",
+          "Returned goods must be sent back within 14 days of notifying us of your withdrawal. Return shipping costs are at the customer's expense unless otherwise agreed.",
+          "Upon withdrawal, we will refund the standard delivery cost of your original order, in addition to the price of the goods.",
+          "Refunds will be processed within 14 days of receiving the returned goods. We reserve the right to deduct an amount reflecting any diminished value of the goods if the handling was beyond what is necessary to establish their nature, characteristics, and functioning.",
+        ],
+      },
+    ],
+  },
+
+  privacyPolicy: {
+    title: "Privacy Policy",
+    introduction:
+      "This Privacy Policy describes how your personal information is collected, used, and shared when you visit or make a purchase from www.emperorakbar.com (the “Site”).",
+    sections: [
+      {
+        heading:
+          "We Collect Personal Information Including Device and Order Information",
+        paragraphs: [
+          "When you visit the Site, we automatically collect certain information about your device, including information about your web browser, IP address, time zone, and some of the cookies that are installed on your device. We also collect information about the individual web pages or products that you view, what websites or search terms referred you to the Site, and information about how you interact with the Site. We collect Device Information using Cookies, Log files, Web beacons, tags, and pixels.",
+          "Additionally, when you make a purchase or attempt to make a purchase through the Site, we collect certain information from you, including your name, billing address, shipping address, payment information, email address, and phone number. We refer to this information as “Order Information.”",
+        ],
+      },
+      {
+        heading: "How Do We Use Your Personal Information?",
+        paragraphs: [
+          "We use the Order Information that we collect generally to fulfill any orders placed through the Site. Additionally, we use this Order Information to communicate with you; screen our orders for potential risk or fraud; and, when in line with the preferences you have shared with us, provide you with information or advertising relating to our products and services or marketing communications we believe may be of interest to you.",
+          "We use the Device Information that we collect to help us screen for potential risk and fraud, and more generally to improve and optimize our Site.",
+        ],
+      },
+      {
+        heading: "Sharing Your Personal Information",
+        paragraphs: [
+          "We use Google Analytics to help us understand how our customers use the Site.",
+          "You can read more about how Google uses your personal information at https://www.google.com/intl/en/policies/privacy/.",
+          "You can opt out of Google Analytics at https://tools.google.com/dlpage/gaoptout.",
+          "We may also share your personal information to comply with applicable laws and regulations or lawful requests for information we receive, or to otherwise protect our rights.",
+        ],
+      },
+      {
+        heading: "Do Not Track",
+        paragraphs: [
+          "Please note that we do not alter our Site’s data collection and use practices when we see a Do Not Track signal from your browser.",
+        ],
+      },
+      {
+        heading: "Your Rights",
+        paragraphs: [
+          "If you are a European resident, you have the right to access personal information we hold about you and to ask that your personal information be corrected, updated, or deleted. If you would like to exercise this right, please contact us through the contact information below.",
+          "We process your information in order to fulfill contracts we might have with you, or otherwise to pursue our legitimate business interests listed above. Your information may be transferred outside of Europe, including to Canada and the United States.",
+        ],
+      },
+      {
+        heading: "Data Retention",
+        paragraphs: [
+          "When you visit the Site, we will maintain your personal information for our records unless and until you ask us to delete this information.",
+        ],
+      },
+      {
+        heading: "Changes",
+        paragraphs: [
+          "We may update this Privacy Policy from time to time to reflect changes to our practices or for other operational, legal, or regulatory reasons.",
+        ],
+      },
+      {
+        heading: "Shopify's Privacy Policy",
+        paragraphs: ["https://www.shopify.com/in/legal/privacy/consumers"],
+      },
+      {
+        heading: "Contact Us",
+        paragraphs: [
+          "For more information about our privacy practices, please contact us by email at darbar@emperorakbar.com or by mail at:",
+          "201, Sabari Samriddhi, V.N. Purav Marg, Chembur, Mumbai, Maharashtra 400071, India",
+        ],
+      },
+    ],
+  },
+
+  termsOfService: {
+    title: "Terms of Service",
+    subtitle: "Terms and Conditions of Use",
+    introduction:
+      "This website is operated by Samex India Pvt. Ltd. Throughout the site, the terms “we”, “us” and “our” refer to Samex India Pvt. Ltd. Samex India Pvt. Ltd. offers this website, including all information, tools and services available from this site to you, the user, conditioned upon your acceptance of all terms, conditions, policies and notices stated here.",
+    sections: [
+      {
+        heading: "Section 1 - Online Store Terms",
+        paragraphs: [
+          "By agreeing to these Terms of Service, you represent that you are at least the age of majority in your state or province of residence, or that you have the required consent to allow any minor dependents to use this site.",
+          "You may not use our products for any illegal or unauthorized purpose nor may you, in the use of the Service, violate any laws in your jurisdiction, including copyright laws.",
+          "You must not transmit any worms or viruses or any code of a destructive nature.",
+          "A breach or violation of any of the Terms will result in an immediate termination of your Services.",
+        ],
+      },
+      {
+        heading: "Section 2 - General Conditions",
+        paragraphs: [
+          "We reserve the right to refuse service to anyone for any reason at any time.",
+          "You understand that your content, not including credit card information, may be transferred unencrypted and involve transmissions over various networks and changes to conform and adapt to technical requirements of connecting networks or devices. Credit card information is always encrypted during transfer over networks.",
+          "You agree not to reproduce, duplicate, copy, sell, resell or exploit any portion of the Service without express written permission from us.",
+          "The headings used in this agreement are included for convenience only and will not limit or otherwise affect these Terms.",
+        ],
+      },
+      {
+        heading:
+          "Section 3 - Accuracy, Completeness and Timeliness of Information",
+        paragraphs: [
+          "We are not responsible if information made available on this site is not accurate, complete or current. The material on this site is provided for general information only and should not be relied upon as the sole basis for making decisions without consulting primary, more accurate, more complete or more timely sources of information. Any reliance on the material on this site is at your own risk.",
+          "This site may contain historical information. Historical information is not current and is provided for reference only. We reserve the right to modify the contents of our site at any time, but we have no obligation to update any information. You agree that it is your responsibility to monitor changes to our site.",
+        ],
+      },
+      {
+        heading: "Section 4 - Modifications to the Service and Prices",
+        paragraphs: [
+          "Prices for our products are subject to change without notice.",
+          "We reserve the right at any time to modify or discontinue the Service, or any part or content thereof, without notice.",
+          "We shall not be liable to you or any third party for any modification, price change, suspension or discontinuance of the Service.",
+        ],
+      },
+      {
+        heading: "Section 5 - Products or Services",
+        paragraphs: [
+          "Certain products or services may be available exclusively online through the website. These products or services may have limited quantities and are subject to return or exchange only according to our Return Policy.",
+          "We have made every effort to display as accurately as possible the colors and images of our products. We cannot guarantee that your computer monitor's display of any color will be accurate.",
+          "We reserve the right to limit sales, quantities, or availability by person, geographic region, or jurisdiction. Product descriptions and pricing may change without notice, and products may be discontinued at our discretion.",
+          "We do not warrant that the quality of products, services, information, or other material purchased or obtained will meet your expectations, or that errors in the Service will be corrected.",
+        ],
+      },
+      {
+        heading: "Section 6 - Accuracy of Billing and Account Information",
+        paragraphs: [
+          "We reserve the right to refuse any order you place with us. We may limit or cancel quantities purchased per person, per household, or per order. These restrictions may include orders placed by the same customer account, credit card, or billing or shipping address.",
+          "If we change or cancel an order, we may attempt to notify you using the email, billing address, or phone number provided when the order was placed.",
+          "You agree to provide current, complete, and accurate purchase and account information and to promptly update your details so that we can complete transactions and contact you as needed.",
+          "For more detail, please review our Returns Policy.",
+        ],
+      },
+      {
+        heading: "Section 7 - Optional Tools",
+        paragraphs: [
+          "We may provide access to third-party tools over which we neither monitor nor have any control or input.",
+          "These tools are provided “as is” and “as available” without warranties or endorsement. We have no liability arising from or relating to your use of optional third-party tools.",
+          "Any use of optional tools is entirely at your own risk and discretion. You should ensure that you are familiar with and approve the terms of the relevant third-party provider.",
+          "Any new services or features introduced through the website shall also be subject to these Terms of Service.",
+        ],
+      },
+      {
+        heading: "Section 8 - Third-Party Links",
+        paragraphs: [
+          "Certain content, products and services available via our Service may include materials from third parties.",
+          "Third-party links may direct you to websites that are not affiliated with us. We are not responsible for examining or evaluating their content or accuracy, and we accept no liability for third-party materials, websites, products, or services.",
+          "Complaints, claims, concerns, or questions regarding third-party products should be directed to the relevant third party.",
+        ],
+      },
+      {
+        heading: "Section 9 - User Comments, Feedback and Other Submissions",
+        paragraphs: [
+          "If you send submissions such as contest entries, creative ideas, suggestions, proposals, plans, or other materials, you agree that we may edit, copy, publish, distribute, translate, and otherwise use them in any medium without restriction.",
+          "We are under no obligation to maintain comments in confidence, pay compensation for them, or respond to them.",
+          "We may monitor, edit, or remove content that we determine is unlawful, offensive, threatening, defamatory, pornographic, obscene, objectionable, or in violation of intellectual property rights or these Terms.",
+          "You agree that your comments will not violate third-party rights, contain unlawful or abusive material, include malware, use a false email address, or mislead others. You are solely responsible for your comments and their accuracy.",
+        ],
+      },
+      {
+        heading: "Section 10 - Personal Information",
+        paragraphs: [
+          "Your submission of personal information through the store is governed by our Privacy Policy.",
+        ],
+      },
+      {
+        heading: "Section 11 - Errors, Inaccuracies and Omissions",
+        paragraphs: [
+          "Occasionally, information on this site may contain typographical errors, inaccuracies, or omissions relating to product descriptions, pricing, promotions, shipping charges, transit times, and availability.",
+          "We reserve the right to correct errors, inaccuracies, or omissions and to change, update, or cancel orders if information is inaccurate, without prior notice where permitted.",
+          "We undertake no obligation to update information except as required by law. No specified update date should be taken to mean that all information has been modified.",
+        ],
+      },
+      {
+        heading: "Section 12 - Prohibited Uses",
+        paragraphs: [
+          "You are prohibited from using the site or its content for unlawful purposes, to violate laws or intellectual property rights, to harass or discriminate against others, to submit false information, to distribute malicious code, to collect personal information unlawfully, to spam or scrape, for obscene or immoral purposes, or to interfere with security features.",
+          "We reserve the right to terminate your use of the Service for violating prohibited uses.",
+        ],
+      },
+      {
+        heading:
+          "Section 13 - Disclaimer of Warranties; Limitation of Liability",
+        paragraphs: [
+          "We do not guarantee that use of our Service will be uninterrupted, timely, secure, or error-free, or that results obtained through the Service will be accurate or reliable.",
+          "We may remove or cancel the Service for indefinite periods without notice. Your use of, or inability to use, the Service is at your sole risk.",
+          "The Service and products are provided “as is” and “as available”, without warranties to the extent permitted by applicable law.",
+          "To the extent permitted by applicable law, Samex India Pvt. Ltd. and its associated parties disclaim liability for direct, indirect, incidental, punitive, special, or consequential damages arising from use of the Service or products. Where such exclusions are not permitted, liability is limited to the maximum extent allowed by law.",
+        ],
+      },
+      {
+        heading: "Section 14 - Indemnification",
+        paragraphs: [
+          "You agree to indemnify, defend, and hold harmless Samex India Pvt. Ltd. and its associated parties from claims, demands, and reasonable legal fees arising from your breach of these Terms or violation of any law or third-party rights.",
+        ],
+      },
+      {
+        heading: "Section 15 - Severability",
+        paragraphs: [
+          "If any provision of these Terms is determined to be unlawful, void, or unenforceable, it shall be enforceable to the fullest extent permitted by law, and the unenforceable portion shall be severed without affecting the validity of the remaining provisions.",
+        ],
+      },
+      {
+        heading: "Section 16 - Termination",
+        paragraphs: [
+          "Obligations and liabilities incurred before the termination date shall survive termination.",
+          "These Terms remain effective unless terminated by either party. You may terminate your agreement by notifying us that you no longer wish to use our Services or by ceasing to use the site.",
+          "If we suspect or determine that you have failed to comply with these Terms, we may terminate the agreement or deny access to our Services, and you remain liable for amounts due up to the termination date.",
+        ],
+      },
+      {
+        heading: "Section 17 - Entire Agreement",
+        paragraphs: [
+          "These Terms of Service and any policies or operating rules posted on the site constitute the entire agreement between you and us and supersede prior agreements, communications, and proposals concerning the Service.",
+          "Failure to exercise or enforce a right or provision does not constitute a waiver of that right. Ambiguities shall not be construed against the drafting party.",
+        ],
+      },
+      {
+        heading: "Section 18 - Governing Law",
+        paragraphs: [
+          "These Terms of Service and any separate agreements under which we provide Services shall be governed by the applicable laws of India.",
+        ],
+      },
+      {
+        heading: "Section 19 - Changes to Terms of Service",
+        paragraphs: [
+          "You can review the most current version of the Terms of Service at any time on this page.",
+          "We reserve the right to update, change, or replace any part of these Terms by posting updates on our website. Your continued use of the website or Service following the posting of changes constitutes acceptance of those changes.",
+        ],
+      },
+      {
+        heading: "Section 20 - Contact Information",
+        paragraphs: [
+          "Questions about the Terms of Service should be sent to darbar@emperorakbar.com.",
+        ],
+      },
+    ],
+  },
+
+  shippingPolicy: {
+    title: "Shipping Policy",
+    sections: [
+      {
+        heading: "",
+        paragraphs: [
+          "All orders will be dispatched within 1-3 working days from the date of confirmation of the order placed by the customer.",
+          "Information regarding the Airway Bill number or tracking details will be emailed to the registered email address after the products are dispatched.",
+          "We have partnered with a leading logistics partner for our domestic and international shipments to help ensure your orders reach you on time and damage-free.",
+          "For any special delivery requests, please email us at birbal@emperorakbar.com and we will try our best to accommodate your requests.",
+        ],
+      },
+      {
+        heading: "Domestic Shipping",
+        paragraphs: [
+          "The estimated delivery time for national orders is 3-6 business days.",
+        ],
+      },
+      {
+        heading: "International Shipping",
+        paragraphs: [
+          "The estimated delivery time for international orders is 5-12 business days.",
+          "Delivery times may be affected by factors beyond our control, including unexpected courier delays caused by weather conditions, political disruptions, or strikes. We will try to keep you updated.",
+          "Your order may be subject to import duties when the package reaches the destination country. Additional import, customs, and tax charges imposed by customs authorities are payable by you.",
+          "For international deliveries, we currently ship on a DDU (Delivery Duty Unpaid) basis. Product prices exclude applicable taxes and duties, which are the recipient's responsibility. Customs policies vary by country, so we recommend contacting your local customs office for further information.",
+          "We take no responsibility for non-delivery if import duties or taxes are not accepted and settled by the recipient, and no refunds will be provided in such cases.",
+        ],
+      },
+      {
+        heading: "Important Advisory for Select Countries",
+        paragraphs: [
+          "In certain countries, including Australia, New Zealand, and some EU member states, local customs authorities have strict import regulations for food-grade products, including green cardamom.",
+          "To avoid complications, we strongly recommend that international buyers limit their orders to quantities that clearly qualify as being for personal consumption, typically under 2 kg in most countries.",
+          "We cannot be held responsible for shipments held, tested, or destroyed by customs. No refunds will be issued in such cases.",
+        ],
+      },
+    ],
   },
 };
 

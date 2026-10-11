@@ -1,11 +1,31 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { ArrowRight, X } from "lucide-react";
 
-export default function RecipesSection({ recipeData }: { recipeData: any }) {
-  const [selectedRecipe, setSelectedRecipe] = useState<any>(null);
+interface RecipeItem {
+  id: string;
+  title: string;
+  slug?: string;
+  author?: string;
+  description?: string;
+  url?: string;
+  image?: string | StaticImageData;
+  tags?: string[];
+  content?: {
+    introduction?: string[];
+  };
+}
+
+interface RecipeData {
+  title?: string;
+  tags?: string[];
+  items: RecipeItem[];
+}
+
+export default function RecipesSection({ recipeData }: { recipeData: RecipeData }) {
+  const [selectedRecipe, setSelectedRecipe] = useState<RecipeItem | null>(null);
 
   return (
     <section className="bg-white py-12 sm:py-16 md:py-24 px-4 sm:px-6 border-t border-stone-200">
@@ -26,34 +46,63 @@ export default function RecipesSection({ recipeData }: { recipeData: any }) {
           </Link>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
-          {recipeData.items.slice(0, 4).map((recipe: any, idx: number) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          {recipeData.items.slice(0, 4).map((recipe: RecipeItem, idx: number) => (
             <div 
               key={idx} 
-              className="p-3 sm:p-0 bg-[#ebd8bc]/60 sm:bg-transparent rounded-2xl sm:rounded-none border border-stone-100 sm:border-0 shadow-sm sm:shadow-none group cursor-pointer flex flex-col"
+              className="bg-black/4 rounded-2xl p-3 sm:p-5 border border-stone-200 hover:shadow-xl transition-all duration-300 flex flex-row sm:flex-col group cursor-pointer gap-4 sm:gap-0"
               onClick={() => setSelectedRecipe(recipe)}
             >
-              <div className="aspect-square sm:aspect-[4/3] rounded-xl sm:rounded-2xl bg-stone-100 mb-2 sm:mb-4 overflow-hidden relative">
+              {/* Image Container: w-2/5 on smartphone, full width on desktop */}
+              <div className="w-2/5 sm:w-full aspect-square sm:aspect-[4/3] bg-stone-100 rounded-xl mb-0 sm:mb-4 flex items-center justify-center relative overflow-hidden group-hover:scale-[1.02] sm:group-hover:scale-105 transition-transform duration-500 shrink-0">
+                <div className="absolute inset-x-0 top-0 h-1.5 sm:h-2 bg-[#d4af37] z-20" />
+                
+                <div className="absolute top-2 left-2 bg-[#d4af37] text-white text-[8px] sm:text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full z-30 shadow-sm">
+                  Recipe
+                </div>
+
                 {recipe.image ? (
                   <Image 
                     src={recipe.image}
                     alt={recipe.title}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="object-cover"
                   />
                 ) : (
-                  <div className="absolute inset-0 flex items-center justify-center text-stone-300 font-serif">
+                  <div className="absolute inset-0 flex items-center justify-center text-stone-300 font-serif text-xs">
                     Recipe Image
                   </div>
                 )}
-                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
-                <button className="absolute bottom-2 right-2 sm:bottom-4 sm:right-4 w-8 h-8 sm:w-10 sm:h-10 bg-white rounded-full flex items-center justify-center text-[#d4af37] shadow-lg translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all">
-                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
-                </button>
+                <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors"></div>
               </div>
-              <h3 className="font-bold text-[11px] sm:text-base leading-tight sm:leading-normal text-stone-900 mb-1 group-hover:text-[#d4af37] transition-colors">
-                {recipe.title.split(" by ")[0]}
-              </h3>
+
+              {/* Content Container */}
+              <div className="flex flex-col flex-1 justify-center sm:justify-start">
+                <span className="text-[10px] sm:text-xs uppercase tracking-wider text-[#d4af37] font-bold block mb-1">
+                  By {recipe.author}
+                </span>
+
+                <h3 className="font-serif font-bold text-sm sm:text-base text-stone-900 leading-snug group-hover:text-[#d4af37] transition-colors mb-1 sm:mb-2 line-clamp-2">
+                  {recipe.title.split(" by ")[0]}
+                </h3>
+
+                <p className="text-[11px] sm:text-xs text-stone-500 line-clamp-2 mb-2 sm:mb-4 leading-relaxed">
+                  {recipe.description}
+                </p>
+
+                <div className="mt-auto flex items-center justify-between pt-1 sm:pt-2">
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                    <span className="text-[10px] sm:text-xs text-stone-500 font-medium capitalize">
+                      {recipe.tags?.[0] || "Signature"}
+                    </span>
+                  </div>
+
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#d4af37] text-white flex items-center justify-center shadow-md group-hover:bg-[#172d1f] group-hover:scale-105 transition-all duration-300 shrink-0">
+                    <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-0.5 transition-transform" />
+                  </div>
+                </div>
+              </div>
             </div>
           ))}
         </div>

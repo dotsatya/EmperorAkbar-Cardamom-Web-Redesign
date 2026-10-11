@@ -33,7 +33,7 @@ export default function CSRPage() {
                 
                 {/* Text Description */}
                 <div className="lg:w-3/5">
-                  <div className="prose prose-stone text-base md:text-lg text-stone-600 mb-6 md:mb-8 leading-relaxed max-w-none">
+                  <div className="prose prose-stone text-sm md:text-base text-stone-600 mb-6 md:mb-8 leading-relaxed max-w-none">
                     {section.paragraphs.map((para, i) => (
                       <p key={i}>{para}</p>
                     ))}

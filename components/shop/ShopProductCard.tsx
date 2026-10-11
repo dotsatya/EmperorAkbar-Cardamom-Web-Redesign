@@ -17,6 +17,7 @@ interface Product {
   image: string | StaticImageData;
   images?: { id: number; src: StaticImageData | string }[];
   url: string;
+  usage: string;
 }
 
 export default function ShopProductCard({ product }: { product: Product }) {
@@ -39,9 +40,9 @@ export default function ShopProductCard({ product }: { product: Product }) {
   return (
     <Link
       href={`/product/${product.id}`}
-      className="bg-white rounded-2xl sm:rounded-3xl overflow-hidden border border-stone-200/50 shadow-sm hover:shadow-xl transition-shadow group flex flex-row sm:flex-col cursor-pointer"
+      className="bg-white rounded-2xl md:rounded-3xl overflow-hidden border border-stone-200/50 shadow-sm hover:shadow-xl transition-shadow group flex flex-row cursor-pointer"
     >
-      <div className="w-2/5 sm:w-full aspect-square bg-stone-100 relative group-hover:scale-105 transition-transform duration-500 overflow-hidden shrink-0">
+      <div className="w-2/5 aspect-square bg-stone-100 relative group-hover:scale-105 transition-transform duration-500 overflow-hidden shrink-0">
         {images.length > 0 ? (
           <>
             <Image
@@ -85,29 +86,34 @@ export default function ShopProductCard({ product }: { product: Product }) {
         )}
 
         {product.status === "sold-out" && (
-          <div className="absolute top-2 left-2 sm:top-4 sm:right-4 sm:left-auto bg-red-500 text-white text-[8px] sm:text-[10px] font-bold uppercase tracking-widest px-2 sm:px-3 py-1 rounded-full z-10">
+          <div className="absolute top-2 left-2 md:top-3 md:left-3 bg-red-500 text-white text-[8px] sm:text-[10px] font-bold uppercase tracking-widest px-2 sm:px-3 py-1 rounded-full z-10">
             Sold Out
           </div>
         )}
         {product.status === "sale" && (
-          <div className="absolute top-2 left-2 sm:top-4 sm:right-4 sm:left-auto bg-[#d4af37] text-white text-[8px] sm:text-[10px] font-bold uppercase tracking-widest px-2 sm:px-3 py-1 rounded-full z-10">
+          <div className="absolute top-2 left-2 md:top-3 md:left-3 bg-[#d4af37] text-white text-[8px] sm:text-[10px] font-bold uppercase tracking-widest px-2 sm:px-3 py-1 rounded-full z-10">
             Sale
           </div>
         )}
       </div>
-      <div className="p-4 sm:p-6 flex flex-col justify-center sm:justify-start flex-1 relative z-10 bg-white">
-        <p className="text-[9px] sm:text-[10px] text-stone-500 font-bold uppercase tracking-widest mb-1 sm:mb-2">
+      <div className="p-4 sm:p-5 md:p-6 flex flex-col justify-center flex-1 relative z-10 bg-white">
+        <p className="text-[9px] sm:text-[10px] md:text-xs text-stone-500 font-bold uppercase tracking-widest mb-1 md:mb-1.5">
           {product.grade} Grade
         </p>
-        <h3 className="font-bold text-stone-800 text-sm sm:text-base mb-2 leading-tight h-auto sm:h-10 line-clamp-2 sm:line-clamp-none">
+        <h3 className="font-bold text-stone-800 text-sm sm:text-base md:text-lg mb-1.5 md:mb-2 leading-tight line-clamp-2">
           {product.name}
         </h3>
-        <div className="flex items-center gap-2 sm:gap-3 mt-auto">
-          <span className="text-base sm:text-lg font-serif font-bold text-stone-900">
+        {product.usage && (
+          <p className="text-xs sm:text-[13px] md:text-sm text-stone-600 mb-3 sm:mb-4 md:mb-6 font-medium line-clamp-2 md:line-clamp-3">
+            {product.usage}
+          </p>
+        )}
+        <div className="flex items-center gap-2 md:gap-3 mt-auto">
+          <span className="text-base sm:text-lg md:text-xl font-serif font-bold text-stone-900">
             {product.currency} {product.price}
           </span>
           {product.originalPrice > product.price && (
-            <span className="text-sm text-stone-400 line-through">
+            <span className="text-xs sm:text-sm text-stone-400 line-through">
               {product.currency} {product.originalPrice}
             </span>
           )}

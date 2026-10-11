@@ -10,13 +10,18 @@ export default function CartPage() {
 
   return (
     <div className="font-sans bg-bg-primary min-h-screen flex flex-col">
-      <main className="flex-1 pt-10 md:pt-16 pb-20 px-6 max-w-7xl mx-auto w-full">
-        <div className="flex justify-center items-center gap-2 text-[10px] md:text-xs text-stone-500 font-bold uppercase tracking-widest mb-8">
+      <main className="flex-1 pt-10 md:pt-16 lg:pt-6 pb-20 px-6 max-w-7xl mx-auto w-full">
+        <div className=" hidden lg:inline-flex justify-left items-center gap-2 text-[10px] md:text-xs text-stone-500 font-bold uppercase tracking-widest mb-8">
           <Link href="/" className="hover:text-stone-900 transition-colors">
             Home
           </Link>
           <ChevronRight className="w-3 h-3" />
+          <Link href="/shop" className="hover:text-stone-900 transition-colors">
+            Shop
+          </Link>
+          <ChevronRight className="w-3 h-3" />
           <span className="text-stone-900">Your Cart</span>
+          <ChevronRight className="w-3 h-3" />
         </div>
 
         <div className="w-full text-right md:text-center mb-12">

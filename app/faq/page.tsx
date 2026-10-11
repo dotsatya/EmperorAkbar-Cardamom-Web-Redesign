@@ -12,7 +12,7 @@ export default function FAQPage() {
             {faqs.title}
           </h1>
           <div className="w-24 h-1 bg-[#d4af37] ml-auto mr-0 md:mx-auto  mb-6"></div>
-          <p className="text-base sm:text-lg md:text-xl text-stone-600 leading-relaxed mb-8 max-w-5xl mx-auto">
+          <p className="text-sm md:text-base text-stone-600 leading-relaxed mb-8 max-w-5xl mx-auto">
             {faqs.intro}
           </p>
         </div>
@@ -21,7 +21,7 @@ export default function FAQPage() {
           {faqs.items.map((faq) => (
             <div key={faq.id} className="bg-white p-5 md:p-8 rounded-[1.5rem] md:rounded-3xl shadow-sm border border-stone-100 transition-all hover:shadow-md">
               <h3 className="text-lg md:text-2xl font-serif font-bold text-stone-900 mb-2 md:mb-4">{faq.question}</h3>
-              <p className="text-stone-600 text-sm md:text-lg leading-relaxed mb-4 md:mb-6">{faq.answer}</p>
+              <p className="text-stone-600 text-sm md:text-base leading-relaxed mb-4 md:mb-6">{faq.answer}</p>
               {faq.videoUrl && (
                 <div className="aspect-video w-full rounded-xl md:rounded-2xl overflow-hidden shadow-sm">
                   <iframe 
