@@ -1,5 +1,12 @@
 import { Suspense } from "react";
 import RecipeDetails from "./RecipeDetails";
+import { websiteData } from "@/data/websiteData";
+
+export function generateStaticParams() {
+  return websiteData.recipes.items.map((item) => ({
+    slug: item.slug,
+  }));
+}
 
 export default function RecipePage({
   params,

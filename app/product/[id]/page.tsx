@@ -1,5 +1,12 @@
 import { Suspense } from "react";
 import ProductDetails from "./ProductDetails";
+import { websiteData } from "@/data/websiteData";
+
+export function generateStaticParams() {
+  return websiteData.shop.products.map((p) => ({
+    id: String(p.id),
+  }));
+}
 
 export default function ProductPage({
   params,
