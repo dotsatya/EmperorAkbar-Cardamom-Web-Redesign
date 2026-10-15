@@ -82,32 +82,23 @@ export default function ProductDetails({
           />
 
           {/* Right: Product Details */}
-          <div className="w-full lg:w-1/2 flex flex-col font-sans pt-0 md:pt-4 lg:pl-4">
-            <h1 className="text-2xl md:text-4xl font-bold tracking-tight mb-3 md:mb-4 leading-[1.1] max-w-lg text-transparent bg-clip-text bg-gradient-to-r from-[#172d1f] to-[#5c7444] drop-shadow-sm">
+          <div className="w-full lg:w-1/2 flex flex-col font-sans lg:pl-4">
+            <h1 className="text-xl md:text-2xl font-bold tracking-tight mb-3 md:mb-4 leading-[1.1] max-w-lg text-transparent bg-clip-text bg-gradient-to-r from-[#172d1f] to-[#5c7444] drop-shadow-sm">
               {product.name.replace(" Cardamom", "\nCardamom")}
             </h1>
 
             <div className="flex items-center gap-3 md:gap-4 mb-2 md:mb-3">
               <span className="text-2xl md:text-3xl font-bold text-stone-800 drop-shadow-sm">
-                Rs. {product.price.toFixed(2)}
+               ₹ {product.price.toFixed(2)}
               </span>
               {product.originalPrice > product.price && (
                 <span className="text-lg md:text-xl text-red-400/80 font-medium line-through">
-                  Rs. {product.originalPrice.toFixed(2)}
+                  ₹ {product.originalPrice.toFixed(2)}
                 </span>
               )}
             </div>
 
-            <p className="text-[13px] md:text-[15px] text-stone-600 mb-6 md:mb-8 font-medium">
-              {product.taxInfo}{" "}
-              <Link
-                href="/shipping"
-                className="underline decoration-[#c59d5f] underline-offset-4 text-[#c59d5f] hover:text-[#a07c44] transition-colors"
-              >
-                Shipping
-              </Link>{" "}
-              calculated at checkout.
-            </p>
+            
 
             {/* Specifications Glass Card */}
             <div className="bg-white/40 backdrop-blur-xl border border-white/60 shadow-[0_8px_32px_rgba(0,0,0,0.04)] rounded-2xl md:rounded-3xl p-5 md:p-8 mb-8 md:mb-10 flex flex-col gap-3 md:gap-4 text-[13px] md:text-[15px] text-stone-700 relative overflow-hidden">

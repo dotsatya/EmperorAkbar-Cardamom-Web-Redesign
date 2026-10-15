@@ -76,7 +76,7 @@ export default function CertificatesSection({ data }: { data: CertificatesData }
             <div
               key={item.id}
               onClick={() => setSelectedItem(item)}
-              className="bg-white rounded-2xl md:rounded-3xl overflow-hidden border border-stone-200/50 shadow-sm hover:shadow-xl transition-shadow group flex flex-row cursor-pointer"
+              className="bg-white rounded-2xl md:rounded-3xl overflow-hidden border border-stone-200/80 shadow-xs hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group flex flex-row cursor-pointer"
             >
               {/* 40% Thumbnail */}
               <div className="w-2/5 aspect-square bg-[#faf9f6] relative group-hover:scale-105 transition-transform duration-500 overflow-hidden shrink-0 flex items-center justify-center p-2.5 sm:p-4 border-r border-stone-100">

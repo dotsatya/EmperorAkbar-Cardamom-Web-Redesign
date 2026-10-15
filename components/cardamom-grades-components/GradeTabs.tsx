@@ -37,7 +37,7 @@ export default function GradeTabs({ grading, activeGrade, setActiveGrade }: Grad
   };
 
   return (
-    <div className="flex flex-wrap justify-center gap-3 md:gap-4 mb-8 md:mb-16">
+    <div className="flex flex-wrap justify-center gap-3 md:gap-4 mb-4 md:mb-8">
       {grading.map((grade) => {
         const isActive = activeGrade.color === grade.color;
         const styles = getTabStyles(grade.color, isActive);

@@ -14,17 +14,7 @@ export default function Home() {
   return (
     <div className="font-sans text-stone-900 ">
       <HeroSection />
-
-      {/* 
-        Archived Sections:
-        - The Aroma is Everything
-        - From the spice hills of south india
-      */}
-
-      {/* promoted by codewarrior tech */}
       <FeaturedGradeSection />
-      
-      {/* store products  */}
       <ProductGridSection shopData={shopData} />
       
       {/* natural +...  section */}

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import ProductCard from "@/components/HomePageSections/ProductCard";
+import ProductCard from "@/components/ProductCard";
 interface Product {
   id: string;
   name: string;
@@ -16,7 +16,7 @@ interface Product {
 
 export default function ProductGridSection({ shopData }: { shopData: any }) {
   return (
-    <section className="px-6 max-w-7xl mx-auto py-12 md:py-16 ">
+    <section className="px-6 max-w-7xl mx-auto py-6 md:py-12 ">
       <div className="flex flex-col md:flex-row justify-between items-end mb-6 gap-6">
         <div>
           <h2 className="text-2xl md:text-4xl font-serif font-bold text-stone-800 uppercase tracking-wide mb-2">

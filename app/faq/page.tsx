@@ -19,7 +19,7 @@ export default function FAQPage() {
 
         <div className="space-y-6">
           {faqs.items.map((faq) => (
-            <div key={faq.id} className="bg-white p-5 md:p-8 rounded-[1.5rem] md:rounded-3xl shadow-sm border border-stone-100 transition-all hover:shadow-md">
+            <div key={faq.id} className="bg-white p-5 md:p-8 rounded-2xl md:rounded-3xl border border-stone-200/80 shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col group hover:-translate-y-1">
               <h3 className="text-lg md:text-2xl font-serif font-bold text-stone-900 mb-2 md:mb-4">{faq.question}</h3>
               <p className="text-stone-600 text-sm md:text-base leading-relaxed mb-4 md:mb-6">{faq.answer}</p>
               {faq.videoUrl && (

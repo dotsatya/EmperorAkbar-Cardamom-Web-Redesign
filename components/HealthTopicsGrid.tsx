@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { X, ArrowRight, Sparkles } from "lucide-react";
+import { X, ArrowRight } from "lucide-react";
 
 type Topic = {
   id: string;
@@ -31,7 +31,7 @@ export default function HealthTopicsGrid({ topics }: { topics: Topic[] }) {
         {topics.map((topic) => (
           <div
             key={topic.id}
-            className="group relative flex flex-col bg-white rounded-[24px] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all duration-500 ease-out hover:-translate-y-2 border border-stone-100/80 cursor-pointer"
+            className="flex flex-col group cursor-pointer hover:-translate-y-1 relative bg-white rounded-2xl md:rounded-3xl overflow-hidden border border-stone-200/80 shadow-xs hover:shadow-lg transition-all duration-300"
             onClick={() => setSelectedTopic(topic)}
           >
             {/* Image Container with subtle gradient overlay */}

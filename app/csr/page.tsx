@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { websiteData } from "@/data/websiteData";
 
@@ -22,7 +21,7 @@ export default function CSRPage() {
           const isEven = idx % 2 === 0;
 
           return (
-            <div key={section.id} className="bg-white p-6 md:p-12 rounded-[2rem] shadow-sm border border-stone-100">
+            <div key={section.id} className="bg-white p-6 md:p-12 rounded-2xl md:rounded-[2rem] border border-stone-200/80 shadow-xs hover:shadow-lg transition-all duration-300">
               {/* Title appears first */}
               <h2 className="text-xl md:text-3xl lg:text-4xl font-serif font-bold text-[#1b4b36] mb-6 md:mb-10 text-center lg:text-left border-b border-stone-100 pb-4 md:pb-6">
                 {section.title}

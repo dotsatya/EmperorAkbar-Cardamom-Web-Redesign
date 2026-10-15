@@ -116,7 +116,7 @@ export default function PolicyLayout({
         </div>
 
         {/* Policy Content Card */}
-        <div className="bg-white rounded-2xl md:rounded-3xl border border-stone-200/70 shadow-sm p-6 sm:p-10 md:p-12 divide-y divide-stone-100">
+        <div className="bg-white rounded-2xl md:rounded-3xl border border-stone-200/80 shadow-xs hover:shadow-lg transition-all duration-300 p-6 sm:p-10 md:p-12 divide-y divide-stone-100">
         
           {sections.map((section, idx) => {
             const hasHeading = Boolean(

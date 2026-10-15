@@ -16,7 +16,7 @@ export default function CardamomGradesPage() {
 
         <CardamomVisualizer />
 
-        <div className="bg-white rounded-3xl p-6 md:p-8 border border-stone-200/50 shadow-sm max-w-3xl mx-auto text-center mt-12 md:mt-16">
+        <div className="bg-white rounded-2xl md:rounded-3xl p-6 md:p-8 border border-stone-200/80 shadow-xs hover:shadow-lg transition-all duration-300 max-w-7xl mx-auto text-center mt-6">
           <h3 className="text-2xl font-serif font-bold text-stone-800 mb-4">
             What makes the difference?
           </h3>

@@ -31,7 +31,7 @@ export default async function RecipeDetails({
   const { recipeInfo, ingredientGroups, steps } = content;
 
   return (
-    <div className="font-sans bg-[#f9f8f6] min-h-screen pb-24">
+    <div className="font-sans bg-[#f9f8f6] min-h-screen pb-20">
       {/* Back Button */}
       <div className="max-w-6xl mx-auto px-6 pt-12 pb-4">
         <Link

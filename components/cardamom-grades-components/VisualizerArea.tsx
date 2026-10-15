@@ -49,13 +49,9 @@ const VisualizerArea = memo(function VisualizerArea({
   const isFractional = currentSize % 1 !== 0;
 
   return (
-    <div className="bg-white rounded-[1.5rem] md:rounded-[2rem] p-4 sm:p-6 md:p-12 border border-stone-200/50 shadow-inner max-w-3xl w-full flex flex-row items-center justify-center gap-2 sm:gap-4 md:gap-8 relative overflow-hidden flex-1">
+    <div className="p-4 sm:p-6 md:p-12 rounded-2xl max-w-3xl w-full flex flex-row items-center justify-center gap-2 sm:gap-4 md:gap-8 relative overflow-hidden flex-1">
       {/* 4. Added aria-hidden to decorative elements for better screen reader accessibility */}
-      <div
-        className="absolute inset-0 bg-stone-50/50 mix-blend-multiply pointer-events-none"
-        aria-hidden="true"
-      ></div>
-
+   
       {/* Visualizer Stage */}
       <div className="relative flex-1 flex justify-end items-end h-[90px] md:h-[120px] w-full max-w-[400px] pr-2">
         {/* Cardamom Image Container */}

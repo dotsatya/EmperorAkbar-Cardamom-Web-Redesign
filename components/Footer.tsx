@@ -1,13 +1,12 @@
 "use client";
-import { Photos } from "@/data/websiteData";
+
 import Image from "next/image";
 import Link from "next/link";
 import { MapPin, Phone, Mail, ExternalLink } from "lucide-react";
 import { SiFacebook, SiInstagram, SiYoutube } from "react-icons/si";
-import { useRouter } from "next/navigation";
+import { Photos } from "@/data/websiteData";
 
 export default function Footer() {
-  const router = useRouter();
   return (
     <footer className="w-full bg-bg-tertiary text-stone-400 py-6 md:pb-6 md:pt-10 px-4 sm:px-6 flex flex-col justify-between relative overflow-hidden">
       {/* Huge background text */}
@@ -20,13 +19,11 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 lg:grid-cols-12 gap-x-6 gap-y-6 sm:gap-8 flex-1 relative z-10">
         {/* Brand Column */}
         <div className="col-span-1 sm:col-span-2 md:col-span-4 lg:col-span-3 flex flex-row md:flex-col items-center md:items-start text-left gap-4 md:gap-0">
-          <div
-            onClick={() => {
-              router.push("/  ");
-            }}
+          <Link
+            href="/"
+            aria-label="Emperor Akbar Homepage"
             className="relative shrink-0 flex items-center justify-center w-12 h-12 md:w-20 md:h-20 rounded-full bg-white shadow-[0_0_15px_rgba(251,191,36,0.15)] border-2 border-amber-500/30 overflow-hidden md:mb-5 p-2 md:p-3 transition-all duration-300 hover:scale-105 hover:border-amber-400"
           >
-            <div className="absolute inset-0 rounded-full border border-white/20 bg-gradient-to-tr from-stone-100 to-white" />
             <Image
               src={Photos.logo}
               alt="Emperor Akbar Logo"
@@ -34,12 +31,8 @@ export default function Footer() {
               height={64}
               className="relative z-10 object-contain aspect-square"
             />
-          </div>
-          <div
-            onClick={() => {
-              router.push("/  ");
-            }}
-          >
+          </Link>
+          <Link href="/" className="inline-block">
             <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif text-[#f4f1ea] md:mb-3 leading-tight">
               The Green Gold <br className="hidden sm:block" />
               <span className="text-[#d4af37] italic">of India.</span>
@@ -48,50 +41,46 @@ export default function Footer() {
               World&apos;s finest Alleppey Green Cardamom, packed fresh with
               patented aroma-lock technology.
             </p>
-          </div>
+          </Link>
         </div>
 
-        {/* Shop Column - Hidden on Tablet & Mobile, Visible on Laptop/Desktop */}
-        <div className="hidden lg:block lg:col-span-2">
-          <h4 className="text-white font-bold tracking-widest text-[10px] sm:text-xs uppercase mb-2.5 md:mb-5">
+        {/* Shop Column (2 cols) */}
+        <div className="lg:col-span-2">
+          <h4 className="text-white font-bold tracking-widest text-xs uppercase mb-4 border-b border-stone-800 pb-2">
             Shop
           </h4>
-          <ul className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm">
+          <ul className="space-y-2.5 text-xs sm:text-sm text-stone-400">
             <li>
               <Link href="/shop" className="hover:text-white transition-colors">
                 All Products
               </Link>
             </li>
             <li>
-              <Link
-                href="/cardamom-grades"
-                className="hover:text-white transition-colors"
-              >
+              <Link href="/cardamom-grades" className="hover:text-white transition-colors">
                 Cardamom Grades
               </Link>
             </li>
             <li>
-              <Link
-                href="/recipes"
-                className="hover:text-white transition-colors"
-              >
+              <Link href="/recipes" className="hover:text-white transition-colors">
                 Recipes
+              </Link>
+            </li>
+            <li>
+              <Link href="/health-benefits" className="hover:text-white transition-colors">
+                Health Benefits
               </Link>
             </li>
           </ul>
         </div>
 
-        {/* Company Column - Hidden on Tablet & Mobile, Visible on Laptop/Desktop */}
-        <div className="hidden lg:block lg:col-span-2">
-          <h4 className="text-white font-bold tracking-widest text-[10px] sm:text-xs uppercase mb-2.5 md:mb-5">
+        {/* Company Column (2 cols) */}
+        <div className="lg:col-span-2">
+          <h4 className="text-white font-bold tracking-widest text-xs uppercase mb-4 border-b border-stone-800 pb-2">
             Company
           </h4>
-          <ul className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm">
+          <ul className="space-y-2.5 text-xs sm:text-sm text-stone-400">
             <li>
-              <Link
-                href="/our-story"
-                className="hover:text-white transition-colors"
-              >
+              <Link href="/our-story" className="hover:text-white transition-colors">
                 Our Story
               </Link>
             </li>
@@ -102,171 +91,95 @@ export default function Footer() {
             </li>
             <li>
               <Link href="/blog" className="hover:text-white transition-colors">
-                Blog
+                Blog &amp; Insights
               </Link>
             </li>
           </ul>
         </div>
 
-        {/* Help Column */}
-        <div className="col-span-1 sm:col-span-1 md:col-span-3 lg:col-span-2">
-          <h4 className="text-white font-bold tracking-widest text-[10px] sm:text-xs uppercase mb-2.5 md:mb-5">
-            Help
+        {/* Customer Care Column (2 cols) */}
+        <div className="lg:col-span-2">
+          <h4 className="text-white font-bold tracking-widest text-xs uppercase mb-4 border-b border-stone-800 pb-2">
+            Support
           </h4>
-          <ul className="grid grid-cols-2 sm:flex sm:flex-col gap-1.5 sm:gap-0 sm:space-y-2 text-xs sm:text-sm">
+          <ul className="space-y-2.5 text-xs sm:text-sm text-stone-400">
             <li>
               <Link href="/faq" className="hover:text-white transition-colors">
                 FAQs
               </Link>
             </li>
             <li>
-              <Link
-                href="/shipping-policy"
-                className="hover:text-white transition-colors"
-              >
-                Shipping & Delivery
+              <Link href="/shipping-policy" className="hover:text-white transition-colors">
+                Shipping &amp; Delivery
               </Link>
             </li>
             <li>
-              <Link
-                href="/return-policy"
-                className="hover:text-white transition-colors"
-              >
-                Return and refund policy
+              <Link href="/return-policy" className="hover:text-white transition-colors">
+                Return &amp; Refund Policy
               </Link>
             </li>
             <li>
-              <Link
-                href="/terms-and-conditions"
-                className="hover:text-white transition-colors"
-              >
-                Terms & Conditions
+              <Link href="/terms-and-conditions" className="hover:text-white transition-colors">
+                Terms &amp; Conditions
               </Link>
             </li>
             <li>
-              <Link
-                href="/privacy-policy"
-                className="hover:text-white transition-colors"
-              >
-                Privacy policy
+              <Link href="/privacy-policy" className="hover:text-white transition-colors">
+                Privacy Policy
               </Link>
             </li>
           </ul>
         </div>
 
-        {/* Contact Column */}
-        <div
-          id="footer-contact"
-          className="col-span-1 sm:col-span-1 md:col-span-5 lg:col-span-3 flex flex-col scroll-mt-6"
-        >
-          <h4 className="text-white font-bold tracking-widest text-[10px] sm:text-xs uppercase mb-2.5 md:mb-5">
+        {/* Contact Column (2 cols) */}
+        <div className="lg:col-span-2">
+          <h4 className="text-white font-bold tracking-widest text-xs uppercase mb-4 border-b border-stone-800 pb-2">
             Contact
           </h4>
-
-          <div className="space-y-2.5 sm:space-y-3.5 text-xs sm:text-sm">
-            {/* Address */}
-            <div className="flex items-start gap-2.5 group">
-              <MapPin className="w-4 h-4 text-[#d4af37] shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-              <div className="leading-relaxed">
-                <a
-                  href="https://www.google.com/maps/search/?api=1&query=201%2C+Sabari+Samriddhi%2C+V.N.+Purav+Marg%2C+Chembur%2C+Mumbai+400071"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group/link inline-block hover:text-white transition-colors"
-                >
-                  <span className="font-semibold text-stone-200 group-hover/link:text-[#d4af37] transition-colors flex items-center gap-1.5">
-                    Samex India Pvt. Ltd.
-                    <ExternalLink className="w-3 h-3 opacity-60 group-hover/link:opacity-100" />
-                  </span>
-                  <span className="text-stone-400 text-xs block mt-0.5">
-                    201, Sabari Samriddhi, V. N. Purav Marg,
-                    <br className="hidden sm:inline" /> Chembur, Mumbai - 400
-                    071, India.
-                  </span>
-                </a>
-              </div>
-            </div>
-
-            {/* Customer Care */}
-            <div className="flex items-center gap-2.5 group">
-              <Phone className="w-4 h-4 text-[#d4af37] shrink-0 group-hover:scale-110 transition-transform" />
-              <div className="text-xs sm:text-sm">
-                <span className="text-[10px] uppercase tracking-wider text-stone-500 block font-medium">
-                  Customer Care
+          <div className="space-y-3 text-xs sm:text-sm text-stone-400">
+            <div className="flex items-start gap-2 group">
+              <MapPin className="w-4 h-4 text-[#d4af37] shrink-0 mt-0.5" />
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=201%2C+Sabari+Samriddhi%2C+V.N.+Purav+Marg%2C+Chembur%2C+Mumbai+400071"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition-colors inline-block leading-relaxed"
+              >
+                <span className="font-semibold text-stone-200 block flex items-center gap-1">
+                  Samex India Pvt. Ltd.
+                  <ExternalLink className="w-3 h-3 opacity-60" />
                 </span>
-                <a
-                  href="tel:+919699196991"
-                  className="font-medium text-stone-200 hover:text-[#d4af37] transition-colors"
-                >
-                  +91 96991 96991
-                </a>
-              </div>
-            </div>
-
-            {/* Email */}
-            <div className="flex items-center gap-2.5 group">
-              <Mail className="w-4 h-4 text-[#d4af37] shrink-0 group-hover:scale-110 transition-transform" />
-              <div className="text-xs sm:text-sm">
-                <span className="text-[10px] uppercase tracking-wider text-stone-500 block font-medium">
-                  E-mail
+                <span className="text-[11px] block mt-0.5 text-stone-400">
+                  Chembur, Mumbai - 400 071, India.
                 </span>
-                <a
-                  href="mailto:birbal@emperorakbar.com"
-                  className="font-medium text-stone-200 hover:text-[#d4af37] transition-colors break-all"
-                >
-                  birbal@emperorakbar.com
-                </a>
-              </div>
+              </a>
             </div>
-          </div>
 
-          {/* Follow Us */}
-          <div className="mt-3 sm:mt-4 pt-2.5 sm:pt-3 border-t border-stone-800/80">
-            <span className="text-[10px] uppercase tracking-wider text-stone-400 font-semibold block mb-2">
-              Follow Us
-            </span>
-            <div className="flex items-center gap-2.5">
-              <a
-                href="https://www.instagram.com/emperorakbarcardamom/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="w-8 h-8 rounded-full border border-stone-700 bg-white/5 flex items-center justify-center text-white/80 hover:bg-[#d4af37] hover:text-black hover:border-transparent transition-all duration-300 hover:scale-110 cursor-pointer"
-              >
-                <SiInstagram className="w-4 h-4" />
+            <div className="flex items-center gap-2">
+              <Phone className="w-4 h-4 text-[#d4af37] shrink-0" />
+              <a href="tel:+919699196991" className="hover:text-[#d4af37] transition-colors">
+                +91 96991 96991
               </a>
+            </div>
 
-              <a
-                href="https://www.facebook.com/emperorakbarcardamom/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                className="w-8 h-8 rounded-full border border-stone-700 bg-white/5 flex items-center justify-center text-white/80 hover:bg-[#d4af37] hover:text-black hover:border-transparent transition-all duration-300 hover:scale-110 cursor-pointer"
-              >
-                <SiFacebook className="w-4 h-4" />
-              </a>
-
-              <a
-                href="https://www.youtube.com/@emperorakbarcardamom"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="YouTube"
-                className="w-8 h-8 rounded-full border border-stone-700 bg-white/5 flex items-center justify-center text-white/80 hover:bg-[#d4af37] hover:text-black hover:border-transparent transition-all duration-300 hover:scale-110 cursor-pointer"
-              >
-                <SiYoutube className="w-4 h-4" />
+            <div className="flex items-center gap-2">
+              <Mail className="w-4 h-4 text-[#d4af37] shrink-0" />
+              <a href="mailto:birbal@emperorakbar.com" className="hover:text-[#d4af37] transition-colors break-all">
+                birbal@emperorakbar.com
               </a>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto w-full pt-3 md:pt-4 mt-4 md:mt-4 border-t border-stone-800/80 flex flex-col md:flex-row justify-between items-center text-[10px] md:text-xs tracking-wider gap-3 md:gap-0 relative z-10 text-center md:text-left text-stone-400">
-        <p>&copy; 2026 Emperor Akbar. All rights reserved.</p>
-        <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
-          <span>India&apos;s Finest Cardamom</span>
-          <span className="hidden sm:block w-1 h-1 rounded-full bg-[#d4af37]"></span>
-          <span>Naturally Extraordinary.</span>
-        </div>
+      {/* Bottom Bar (Flat & Simple) */}
+      <div className="max-w-7xl mx-auto pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-stone-500 gap-3">
+        <p>&copy; {new Date().getFullYear()} Emperor Akbar. All rights reserved.</p>
+        <p className="flex items-center gap-3">
+          <span>GI-Tagged Alleppey Green Cardamom</span>
+          <span className="w-1 h-1 bg-[#d4af37]" />
+          <span>Naturally Extraordinary</span>
+        </p>
       </div>
     </footer>
   );

@@ -1,9 +1,11 @@
 import type { NextConfig } from "next";
 
+const isProd = process.env.NODE_ENV === "production";
+
 const nextConfig: NextConfig = {
   output: "export",
   trailingSlash: true,
-  basePath: "/EmperorAkbar-Cardamom-Web-Redesign",
+  basePath: isProd ? "/EmperorAkbar-Cardamom-Web-Redesign" : undefined,
   /* config options here */
   images: {
     unoptimized: true,

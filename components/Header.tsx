@@ -25,10 +25,10 @@ function HeaderContent() {
   const pathname = usePathname();
   const { cartCount } = useCart();
 
-  // Scroll listener with passive flag for better scroll performance
+  // Scroll listener to toggle hanging badge vs contained header logo
   useEffect(() => {
     const handleScroll = () => {
-      const scrolled = window.scrollY > 20;
+      const scrolled = window.scrollY > 25;
       setIsScrolled((prev) => (prev !== scrolled ? scrolled : prev));
     };
 
@@ -45,49 +45,68 @@ function HeaderContent() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
+  // Normalize pathname to properly match routes even with trailingSlash: true or subpages
+  const normalizedPathname = pathname ? pathname.replace(/\/+$/, "") || "/" : "/";
+
+  const isLinkActive = (href: string) => {
+    const normalizedHref = href.replace(/\/+$/, "") || "/";
+    if (normalizedHref === "/") {
+      return normalizedPathname === "/";
+    }
+    return (
+      normalizedPathname === normalizedHref ||
+      normalizedPathname.startsWith(`${normalizedHref}/`)
+    );
+  };
+
   return (
     <>
-      {/* Spacer to prevent layout shift below fixed header */}
-      <div
-        aria-hidden="true"
-        className={`w-full shrink-0 transition-[height] duration-300 ${
-          isScrolled ? "h-16" : "h-[88px]"
-        }`}
-      />
+      {/* Fixed-height spacer to prevent layout shift below fixed header */}
+      <div aria-hidden="true" className="w-full shrink-0 h-[82px]" />
 
       <header
         role="banner"
-        className={`fixed top-0 left-0 right-0 w-full z-50 px-6 md:px-12 
-          border-b border-stone-200/80 bg-white/80 backdrop-blur-md
-          flex items-center justify-between transition-all duration-300 ease-in-out text-stone-800 ${
-            isScrolled ? "h-16 shadow-md" : "h-[88px]"
+        className={`fixed top-0 left-0 right-0 w-full z-50 px-4 sm:px-6 md:px-12 
+          border-b border-stone-200/80 bg-white/95 backdrop-blur-md
+          flex items-center justify-between text-stone-800 h-[82px] transition-shadow duration-300 ${
+            isScrolled ? "shadow-md" : "shadow-xs"
           }`}
       >
-        {/* Logo: replaced router.push with semantic Link */}
+        {/* Brand logo: expands as hanging tab at top, retracts flush inside header when scrolled */}
         <Link
           href="/"
-          aria-label="Go to Homepage"
-          className="flex items-center shrink-0"
+          aria-label="Emperor Akbar Homepage"
+          className="relative self-start shrink-0 z-20 group transition-all duration-300"
         >
-          <Image
-            src={Photos.logo}
-            alt="Emperor Akbar Logo"
-            width={160}
-            height={48}
-            priority
-            className={`transition-all duration-300 object-contain w-auto ${
-              isScrolled ? "h-9" : "h-11"
+          <div
+            className={`flex flex-col items-center justify-center transition-all duration-300 ease-in-out ${
+              isScrolled
+                ? "h-[76px] px-2 bg-transparent shadow-none border-x-transparent border-b-transparent rounded-none"
+                : "h-[104px] sm:h-[110px] px-3.5 sm:px-4 pt-2 pb-3 md:pb-3.5 bg-white rounded-b-2xl md:rounded-b-3xl shadow-[0_8px_20px_rgba(0,0,0,0.12)] border-x border-b border-stone-200/70"
             }`}
-          />
+          >
+            <Image
+              src={Photos.logo}
+              alt="Emperor Akbar Logo"
+              width={180}
+              height={120}
+              priority
+              className={`h-auto object-contain transition-all duration-300 ease-in-out ${
+                isScrolled
+                  ? "w-22 sm:w-24 md:w-28"
+                  : "w-24 sm:w-28 md:w-32 lg:w-36 group-hover:scale-105"
+              }`}
+            />
+          </div>
         </Link>
 
         {/* Desktop Nav */}
         <nav
           aria-label="Main Navigation"
-          className="hidden lg:flex items-center gap-7 text-[15px] font-medium text-stone-700"
+          className="hidden lg:flex items-center gap-5 xl:gap-7 text-[14px] xl:text-[15px] font-medium text-stone-700"
         >
           {NAV_LINKS.map((link) => {
-            const isActive = pathname === link.href;
+            const isActive = isLinkActive(link.href);
             return (
               <Link
                 key={link.href}
@@ -95,13 +114,13 @@ function HeaderContent() {
                 aria-current={isActive ? "page" : undefined}
                 className={`relative py-1 transition-colors duration-200 group ${
                   isActive
-                    ? "text-stone-950 font-semibold"
+                    ? "text-stone-950 font-bold"
                     : "hover:text-stone-950"
                 }`}
               >
                 {link.name}
                 <span
-                  className={`absolute bottom-0 left-0 h-[2px] bg-stone-800 transition-all duration-300 ${
+                  className={`absolute bottom-0 left-0 h-[2.5px] bg-stone-900 transition-all duration-300 ${
                     isActive ? "w-full" : "w-0 group-hover:w-full"
                   }`}
                 />
@@ -171,7 +190,7 @@ function HeaderContent() {
         >
           <nav className="flex flex-col items-stretch px-6 gap-1 text-center font-medium text-stone-700">
             {NAV_LINKS.map((link, index) => {
-              const isActive = pathname === link.href;
+              const isActive = isLinkActive(link.href);
               return (
                 <Link
                   key={link.href}
@@ -203,7 +222,7 @@ function HeaderContent() {
 
 export default function Header() {
   return (
-    <Suspense fallback={<div className="h-[88px] w-full shrink-0" />}>
+    <Suspense fallback={<div className="h-[82px] w-full shrink-0" />}>
       <HeaderContent />
     </Suspense>
   );

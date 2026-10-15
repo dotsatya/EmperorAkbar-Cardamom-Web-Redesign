@@ -41,12 +41,14 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <CartProvider>
-          <div className="relative z-10 bg-bg-primary min-h-screen rounded-b-[2.5rem] md:rounded-b-4xl overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] flex flex-col mb-0 transition-transform duration-500">
+          {/* Main content wrapper with flat straight bottom edge (NO rounded corners) */}
+          <div className="relative z-10 bg-bg-primary min-h-screen flex flex-col shadow-[0_25px_50px_rgba(0,0,0,0.25)] mb-0">
             <Header />
             <main className="flex flex-col flex-1">
               {children}
             </main>
           </div>
+          {/* Clean footer reveal underneath */}
           <FooterRevealWrapper>
             <Footer />
           </FooterRevealWrapper>

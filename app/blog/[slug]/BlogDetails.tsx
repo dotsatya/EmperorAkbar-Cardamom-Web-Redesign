@@ -28,7 +28,7 @@ export default async function BlogDetails({
   const content = blog.content as any;
 
   return (
-    <div className="font-sans bg-[#f9f8f6] min-h-screen pb-24">
+    <div className="font-sans bg-[#f9f8f6] min-h-screen pb-20">
       {/* Back Button */}
       <div className="max-w-6xl mx-auto px-6 pt-12 pb-4">
         <Link
@@ -207,7 +207,7 @@ export default async function BlogDetails({
               {content.faqs.map((faq: any, idx: number) => (
                 <div
                   key={idx}
-                  className="bg-white p-5 md:p-8 rounded-[1.5rem] md:rounded-2xl shadow-sm border border-stone-100 transition-all hover:shadow-md"
+                  className="bg-white p-5 md:p-8 rounded-2xl border border-stone-200/80 shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col group cursor-pointer hover:-translate-y-1"
                 >
                   <h4 className="text-lg md:text-xl font-bold text-stone-900 mb-3 md:mb-4">
                     {faq.question}
@@ -262,7 +262,7 @@ export default async function BlogDetails({
                 <Link
                   key={idx}
                   href={link.url}
-                  className="group flex flex-col sm:flex-row sm:items-center p-6 md:p-8 bg-white rounded-2xl border border-stone-100 hover:border-[#d4af37] hover:shadow-md transition-all"
+                  className="group flex flex-col sm:flex-row sm:items-center p-6 md:p-8 bg-white rounded-2xl border border-stone-200/80 shadow-xs hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer"
                 >
                   <span className="flex-1 text-lg font-serif font-semibold text-stone-800 group-hover:text-[#1b4b36] transition-colors mb-2 sm:mb-0">
                     {link.label}
