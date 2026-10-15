@@ -32,7 +32,7 @@ export default function StoryBlock({
       {!image ? (
         <div
           onClick={handleReadMore}
-          className="bg-white rounded-2xl md:rounded-3xl border border-stone-200/80 shadow-xs hover:shadow-lg transition-all duration-300 p-5 sm:p-6 md:p-8 lg:p-10 cursor-pointer group flex flex-col justify-center"
+          className="bg-white rounded-2xl md:rounded-3xl border border-stone-200/80 shadow-xs hover:shadow-lg transition-all duration-300 hover:-translate-y-1 p-5 sm:p-6 md:p-8 lg:p-10 cursor-pointer group flex flex-col justify-center"
         >
           <div className="flex items-center justify-between mb-2 sm:mb-3">
             <p className="text-[9px] md:text-[10px] text-[#d4af37] font-bold uppercase tracking-widest">
@@ -59,7 +59,7 @@ export default function StoryBlock({
       ) : (
         <div
           onClick={handleReadMore}
-          className={`bg-white rounded-2xl md:rounded-3xl border border-stone-200/80 shadow-xs hover:shadow-lg transition-all duration-300 flex flex-row ${
+          className={`bg-white rounded-2xl md:rounded-3xl border border-stone-200/80 shadow-xs hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-row ${
             reverse ? "md:flex-row-reverse" : "md:flex-row"
           } overflow-hidden cursor-pointer group items-stretch md:h-60 lg:h-72`}
         >

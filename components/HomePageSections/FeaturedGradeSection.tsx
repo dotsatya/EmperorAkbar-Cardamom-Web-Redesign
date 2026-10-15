@@ -8,7 +8,7 @@ export default function FeaturedGradeSection() {
   return (
     <section className="px-4 sm:px-6 max-w-7xl mx-auto mt-6 md:mt-12">
       {/* Featured Grade Display Card */}
-      <div className="relative bg-white rounded-3xl md:rounded-[2.5rem] p-6 sm:p-8 md:p-10 lg:p-12 border border-stone-200/80 shadow-xs hover:shadow-lg transition-all duration-300 overflow-hidden">
+      <div className="relative bg-white rounded-3xl md:rounded-[2.5rem] p-6 sm:p-8 md:p-10 lg:p-12 border border-stone-200/80 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden">
         {/* Subtle Ambient Background Accents */}
         <div
           aria-hidden="true"

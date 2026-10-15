@@ -1267,10 +1267,8 @@ export const websiteData = {
       "All",
       "alleppey green cardamom",
       "buying cardamom",
-      "cardamom",
       "healthy",
       "spice",
-      "wholesale",
     ],
 
     items: [
@@ -1285,7 +1283,7 @@ export const websiteData = {
         url: "/blogs/p/cardamom-market-analysis-august-2026-quality-trends-demand-growth-and-price-forecast-for-indian-green-cardamom",
         image: blog1,
         youtubeUrl: "https://www.youtube.com/watch?v=KQpJzbeQ5yg",
-        tags: ["cardamom", "wholesale", "spice", "alleppey green cardamom"],
+        tags: [ "alleppey green cardamom"],
 
         content: {
           introduction: [
@@ -1544,7 +1542,7 @@ export const websiteData = {
           "Learn how aroma, pod fullness, and natural green colour can help you identify fresh, high-quality cardamom before buying.",
         url: "/blogs/p/how-to-identify-fresh-high-quality-cardamom-3-simple-checks-before-you-buy",
         image: blog2,
-        tags: ["cardamom", "buying cardamom", "healthy", "spice"],
+        tags: [ "healthy", "spice"],
 
         content: {
           introduction: [
@@ -1655,7 +1653,7 @@ export const websiteData = {
           "Discover how cardamom adds warm, floral, and citrus notes to cakes, cookies, breads, custards, and other baked treats.",
         url: "/blogs/p/cardamom-in-baking-the-spice-your-cakes-and-cookies-have-been-missing",
         image: blog3,
-        tags: ["cardamom", "spice", "healthy"],
+        tags: [ "spice", "healthy"],
 
         content: {
           introduction: [
@@ -1783,7 +1781,7 @@ export const websiteData = {
           "Explore how growing conditions, rainfall, altitude, estate cultivation, handpicking, and grading influence green cardamom quality.",
         url: "/blogs/p/why-origin-matters-in-green-cardamom",
         image: blog4,
-        tags: ["cardamom", "alleppey green cardamom", "buying cardamom"],
+        tags: ["buying cardamom", "alleppey green cardamom"],
 
         content: {
           introduction: [
@@ -1916,7 +1914,7 @@ export const websiteData = {
           "Discover a handcrafted Raksha Bandhan rakhi made with natural cardamom pods, bringing together Indian traditions, aroma, craftsmanship, and meaningful blessings.",
         url: "/blogs/p/cardamom-rakhi-a-first-of-its-kind-rakhi-that-brings-aroma-tradition-and-blessings-together",
         image: blog5,
-        tags: ["cardamom", "spice", "healthy"],
+        tags: [ "spice", "healthy"],
 
         content: {
           introduction: [
