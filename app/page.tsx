@@ -20,10 +20,18 @@ export const metadata: Metadata = {
     title: "Emperor Akbar Cardamom | GI-Tagged Alleppey Cardamom",
     description:
       "Discover premium GI-tagged Alleppey Green Cardamom, its unique aroma, quality grades, and versatile uses in cooking and recipes.",
-    url: "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/",
-    siteName: "Emperor Akbar Cardamom Redesign",
+    url: "https://www.emperorakbar.com/",
+    siteName: "Emperor Akbar Cardamom",
     type: "website",
     locale: "en_IN",
+    images: [
+      {
+        url: "https://www.emperorakbar.com/images/hero-bg.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Emperor Akbar Alleppey Green Cardamom",
+      },
+    ],
   },
 };
 
@@ -32,8 +40,8 @@ const homeSchema = {
   "@graph": [
     {
       "@type": "WebSite",
-      "@id": "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/#website",
-      url: "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/",
+      "@id": "https://www.emperorakbar.com/#website",
+      url: "https://www.emperorakbar.com/",
       name: "Emperor Akbar Cardamom Redesign",
       description:
         "Independent digital flagship redesign exploring premium GI-tagged Alleppey Green Cardamom, grading standards, and recipes.",
@@ -41,10 +49,10 @@ const homeSchema = {
     },
     {
       "@type": "Organization",
-      "@id": "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/#organization",
+      "@id": "https://www.emperorakbar.com/#organization",
       name: "Emperor Akbar Cardamom",
-      url: "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/",
-      logo: "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/images/logo.png",
+      url: "https://www.emperorakbar.com/",
+      logo: "https://www.emperorakbar.com/images/logo.png",
       description:
         "Authentic GI-tagged Alleppey Green Cardamom showcase.",
       sameAs: [

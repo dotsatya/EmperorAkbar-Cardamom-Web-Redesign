@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat, Playfair_Display, Great_Vibes } from "next/font/google";
 import "./globals.css";
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FooterRevealWrapper from "@/components/FooterRevealWrapper";
@@ -23,14 +24,20 @@ const greatVibes = Great_Vibes({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign"),
+  metadataBase: new URL(
+    "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/"
+  ),
+
   title: {
     default: "Emperor Akbar Cardamom | GI-Tagged Alleppey Cardamom",
     template: "%s | Emperor Akbar Cardamom",
   },
+
   description:
     "Discover premium GI-tagged Alleppey Green Cardamom, its unique aroma, quality grades, and versatile uses in cooking and recipes.",
+
   applicationName: "Emperor Akbar Cardamom Redesign",
+
   keywords: [
     "green cardamom",
     "Alleppey green cardamom",
@@ -41,15 +48,27 @@ export const metadata: Metadata = {
     "choti elaichi",
     "Indian spices",
     "premium cardamom grades",
-    "doctor of spices",
   ],
-  authors: [{ name: "Satya (dotsatya)", url: "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/" }],
+
+  authors: [
+    {
+      name: "Satya (dotsatya)",
+      url: "https://github.com/dotsatya",
+    },
+  ],
+
   creator: "Satya (dotsatya)",
   publisher: "Emperor Akbar Cardamom Redesign",
   category: "Food & Grocery",
+
   alternates: {
     canonical: "/",
   },
+
+  icons: {
+    icon: "/icon.png",
+  },
+
   openGraph: {
     type: "website",
     locale: "en_IN",
@@ -67,6 +86,7 @@ export const metadata: Metadata = {
       },
     ],
   },
+
   twitter: {
     card: "summary_large_image",
     title: "Emperor Akbar Cardamom | GI-Tagged Alleppey Cardamom",
@@ -74,6 +94,7 @@ export const metadata: Metadata = {
       "Discover premium GI-tagged Alleppey Green Cardamom, its unique aroma, quality grades, and versatile uses in cooking and recipes.",
     images: ["/images/hero-bg.jpg"],
   },
+
   robots: {
     index: true,
     follow: true,
@@ -84,18 +105,6 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
-  },
-  icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "32x32" },
-      { url: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
-      { url: "/favicon-16x16.png", type: "image/png", sizes: "16x16" },
-      { url: "/icon.png", type: "image/png", sizes: "192x192" },
-    ],
-    shortcut: "/favicon.ico",
-    apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
-    ],
   },
 };
 
@@ -108,18 +117,18 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body
         className={`${montserrat.variable} ${playfair.variable} ${greatVibes.variable} font-sans antialiased bg-bg-primary text-stone-900 min-h-screen flex flex-col`}
-        style={{ paddingBottom: 'var(--footer-height, 0px)' }}
+        style={{ paddingBottom: "var(--footer-height, 0px)" }}
         suppressHydrationWarning
       >
         <CartProvider>
-          {/* Main content wrapper with flat straight bottom edge (NO rounded corners) */}
           <div className="relative z-10 bg-bg-primary min-h-screen flex flex-col shadow-[0_25px_50px_rgba(0,0,0,0.25)] mb-0">
             <Header />
+
             <main className="flex flex-col flex-1">
               {children}
             </main>
           </div>
-          {/* Clean footer reveal underneath */}
+
           <FooterRevealWrapper>
             <Footer />
           </FooterRevealWrapper>
