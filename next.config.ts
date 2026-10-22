@@ -18,6 +18,7 @@ const nextConfig: NextConfig = {
   },
   experimental: {
     agentFeedback: true,
+    optimizePackageImports: ["lucide-react"],
   },
   turbopack: {
     rules: {

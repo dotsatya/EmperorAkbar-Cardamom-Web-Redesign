@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { MapPin, Phone, Mail, ExternalLink } from "lucide-react";
@@ -24,6 +22,7 @@ export default function Footer() {
           <Link
             href="/"
             aria-label="Emperor Akbar Homepage"
+            
             className="relative shrink-0 flex items-center justify-center w-12 h-12 md:w-20 md:h-20 rounded-full bg-white shadow-[0_0_15px_rgba(251,191,36,0.15)] border-2 border-amber-500/30 overflow-hidden md:mb-5 p-2 md:p-3 transition-all duration-300 hover:scale-105 hover:border-amber-400"
           >
             <Image
