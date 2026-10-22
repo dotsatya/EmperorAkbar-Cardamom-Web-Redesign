@@ -1,12 +1,20 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import ProductCard, { ProductItem } from "@/components/ProductCard";
+import ProductCard from "@/components/ProductCard";
+interface Product {
+  id: string;
+  name: string;
+  grade: string;
+  size: string;
+  price: number;
+  originalPrice: number;
+  currency: string;
+  status: string;
+  image: string;
+  url: string;
+}
 
-export default function ProductGridSection({
-  shopData,
-}: {
-  shopData: { products: ProductItem[] };
-}) {
+export default function ProductGridSection({ shopData }: { shopData: any }) {
   return (
     <section className="px-6 max-w-7xl mx-auto py-6 md:py-12 ">
       <div className="flex flex-col md:flex-row justify-between items-end mb-6 gap-6">
@@ -16,9 +24,6 @@ export default function ProductGridSection({
           </h2>
           <p className="text-stone-500 font-serif italic">
             Premium quality for every kitchen. For every occasion.
-          </p>
-          <p className="text-stone-600 text-xs sm:text-sm max-w-2xl mt-1.5 leading-relaxed">
-            From our flagship 8mm+ Purple Grade to versatile 6mm Green Grade, each batch is calibrated for uniform pod sizing, high essential oil content, and authentic spice potency.
           </p>
         </div>
         <Link href="/shop">
@@ -30,10 +35,10 @@ export default function ProductGridSection({
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {shopData.products
-          .filter((product: ProductItem) =>
+          .filter((product: Product) =>
             ["Purple", "Pink", "Green"].includes(product.grade),
           )
-          .map((product: ProductItem) => (
+          .map((product: Product) => (
             <ProductCard key={product.id} product={product} />
           ))}
       </div>

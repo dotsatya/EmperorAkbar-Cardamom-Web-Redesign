@@ -19,13 +19,10 @@ export default function LegacySection() {
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-stone-900 uppercase tracking-wide mb-6">
             A Legacy of Aroma
           </h2>
-          <p className="text-stone-700 text-sm leading-relaxed mb-4 pr-0 sm:pr-4">
+          <p className="text-stone-700 text-sm leading-relaxed mb-8 pr-0 sm:pr-4">
             From a family business in 1981 to a globally loved brand today,
             Emperor Akbar continues to bring the unmatched aroma of Alleppey
             Green Cardamom to kitchens around the world.
-          </p>
-          <p className="text-stone-600 text-xs sm:text-sm leading-relaxed mb-8 pr-0 sm:pr-4">
-            Cultivated in the biodiverse Western Ghats of Kerala, our cardamom is hand-harvested at peak maturity, carefully graded by pod diameter, and packaged immediately to preserve natural volatile oils, rich eucalyptus-citrus notes, and culinary excellence.
           </p>
           <Link href="/our-story">
             <ShinyButton className="bg-[#0b1f14] text-white px-6 py-2.5 rounded-[2rem] font-bold text-xs tracking-widest hover:bg-black transition-colors flex items-center gap-2">

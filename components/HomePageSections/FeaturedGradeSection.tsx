@@ -67,19 +67,20 @@ export default function FeaturedGradeSection() {
                 </span>
               </div>
               <blockquote className="text-stone-700 leading-relaxed text-xs sm:text-sm md:text-[15px] italic">
-                Emperor Akbar Cardamom is loved by celebrity chef and renowned culinary maestro{" "}
+                Emperor Akbar Cardamom is loved by celebrity chef and renowned
+                culinary maestro{" "}
                 <strong className="text-stone-900 not-italic font-semibold">
                   Chef Mohamad Chabchoul
                 </strong>{" "}
-                — winner of Executive Chef of the Year, Dubai (2021–2024), TV host, and Pro Chef Awardee 2021. His first expression on experiencing its aroma:{" "}
+                — winner of Executive Chef of the Year, Dubai (2021–2024), TV
+                host, and Pro Chef Awardee 2021. His first expression on
+                experiencing its aroma:{" "}
                 <strong className="text-[#6b2c58] font-semibold not-italic">
                   &ldquo;Mashaallah, the aroma is amazing&rdquo;
                 </strong>
-                , reflects the distinctive, world-class standard of Emperor Akbar Cardamom.
+                , reflects the distinctive, world-class standard of Emperor
+                Akbar Cardamom.
               </blockquote>
-              <p className="text-stone-600 text-xs sm:text-sm mt-3 leading-relaxed">
-                Selected exclusively from pods measuring 8 mm and larger, our Purple Grade represents the pinnacle of Alleppey green cardamom — plump, vibrant green, and filled with glistening oil-rich black seeds that impart superior fragrance and depth to gourmet dishes.
-              </p>
             </div>
 
             {/* Action Buttons */}

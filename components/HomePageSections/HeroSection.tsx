@@ -31,10 +31,8 @@ export default function HeroSection() {
             </span>
             THE GREEN <br /> GOLD OF INDIA
           </h1>
-          <p className="text-lg md:text-xl lg:text-2xl font-light mb-4">
-            Pure. Aromatic. Naturally Extraordinary.
-          </p>
-          <p className="text-stone-300 max-w-lg mb-10 leading-relaxed text-sm md:text-base">
+     
+          <p className="text-stone-300 max-w-lg mb-10 leading-relaxed text-sm md:text-sm">
             Celebrated as the Green Gold of India, Emperor Akbar Cardamom brings you
             authentic GI-tagged Alleppey Green Cardamom cultivated in the misty hills of
             South India. Explore our premium cardamom grades, distinct pod sizes, and
