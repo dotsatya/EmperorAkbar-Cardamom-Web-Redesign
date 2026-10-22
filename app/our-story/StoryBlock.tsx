@@ -68,6 +68,7 @@ export default function StoryBlock({
             <Image
               src={image}
               alt={title}
+              title={title}
               fill
               className="object-cover"
             />

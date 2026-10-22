@@ -63,6 +63,7 @@ export default function CartView() {
                       <Image
                         src={item.image}
                         alt={item.name}
+                        title={item.name}
                         fill
                         className="object-contain mix-blend-multiply p-2"
                       />

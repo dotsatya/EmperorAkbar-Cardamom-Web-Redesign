@@ -130,6 +130,7 @@ export default async function BlogDetails({
                 <Image
                   src={blog.image}
                   alt={blog.title}
+                  title={blog.title}
                   fill
                   className="object-cover"
                 />

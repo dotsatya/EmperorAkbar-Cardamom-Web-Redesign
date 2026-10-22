@@ -114,6 +114,7 @@ export default function ProductCard({ product, className = "" }: ProductCardProp
             <Image
               src={images[currentIdx].src}
               alt={`${product.name} - Emperor Akbar Cardamom`}
+              title={`${product.name} - Emperor Akbar Cardamom`}
               fill
               className="object-cover mix-blend-multiply p-1 sm:p-2"
             />

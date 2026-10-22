@@ -40,6 +40,7 @@ export default function HealthTopicsGrid({ topics }: { topics: Topic[] }) {
               <Image
                 src={topic.image}
                 alt={topic.title}
+                title={topic.title}
                 fill
                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
               />
@@ -85,6 +86,7 @@ export default function HealthTopicsGrid({ topics }: { topics: Topic[] }) {
               <Image
                 src={selectedTopic.image}
                 alt={selectedTopic.title}
+                title={selectedTopic.title}
                 fill
                 className="object-cover"
               />

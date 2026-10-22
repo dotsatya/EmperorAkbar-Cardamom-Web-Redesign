@@ -69,6 +69,7 @@ const VisualizerArea = memo(function VisualizerArea({
             <Image
               src={Photos.greenSeedDemo}
               alt={`Cardamom Pod Size ${currentSize}mm`}
+              title={`Cardamom Pod Size ${currentSize}mm`}
               fill
               priority // 5. Added priority since this is the primary hero image of the component
               className="object-contain object-bottom drop-shadow-2xl"

@@ -34,6 +34,7 @@ export default function ProductGallery({
               <Image
                 src={img.src}
                 alt={`${productName} thumbnail ${idx + 1}`}
+                title={`${productName} - Thumbnail ${idx + 1}`}
                 fill
                 className={`object-cover transition-transform duration-500 ${
                   idx === selectedImage ? "scale-110" : "hover:scale-110"
@@ -53,6 +54,7 @@ export default function ProductGallery({
           <Image
             src={images[selectedImage]?.src || images[0].src}
             alt={productName}
+            title={productName}
             fill
             // Note: Use 'object-cover' here instead of 'object-contain' if you want the image to stretch and completely fill the square without ANY empty background space.
             className="object-contain  mix-blend-multiply group-hover:scale-[1.05] transition-transform duration-700 ease-out z-10"

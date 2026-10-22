@@ -97,6 +97,7 @@ export default function CSRPage() {
                   <Image
                     src={section.image}
                     alt={section.title}
+                    title={section.title}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                   />

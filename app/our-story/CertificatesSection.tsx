@@ -84,6 +84,7 @@ export default function CertificatesSection({ data }: { data: CertificatesData }
                   <Image
                     src={item.image}
                     alt={item.title}
+                    title={item.title}
                     fill
                     className="object-contain drop-shadow-sm mix-blend-multiply"
                   />
@@ -135,6 +136,7 @@ export default function CertificatesSection({ data }: { data: CertificatesData }
                  <Image 
                    src={selectedItem.image} 
                    alt={selectedItem.title} 
+                   title={selectedItem.title}
                    fill
                    className="object-contain drop-shadow-xl p-4" 
                  />

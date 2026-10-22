@@ -33,6 +33,7 @@ export default function HealthBenefitsSlider() {
             <Image
               src={img.src}
               alt={`Cardamom Health Benefits & Natural Wellness - Ayurvedic Spice Remedies ${idx + 1}`}
+              title={`Cardamom Health Benefits & Natural Wellness - Slide ${idx + 1}`}
               fill
               className="object-cover"
               priority={idx === 0}

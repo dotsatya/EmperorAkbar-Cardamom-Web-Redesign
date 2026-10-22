@@ -63,6 +63,7 @@ export default function HealthBenefitsPage() {
           <Image
             src={healthData.hero.image}
             alt="Health Benefits of Alleppey Green Cardamom"
+            title="Health Benefits of Alleppey Green Cardamom"
             fill
             className="object-cover opacity-60"
             priority

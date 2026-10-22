@@ -36,6 +36,7 @@ export default function FeaturedGradeSection() {
                 <Image
                   src={Photos.purpleSeedDemo}
                   alt="Purple Grade Cardamom"
+                  title="Purple Grade Cardamom (8mm & Above)"
                   fill
                   className="object-contain mix-blend-multiply drop-shadow-md scale-90"
                 />
@@ -106,6 +107,7 @@ export default function FeaturedGradeSection() {
               <Image
                 src="https://www.emperorakbar.com/cdn/shop/files/EAC_Website_Home_Chabchaul_020126_900x.jpg?v=1767354197"
                 alt="Chef Mohamad Chabchoul endorsing Emperor Akbar Cardamom"
+                title="Chef Mohamad Chabchoul endorsing Emperor Akbar Cardamom"
                 fill
                 sizes="(max-width: 768px) 100vw, 420px"
                 className="object-cover object-top transition-transform duration-700 group-hover:scale-105"

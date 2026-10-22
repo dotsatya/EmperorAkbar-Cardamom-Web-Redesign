@@ -28,6 +28,7 @@ export default function Footer() {
             <Image
               src={Photos.logo}
               alt="Emperor Akbar Logo"
+              title="Emperor Akbar Logo"
               width={64}
               height={64}
               className="relative z-10 object-contain aspect-square"

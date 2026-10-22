@@ -126,6 +126,7 @@ export default async function RecipeDetails({
                 <Image
                   src={recipe.image}
                   alt={recipe.title}
+                  title={recipe.title}
                   fill
                   className="object-cover"
                 />

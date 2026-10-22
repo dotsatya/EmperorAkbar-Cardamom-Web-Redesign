@@ -12,6 +12,7 @@ export default function HeroSection() {
         <Image
           src={Photos.heroBG}
           alt="Misty Cardamom Plantation"
+          title="Misty Cardamom Plantation - Emperor Akbar"
           fill
           className="object-cover object-center "
           priority

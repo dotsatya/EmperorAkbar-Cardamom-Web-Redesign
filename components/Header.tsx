@@ -88,6 +88,7 @@ function HeaderContent() {
             <Image
               src={Photos.logo}
               alt="Emperor Akbar Logo"
+              title="Emperor Akbar Logo"
               width={180}
               height={120}
               priority
