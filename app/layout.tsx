@@ -25,7 +25,7 @@ const greatVibes = Great_Vibes({
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/"
+    "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/",
   ),
 
   title: {
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
   },
 
   icons: {
-    icon: "/icon.png",
+    icon: "/EmperorAkbar-Cardamom-Web-Redesign/icon.png",
   },
 
   openGraph: {
@@ -124,9 +124,7 @@ export default function RootLayout({
           <div className="relative z-10 bg-bg-primary min-h-screen flex flex-col shadow-[0_25px_50px_rgba(0,0,0,0.25)] mb-0">
             <Header />
 
-            <main className="flex flex-col flex-1">
-              {children}
-            </main>
+            <main className="flex flex-col flex-1">{children}</main>
           </div>
 
           <FooterRevealWrapper>
