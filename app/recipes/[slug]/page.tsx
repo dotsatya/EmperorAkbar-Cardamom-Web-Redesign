@@ -29,10 +29,9 @@ export async function generateMetadata({
 
   const rawImg = recipe.image;
   const imgUrl = typeof rawImg === "string" ? rawImg : (rawImg as { src?: string })?.src || "/images/hero-bg.jpg";
-  const title = `${recipe.title} Recipe | Emperor Akbar Cardamom`;
+  const title = `${recipe.title} | Emperor Akbar Cardamom`;
   const description =
-    recipe.description ||
-    `Learn how to cook ${recipe.title} with premium Alleppey green cardamom. Full ingredients and step-by-step instructions.`;
+    `Learn how to make ${recipe.title}. A delicious culinary recipe infused with aromatic Alleppey green cardamom.`;
 
   return {
     title,
@@ -42,7 +41,7 @@ export async function generateMetadata({
       recipe.title,
       "cardamom recipe",
       "Alleppey green cardamom recipes",
-      "how to cook with cardamom",
+      "cooking with cardamom",
       "Emperor Akbar Cardamom",
     ],
     alternates: {
@@ -51,7 +50,7 @@ export async function generateMetadata({
     openGraph: {
       title,
       description,
-      url: `https://www.emperorakbar.com/recipes/${slug}/`,
+      url: `https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/recipes/${slug}/`,
       type: "article",
       images: [
         {
@@ -75,7 +74,9 @@ export default async function RecipePage({ params }: RecipePageProps) {
 
   const rawImg = recipe?.image;
   const imgUrl = typeof rawImg === "string" ? rawImg : (rawImg as { src?: string })?.src || "/images/hero-bg.jpg";
-  const fullImgUrl = imgUrl.startsWith("http") ? imgUrl : `https://www.emperorakbar.com${imgUrl}`;
+  const fullImgUrl = imgUrl.startsWith("http")
+    ? imgUrl
+    : `https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign${imgUrl}`;
 
   // Build Recipe ingredients array
   const ingredients: string[] = [];
@@ -124,19 +125,19 @@ export default async function RecipePage({ params }: RecipePageProps) {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://www.emperorakbar.com/",
+        item: "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Recipes",
-        item: "https://www.emperorakbar.com/recipes/",
+        item: "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/recipes/",
       },
       {
         "@type": "ListItem",
         position: 3,
         name: recipe ? recipe.title : "Recipe",
-        item: `https://www.emperorakbar.com/recipes/${slug}/`,
+        item: `https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/recipes/${slug}/`,
       },
     ],
   };

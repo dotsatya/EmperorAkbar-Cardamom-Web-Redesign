@@ -4,9 +4,9 @@ import BlogList from "@/components/BlogList";
 import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Cardamom Insights, Market Trends & Recipes Blog | Emperor Akbar",
+  title: "Cardamom Insights & Market Trends | Emperor Akbar",
   description:
-    "Read the latest articles on Indian green cardamom market analysis, quality identification tests, baking tips, GI origin history, and festive traditions.",
+    "Read expert articles on green cardamom market trends, quality checks, baking ideas, Alleppey GI origin history, and culinary tips.",
   keywords: [
     "cardamom blog",
     "cardamom market analysis",
@@ -19,10 +19,10 @@ export const metadata: Metadata = {
     canonical: "/blog/",
   },
   openGraph: {
-    title: "Cardamom Insights, Market Trends & Recipes Blog | Emperor Akbar",
+    title: "Cardamom Insights & Market Trends | Emperor Akbar",
     description:
       "Expert insights, quality identification tests, and culinary inspirations for green cardamom.",
-    url: "https://www.emperorakbar.com/blog/",
+    url: "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/blog/",
     type: "website",
   },
 };
@@ -35,13 +35,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://www.emperorakbar.com/",
+      item: "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Blog",
-      item: "https://www.emperorakbar.com/blog/",
+      item: "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/blog/",
     },
   ],
 };

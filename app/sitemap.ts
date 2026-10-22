@@ -3,7 +3,7 @@ import { websiteData } from "@/data/websiteData";
 
 export const dynamic = "force-static";
 
-const BASE_URL = "https://www.emperorakbar.com";
+const BASE_URL = "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const currentDate = new Date().toISOString();

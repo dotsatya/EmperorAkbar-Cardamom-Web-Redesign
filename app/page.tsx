@@ -10,18 +10,18 @@ import HealthBenefitsSlider from "@/components/HealthBenefitsSlider";
 import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Emperor Akbar Cardamom | World's Best GI-Tagged Alleppey Green Cardamom",
+  title: "Emperor Akbar Cardamom | GI-Tagged Alleppey Cardamom",
   description:
-    "Experience the world's finest GI-tagged Alleppey Green Cardamom sealed with patented Aroma-Lock technology. India's top exporter of 100% natural, premium cardamom pods.",
+    "Discover premium GI-tagged Alleppey Green Cardamom, its unique aroma, quality grades, and versatile uses in cooking and recipes.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Emperor Akbar Cardamom - The Green Gold of India",
+    title: "Emperor Akbar Cardamom | GI-Tagged Alleppey Cardamom",
     description:
-      "Buy authentic GI-tagged Alleppey Green Cardamom sealed with patented Aroma-Lock technology. Pure, aromatic, and 100% natural.",
-    url: "https://www.emperorakbar.com",
-    siteName: "Emperor Akbar Cardamom",
+      "Discover premium GI-tagged Alleppey Green Cardamom, its unique aroma, quality grades, and versatile uses in cooking and recipes.",
+    url: "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/",
+    siteName: "Emperor Akbar Cardamom Redesign",
     type: "website",
     locale: "en_IN",
   },
@@ -31,45 +31,27 @@ const homeSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
-      "@id": "https://www.emperorakbar.com/#organization",
-      name: "Emperor Akbar Cardamom",
-      legalName: "Samex India Pvt. Ltd.",
-      url: "https://www.emperorakbar.com",
-      logo: "https://www.emperorakbar.com/images/logo.png",
+      "@type": "WebSite",
+      "@id": "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/#website",
+      url: "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/",
+      name: "Emperor Akbar Cardamom Redesign",
       description:
-        "World's best GI-tagged Alleppey Green Cardamom brand and India's #1 exporter of premium whole cardamom pods.",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "201, Sabari Samriddhi, V.N. Purav Marg, Chembur",
-        addressLocality: "Mumbai",
-        postalCode: "400071",
-        addressCountry: "IN",
-      },
-      contactPoint: {
-        "@type": "ContactPoint",
-        telephone: "+91-9699196991",
-        contactType: "customer service",
-        email: "birbal@emperorakbar.com",
-        areaServed: ["IN", "AE", "US", "GB", "SA"],
-        availableLanguage: ["English", "Hindi"],
-      },
+        "Independent digital flagship redesign exploring premium GI-tagged Alleppey Green Cardamom, grading standards, and recipes.",
+      inLanguage: "en-IN",
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/#organization",
+      name: "Emperor Akbar Cardamom",
+      url: "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/",
+      logo: "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/images/logo.png",
+      description:
+        "Authentic GI-tagged Alleppey Green Cardamom showcase.",
       sameAs: [
         "https://www.facebook.com/EmperorAkbarCardamom",
         "https://www.instagram.com/emperorakbarcardamom",
         "https://www.youtube.com/@EmperorAkbarCardamom",
       ],
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://www.emperorakbar.com/#website",
-      url: "https://www.emperorakbar.com",
-      name: "Emperor Akbar Cardamom",
-      description:
-        "Authentic GI-Tagged Alleppey Green Cardamom with Patented Aroma-Lock Technology",
-      publisher: {
-        "@id": "https://www.emperorakbar.com/#organization",
-      },
     },
   ],
 };

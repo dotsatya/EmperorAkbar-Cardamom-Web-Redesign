@@ -6,13 +6,12 @@ import StoryBlock from "./StoryBlock";
 import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Our Story & Heritage | India's Largest Green Cardamom Exporter",
+  title: "Our Story & Heritage | Emperor Akbar Cardamom",
   description:
-    "Discover the legacy of Emperor Akbar Cardamom and Samex India. Certified Three Star Export House by Government of India and recipient of Spices Board excellence awards.",
+    "Explore the legacy of Emperor Akbar Cardamom and Samex India, delivering GI-tagged Alleppey Green Cardamom with authentic spice heritage.",
   keywords: [
     "Emperor Akbar cardamom story",
     "Samex India Pvt Ltd",
-    "largest cardamom exporter India",
     "GI tagged cardamom history",
     "Alleppey green cardamom legacy",
     "Three Star Export House cardamom",
@@ -25,7 +24,7 @@ export const metadata: Metadata = {
     title: "Our Story & Heritage | Emperor Akbar Cardamom",
     description:
       "A royal legacy of purity, passion, and global cardamom export excellence from the Western Ghats of India.",
-    url: "https://www.emperorakbar.com/our-story/",
+    url: "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/our-story/",
     type: "website",
   },
 };
@@ -38,13 +37,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://www.emperorakbar.com/",
+      item: "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Our Story",
-      item: "https://www.emperorakbar.com/our-story/",
+      item: "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/our-story/",
     },
   ],
 };

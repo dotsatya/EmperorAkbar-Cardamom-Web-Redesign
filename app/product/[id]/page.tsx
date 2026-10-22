@@ -30,8 +30,8 @@ export async function generateMetadata({
   const rawImg = product.image;
   const imgUrl = typeof rawImg === "string" ? rawImg : (rawImg as { src?: string })?.src || "/images/hero-bg.jpg";
 
-  const title = `${product.name} | Buy Online | Emperor Akbar`;
-  const description = `${product.speciality} (${product.size}). Buy authentic GI-tagged Alleppey Green Cardamom sealed in patented Aroma-Lock packaging. ₹${product.price} INR.`;
+  const title = `${product.name} | Emperor Akbar Cardamom`;
+  const description = `${product.name} (${product.size}). Authentic GI-tagged Alleppey Green Cardamom with natural aroma oils and rich flavour.`;
 
   return {
     title,
@@ -43,7 +43,6 @@ export async function generateMetadata({
       "Alleppey green cardamom",
       "buy cardamom online",
       "Emperor Akbar cardamom",
-      "aroma lock pack",
     ],
     alternates: {
       canonical: `/product/${id}/`,
@@ -51,7 +50,7 @@ export async function generateMetadata({
     openGraph: {
       title,
       description,
-      url: `https://www.emperorakbar.com/product/${id}/`,
+      url: `https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/product/${id}/`,
       type: "website",
       images: [
         {
@@ -75,7 +74,9 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
   const rawImg = product?.image;
   const imgUrl = typeof rawImg === "string" ? rawImg : (rawImg as { src?: string })?.src || "/images/hero-bg.jpg";
-  const fullImgUrl = imgUrl.startsWith("http") ? imgUrl : `https://www.emperorakbar.com${imgUrl}`;
+  const fullImgUrl = imgUrl.startsWith("http")
+    ? imgUrl
+    : `https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign${imgUrl}`;
 
   const productSchema = product
     ? {
@@ -91,7 +92,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
         },
         offers: {
           "@type": "Offer",
-          url: `https://www.emperorakbar.com/product/${product.id}/`,
+          url: `https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/product/${product.id}/`,
           priceCurrency: "INR",
           price: product.price,
           itemCondition: "https://schema.org/NewCondition",
@@ -120,19 +121,19 @@ export default async function ProductPage({ params }: ProductPageProps) {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://www.emperorakbar.com/",
+        item: "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Shop",
-        item: "https://www.emperorakbar.com/shop/",
+        item: "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/shop/",
       },
       {
         "@type": "ListItem",
         position: 3,
         name: product ? product.name : "Product",
-        item: `https://www.emperorakbar.com/product/${id}/`,
+        item: `https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/product/${id}/`,
       },
     ],
   };

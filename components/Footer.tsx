@@ -34,20 +34,22 @@ export default function Footer() {
               className="relative z-10 object-contain aspect-square"
             />
           </Link>
-          <Link
-            href="/"
-            aria-label="Emperor Akbar Cardamom - Home"
-            className="inline-block"
-          >
-            <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif text-[#f4f1ea] md:mb-3 leading-tight">
-              The Green Gold <br className="hidden sm:block" />
-              <span className="text-[#d4af37] italic">of India.</span>
-            </h3>
-            <p className="text-xs text-stone-400/80 hidden md:block max-w-xs leading-relaxed">
+          <div>
+            <Link
+              href="/"
+              aria-label="Emperor Akbar Cardamom - Home"
+              className="inline-block hover:opacity-90 transition-opacity"
+            >
+              <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif text-[#f4f1ea] leading-tight">
+                The Green Gold <br className="hidden sm:block" />
+                <span className="text-[#d4af37] italic">of India.</span>
+              </h3>
+            </Link>
+            <p className="text-xs text-stone-400/80 hidden md:block max-w-xs leading-relaxed mt-2 md:mt-3">
               World&apos;s finest Alleppey Green Cardamom, packed fresh with
               patented aroma-lock technology.
             </p>
-          </Link>
+          </div>
         </div>
 
         {/* Shop Column (2 cols) */}

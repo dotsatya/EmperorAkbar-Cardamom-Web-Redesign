@@ -3,9 +3,9 @@ import CardamomVisualizer from "@/components/cardamom-grades-components/Cardamom
 import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Cardamom Grades Guide | Purple, Pink, Green, Orange, Red Sizes Explained",
+  title: "Cardamom Grades Guide & Pod Sizing | Emperor Akbar",
   description:
-    "Learn about Emperor Akbar colour-coded cardamom grading system based on pod diameter (6mm to 8mm+). Discover Alleppey green cardamom quality standards.",
+    "Learn about colour-coded green cardamom grades based on pod diameter from 6mm to 8mm+, flavour intensity, and culinary recommendations.",
   keywords: [
     "cardamom grades",
     "cardamom pod sizes",
@@ -20,10 +20,10 @@ export const metadata: Metadata = {
     canonical: "/cardamom-grades/",
   },
   openGraph: {
-    title: "Cardamom Grades Guide | Emperor Akbar Cardamom",
+    title: "Cardamom Grades Guide & Pod Sizing | Emperor Akbar",
     description:
       "Understand the difference in cardamom pod diameter and quality standards across Purple, Pink, Green, Orange, and Red grades.",
-    url: "https://www.emperorakbar.com/cardamom-grades/",
+    url: "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/cardamom-grades/",
     type: "website",
   },
 };
@@ -36,13 +36,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://www.emperorakbar.com/",
+      item: "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Cardamom Grades",
-      item: "https://www.emperorakbar.com/cardamom-grades/",
+      item: "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/cardamom-grades/",
     },
   ],
 };

@@ -4,26 +4,26 @@ import RecipesList from "@/components/RecipesList";
 import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Authentic Cardamom Recipes | Desserts, Chai & Savory Delights",
+  title: "Cardamom Recipes & Culinary Dishes | Emperor Akbar",
   description:
-    "Explore chef-crafted cardamom recipes: Cardamom Rasmalai, Pistachio Latte, Elaichi Chai, Biryani, and traditional sweets made with Emperor Akbar Cardamom.",
+    "Explore authentic sweet and savoury recipes made with aromatic Alleppey green cardamom, from traditional chai and payasam to biryani.",
   keywords: [
     "cardamom recipes",
     "elaichi recipes",
     "cardamom rasmalai",
     "elaichi chai recipe",
     "cardamom pistachio latte",
-    "how to use green cardamom in cooking",
+    "cooking with green cardamom",
     "Emperor Akbar Cardamom recipes",
   ],
   alternates: {
     canonical: "/recipes/",
   },
   openGraph: {
-    title: "Authentic Cardamom Recipes | Emperor Akbar Cardamom",
+    title: "Cardamom Recipes & Culinary Dishes | Emperor Akbar",
     description:
-      "Flavours that bring people together. Explore our collection of chef-crafted recipes using aromatic Alleppey green cardamom.",
-    url: "https://www.emperorakbar.com/recipes/",
+      "Explore delicious chef-crafted recipes using aromatic Alleppey green cardamom.",
+    url: "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/recipes/",
     type: "website",
   },
 };
@@ -36,13 +36,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://www.emperorakbar.com/",
+      item: "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Recipes",
-      item: "https://www.emperorakbar.com/recipes/",
+      item: "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/recipes/",
     },
   ],
 };

@@ -4,13 +4,12 @@ import { websiteData } from "@/data/websiteData";
 import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Frequently Asked Questions | Cardamom Storage, Grades & Quality",
+  title: "Cardamom FAQ: Storage, Grades & Usage | Emperor Akbar",
   description:
-    "Find answers to frequently asked questions about Emperor Akbar Cardamom, pod sizing, Aroma-Lock technology, storage tips, and GI-tag authenticity.",
+    "Find answers to common questions about green cardamom grades, proper storage methods, pod sizing, and aroma freshness preservation.",
   keywords: [
     "cardamom FAQ",
     "how to store cardamom",
-    "aroma lock packaging",
     "green cardamom shelf life",
     "how is cardamom graded",
     "Emperor Akbar Cardamom questions",
@@ -19,10 +18,10 @@ export const metadata: Metadata = {
     canonical: "/faq/",
   },
   openGraph: {
-    title: "Frequently Asked Questions | Emperor Akbar Cardamom",
+    title: "Cardamom FAQ: Storage, Grades & Usage | Emperor Akbar",
     description:
-      "All your questions answered about authentic Alleppey green cardamom grades, freshness preservation, and storage tips.",
-    url: "https://www.emperorakbar.com/faq/",
+      "All your questions answered about green cardamom grades, freshness preservation, and storage tips.",
+    url: "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/faq/",
     type: "website",
   },
 };
@@ -51,13 +50,13 @@ export default function FAQPage() {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://www.emperorakbar.com/",
+        item: "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "FAQ",
-        item: "https://www.emperorakbar.com/faq/",
+        item: "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/faq/",
       },
     ],
   };

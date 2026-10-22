@@ -34,10 +34,11 @@ export default function HeroSection() {
           <p className="text-lg md:text-xl lg:text-2xl font-light mb-4">
             Pure. Aromatic. Naturally Extraordinary.
           </p>
-          <p className="text-stone-300 max-w-md mb-10 leading-relaxed text-sm md:text-base">
-            From the lush spice hills of Alleppey to your kitchen. Emperor
-            Akbar brings you the world&apos;s finest green cardamom, sealed at
-            its freshest.
+          <p className="text-stone-300 max-w-lg mb-10 leading-relaxed text-sm md:text-base">
+            Celebrated as the Green Gold of India, Emperor Akbar Cardamom brings you
+            authentic GI-tagged Alleppey Green Cardamom cultivated in the misty hills of
+            South India. Explore our premium cardamom grades, distinct pod sizes, and
+            fresh culinary recipes.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mb-16">

@@ -23,31 +23,29 @@ const greatVibes = Great_Vibes({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.emperorakbar.com"),
+  metadataBase: new URL("https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign"),
   title: {
-    default: "Emperor Akbar Cardamom | World's Best GI-Tagged Alleppey Green Cardamom",
+    default: "Emperor Akbar Cardamom | GI-Tagged Alleppey Cardamom",
     template: "%s | Emperor Akbar Cardamom",
   },
   description:
-    "Buy authentic GI-tagged Alleppey Green Cardamom with patented Aroma-Lock packaging. India's No. 1 exporter of premium whole cardamom pods directly from the Western Ghats.",
-  applicationName: "Emperor Akbar Cardamom",
+    "Discover premium GI-tagged Alleppey Green Cardamom, its unique aroma, quality grades, and versatile uses in cooking and recipes.",
+  applicationName: "Emperor Akbar Cardamom Redesign",
   keywords: [
     "green cardamom",
     "Alleppey green cardamom",
     "Emperor Akbar cardamom",
     "buy cardamom online",
     "GI tagged cardamom",
-    "aroma lock cardamom",
     "cardamom pods",
     "choti elaichi",
     "Indian spices",
-    "largest cardamom exporter India",
     "premium cardamom grades",
     "doctor of spices",
   ],
-  authors: [{ name: "Samex India Pvt. Ltd.", url: "https://www.emperorakbar.com" }],
-  creator: "Samex India Pvt. Ltd.",
-  publisher: "Emperor Akbar Cardamom",
+  authors: [{ name: "Satya (dotsatya)", url: "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/" }],
+  creator: "Satya (dotsatya)",
+  publisher: "Emperor Akbar Cardamom Redesign",
   category: "Food & Grocery",
   alternates: {
     canonical: "/",
@@ -55,11 +53,11 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://www.emperorakbar.com",
-    siteName: "Emperor Akbar Cardamom",
-    title: "Emperor Akbar Cardamom | World's Best GI-Tagged Alleppey Green Cardamom",
+    url: "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/",
+    siteName: "Emperor Akbar Cardamom Redesign",
+    title: "Emperor Akbar Cardamom | GI-Tagged Alleppey Cardamom",
     description:
-      "Buy authentic GI-tagged Alleppey Green Cardamom with patented Aroma-Lock packaging. India's No. 1 exporter of premium whole green cardamom pods.",
+      "Discover premium GI-tagged Alleppey Green Cardamom, its unique aroma, quality grades, and versatile uses in cooking and recipes.",
     images: [
       {
         url: "/images/hero-bg.jpg",
@@ -71,11 +69,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Emperor Akbar Cardamom | World's Best GI-Tagged Alleppey Green Cardamom",
+    title: "Emperor Akbar Cardamom | GI-Tagged Alleppey Cardamom",
     description:
-      "Buy authentic GI-tagged Alleppey Green Cardamom with patented Aroma-Lock packaging. India's No. 1 exporter of cardamom.",
+      "Discover premium GI-tagged Alleppey Green Cardamom, its unique aroma, quality grades, and versatile uses in cooking and recipes.",
     images: ["/images/hero-bg.jpg"],
-    creator: "@emperorakbar",
   },
   robots: {
     index: true,

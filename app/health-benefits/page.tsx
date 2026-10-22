@@ -8,9 +8,9 @@ import ShinyButton from "@/components/ShinyButton";
 import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Health Benefits of Cardamom | Doctor of Spices Wellness Guide",
+  title: "Health Benefits of Green Cardamom | Doctor of Spices",
   description:
-    "Explore the science-backed medicinal and Ayurvedic benefits of green cardamom: digestion aid, oral health, antioxidant properties, and daily wellness.",
+    "Explore the evidence-based wellness and Ayurvedic benefits of green cardamom, from digestive support to oral health and antioxidants.",
   keywords: [
     "health benefits of cardamom",
     "green cardamom medicinal uses",
@@ -24,10 +24,10 @@ export const metadata: Metadata = {
     canonical: "/health-benefits/",
   },
   openGraph: {
-    title: "Health Benefits of Green Cardamom | Emperor Akbar Cardamom",
+    title: "Health Benefits of Green Cardamom | Doctor of Spices",
     description:
       "Explore the medicinal properties of cardamom that make it Mother Nature's own doctor of spices.",
-    url: "https://www.emperorakbar.com/health-benefits/",
+    url: "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/health-benefits/",
     type: "website",
   },
 };
@@ -40,13 +40,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://www.emperorakbar.com/",
+      item: "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Health Benefits",
-      item: "https://www.emperorakbar.com/health-benefits/",
+      item: "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/health-benefits/",
     },
   ],
 };

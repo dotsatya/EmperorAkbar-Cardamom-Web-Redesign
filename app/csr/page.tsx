@@ -6,9 +6,9 @@ import { websiteData } from "@/data/websiteData";
 import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Corporate Social Responsibility (CSR) | Shubh Laabh Initiatives",
+  title: "CSR & Community Welfare | Emperor Akbar Cardamom",
   description:
-    "Learn about Emperor Akbar Cardamom's CSR initiatives, healthcare camps, community welfare programs, and the philosophy of Shubh Laabh.",
+    "Explore Emperor Akbar Cardamom's CSR initiatives, healthcare camps, and social welfare programs rooted in the philosophy of Shubh Laabh.",
   keywords: [
     "cardamom CSR",
     "Emperor Akbar community welfare",
@@ -20,10 +20,10 @@ export const metadata: Metadata = {
     canonical: "/csr/",
   },
   openGraph: {
-    title: "Corporate Social Responsibility | Emperor Akbar Cardamom",
+    title: "CSR & Community Welfare | Emperor Akbar Cardamom",
     description:
       "Devoted to enriching lives, supporting communities, and spreading goodness beyond business.",
-    url: "https://www.emperorakbar.com/csr/",
+    url: "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/csr/",
     type: "website",
   },
 };
@@ -36,13 +36,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://www.emperorakbar.com/",
+      item: "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "CSR",
-      item: "https://www.emperorakbar.com/csr/",
+      item: "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/csr/",
     },
   ],
 };

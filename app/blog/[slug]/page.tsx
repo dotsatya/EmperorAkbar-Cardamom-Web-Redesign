@@ -29,7 +29,7 @@ export async function generateMetadata({
 
   const rawImg = blog.image;
   const imgUrl = typeof rawImg === "string" ? rawImg : (rawImg as { src?: string })?.src || "/images/hero-bg.jpg";
-  const title = `${blog.title} | Emperor Akbar Cardamom Blog`;
+  const title = `${blog.title.length > 38 ? blog.title.slice(0, 38) + "..." : blog.title} | Emperor Akbar Cardamom`;
   const description =
     blog.description ||
     "Read in-depth insights, cooking tips, and origin stories from Emperor Akbar Cardamom.";
@@ -50,7 +50,7 @@ export async function generateMetadata({
     openGraph: {
       title,
       description,
-      url: `https://www.emperorakbar.com/blog/${slug}/`,
+      url: `https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/blog/${slug}/`,
       type: "article",
       images: [
         {
@@ -74,7 +74,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   const rawImg = blog?.image;
   const imgUrl = typeof rawImg === "string" ? rawImg : (rawImg as { src?: string })?.src || "/images/hero-bg.jpg";
-  const fullImgUrl = imgUrl.startsWith("http") ? imgUrl : `https://www.emperorakbar.com${imgUrl}`;
+  const fullImgUrl = imgUrl.startsWith("http")
+    ? imgUrl
+    : `https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign${imgUrl}`;
 
   const articleSchema = blog
     ? {
@@ -83,23 +85,23 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         headline: blog.title,
         description: blog.description,
         image: [fullImgUrl],
-        url: `https://www.emperorakbar.com/blog/${slug}/`,
+        url: `https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/blog/${slug}/`,
         author: {
           "@type": "Organization",
           name: "Emperor Akbar Cardamom",
-          url: "https://www.emperorakbar.com",
+          url: "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/",
         },
         publisher: {
           "@type": "Organization",
           name: "Emperor Akbar Cardamom",
           logo: {
             "@type": "ImageObject",
-            url: "https://www.emperorakbar.com/images/logo.png",
+            url: "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/images/logo.png",
           },
         },
         mainEntityOfPage: {
           "@type": "WebPage",
-          "@id": `https://www.emperorakbar.com/blog/${slug}/`,
+          "@id": `https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/blog/${slug}/`,
         },
       }
     : null;
@@ -112,19 +114,19 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://www.emperorakbar.com/",
+        item: "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Blog",
-        item: "https://www.emperorakbar.com/blog/",
+        item: "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/blog/",
       },
       {
         "@type": "ListItem",
         position: 3,
         name: blog ? blog.title : "Blog Post",
-        item: `https://www.emperorakbar.com/blog/${slug}/`,
+        item: `https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/blog/${slug}/`,
       },
     ],
   };

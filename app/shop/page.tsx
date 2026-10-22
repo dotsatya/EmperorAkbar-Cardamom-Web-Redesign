@@ -4,14 +4,13 @@ import ProductCard from "@/components/ProductCard";
 import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Shop Premium Cardamom Pods | Purple, Pink, Green, Orange, Red Grades",
+  title: "Shop Premium Cardamom Pods & Grades | Emperor Akbar",
   description:
-    "Buy authentic GI-tagged Alleppey Green Cardamom packs online. Choose from colour-coded pod sizes 6mm to 8mm+ sealed with patented Aroma-Lock technology.",
+    "Explore authentic GI-tagged Alleppey Green Cardamom pods. Choose from premium colour-coded grades 6mm to 8mm+ for everyday culinary uses.",
   keywords: [
     "buy cardamom online",
     "shop green cardamom",
     "Alleppey green cardamom",
-    "aroma lock cardamom",
     "purple grade cardamom",
     "pink grade cardamom",
     "green grade cardamom",
@@ -21,10 +20,10 @@ export const metadata: Metadata = {
     canonical: "/shop/",
   },
   openGraph: {
-    title: "Shop Premium Cardamom Pods | Emperor Akbar Cardamom",
+    title: "Shop Premium Cardamom Pods & Grades | Emperor Akbar",
     description:
-      "Buy authentic GI-tagged Alleppey Green Cardamom packs online with patented Aroma-Lock technology.",
-    url: "https://www.emperorakbar.com/shop/",
+      "Explore authentic GI-tagged Alleppey Green Cardamom pods in premium colour-coded grades from 6mm to 8mm+.",
+    url: "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/shop/",
     type: "website",
   },
 };
@@ -40,7 +39,7 @@ export default function ShopPage() {
       "@type": "ListItem",
       position: idx + 1,
       name: product.name,
-      url: `https://www.emperorakbar.com/product/${product.id}/`,
+      url: `https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/product/${product.id}/`,
     })),
   };
 
@@ -52,13 +51,13 @@ export default function ShopPage() {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://www.emperorakbar.com/",
+        item: "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Shop",
-        item: "https://www.emperorakbar.com/shop/",
+        item: "https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/shop/",
       },
     ],
   };
