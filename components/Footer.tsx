@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { MapPin, Phone, Mail, ExternalLink } from "lucide-react";
-import { SiFacebook, SiInstagram, SiYoutube } from "react-icons/si";
 import { Photos } from "@/data/websiteData";
 
 export default function Footer() {
@@ -11,9 +10,12 @@ export default function Footer() {
     <footer className="w-full bg-bg-tertiary text-stone-400 py-6 md:pb-6 md:pt-10 px-4 sm:px-6 flex flex-col justify-between relative overflow-hidden">
       {/* Huge background text */}
       <div className="absolute inset-0 flex items-center justify-center z-0 pointer-events-none overflow-hidden opacity-50 md:opacity-100">
-        <h1 className="text-[20vw] md:text-[13vw] font-serif font-black text-white/5 tracking-tighter leading-none whitespace-nowrap select-none uppercase">
+        <span
+          aria-hidden="true"
+          className="text-[20vw] md:text-[13vw] font-serif font-black text-white/5 tracking-tighter leading-none whitespace-nowrap select-none uppercase"
+        >
           Emperor Akbar
-        </h1>
+        </span>
       </div>
 
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 lg:grid-cols-12 gap-x-6 gap-y-6 sm:gap-8 flex-1 relative z-10">
@@ -32,7 +34,11 @@ export default function Footer() {
               className="relative z-10 object-contain aspect-square"
             />
           </Link>
-          <Link href="/" className="inline-block">
+          <Link
+            href="/"
+            aria-label="Emperor Akbar Cardamom - Home"
+            className="inline-block"
+          >
             <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif text-[#f4f1ea] md:mb-3 leading-tight">
               The Green Gold <br className="hidden sm:block" />
               <span className="text-[#d4af37] italic">of India.</span>
@@ -56,17 +62,26 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/cardamom-grades" className="hover:text-white transition-colors">
+              <Link
+                href="/cardamom-grades"
+                className="hover:text-white transition-colors"
+              >
                 Cardamom Grades
               </Link>
             </li>
             <li>
-              <Link href="/recipes" className="hover:text-white transition-colors">
+              <Link
+                href="/recipes"
+                className="hover:text-white transition-colors"
+              >
                 Recipes
               </Link>
             </li>
             <li>
-              <Link href="/health-benefits" className="hover:text-white transition-colors">
+              <Link
+                href="/health-benefits"
+                className="hover:text-white transition-colors"
+              >
                 Health Benefits
               </Link>
             </li>
@@ -80,7 +95,10 @@ export default function Footer() {
           </h4>
           <ul className="space-y-2.5 text-xs sm:text-sm text-stone-400">
             <li>
-              <Link href="/our-story" className="hover:text-white transition-colors">
+              <Link
+                href="/our-story"
+                className="hover:text-white transition-colors"
+              >
                 Our Story
               </Link>
             </li>
@@ -109,22 +127,34 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/shipping-policy" className="hover:text-white transition-colors">
+              <Link
+                href="/shipping-policy"
+                className="hover:text-white transition-colors"
+              >
                 Shipping &amp; Delivery
               </Link>
             </li>
             <li>
-              <Link href="/return-policy" className="hover:text-white transition-colors">
+              <Link
+                href="/return-policy"
+                className="hover:text-white transition-colors"
+              >
                 Return &amp; Refund Policy
               </Link>
             </li>
             <li>
-              <Link href="/terms-and-conditions" className="hover:text-white transition-colors">
+              <Link
+                href="/terms-and-conditions"
+                className="hover:text-white transition-colors"
+              >
                 Terms &amp; Conditions
               </Link>
             </li>
             <li>
-              <Link href="/privacy-policy" className="hover:text-white transition-colors">
+              <Link
+                href="/privacy-policy"
+                className="hover:text-white transition-colors"
+              >
                 Privacy Policy
               </Link>
             </li>
@@ -157,14 +187,20 @@ export default function Footer() {
 
             <div className="flex items-center gap-2">
               <Phone className="w-4 h-4 text-[#d4af37] shrink-0" />
-              <a href="tel:+919699196991" className="hover:text-[#d4af37] transition-colors">
+              <a
+                href="tel:+919699196991"
+                className="hover:text-[#d4af37] transition-colors"
+              >
                 +91 96991 96991
               </a>
             </div>
 
             <div className="flex items-center gap-2">
               <Mail className="w-4 h-4 text-[#d4af37] shrink-0" />
-              <a href="mailto:birbal@emperorakbar.com" className="hover:text-[#d4af37] transition-colors break-all">
+              <a
+                href="mailto:birbal@emperorakbar.com"
+                className="hover:text-[#d4af37] transition-colors break-all"
+              >
                 birbal@emperorakbar.com
               </a>
             </div>
@@ -174,7 +210,9 @@ export default function Footer() {
 
       {/* Bottom Bar (Flat & Simple) */}
       <div className="max-w-7xl mx-auto pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-stone-500 gap-3">
-        <p>&copy; {new Date().getFullYear()} Emperor Akbar. All rights reserved.</p>
+        <p>
+          &copy; {new Date().getFullYear()} Emperor Akbar. All rights reserved.
+        </p>
         <p className="flex items-center gap-3">
           <span>GI-Tagged Alleppey Green Cardamom</span>
           <span className="w-1 h-1 bg-[#d4af37]" />

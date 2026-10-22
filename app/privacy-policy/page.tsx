@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Privacy Policy | Emperor Akbar Cardamom",
   description:
     "Learn how Emperor Akbar Cardamom collects, uses, and protects your personal and order information.",
+  alternates: {
+    canonical: "/privacy-policy/",
+  },
 };
 
 export default function PrivacyPolicyPage() {

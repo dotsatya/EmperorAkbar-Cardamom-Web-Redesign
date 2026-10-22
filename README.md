@@ -98,7 +98,7 @@ This redesign reimagines Emperor Akbar as an **exclusive luxury spice boutique**
 | **Language** | [TypeScript 5](https://www.typescriptlang.org/) |
 | **Styling** | [Tailwind CSS v4](https://tailwindcss.com/), `@tailwindcss/typography` |
 | **Typography** | Google Fonts (`Montserrat`, `Playfair Display`, `Great Vibes`) via `next/font` |
-| **Icons** | [Lucide React](https://lucide.dev/), [React Icons](https://react-icons.github.io/react-icons/) |
+| **Icons** | [Lucide React](https://lucide.dev/) |
 | **State Management** | React Context API (`CartProvider`) |
 | **CI / CD & Hosting** | [GitHub Actions](https://github.com/features/actions) → [GitHub Pages](https://pages.github.com/) |
 
@@ -134,25 +134,44 @@ emperorakbar-web-redesign/
 │   │   └── page.tsx
 │   ├── shop/                       # Full product catalog & filter system
 │   │   └── page.tsx
-│   ├── (policies)/                 # Legal, Shipping, Privacy, and Terms pages
+│   ├── privacy-policy/             # Privacy Policy statement
+│   │   └── page.tsx
+│   ├── return-policy/              # Return & refund guidelines
+│   │   └── page.tsx
+│   ├── shipping-policy/            # Shipping & delivery guidelines
+│   │   └── page.tsx
+│   ├── terms-and-conditions/       # Terms & conditions legal page
+│   │   └── page.tsx
 │   ├── globals.css                 # Design tokens, custom animations, glassmorphism
 │   ├── layout.tsx                  # Root layout with Fonts, CartProvider, Header & Footer
+│   ├── robots.ts                   # Search crawler directives (/robots.txt)
+│   ├── sitemap.ts                  # Dynamic XML sitemap generator (/sitemap.xml)
 │   └── page.tsx                    # Redesigned Homepage
 ├── components/
 │   ├── HomePageSections/           # Hero, Badges, Chef Chabchoul, Featured Grade, Recipes
 │   ├── cardamom-grades-components/ # Visualizer area, diameter circles, Grade tabs
 │   ├── policy/                     # Standardized policy layout with navigation tabs
-│   ├── shop/                       # Shop product card & variant selectors
+│   ├── BlogCard.tsx                # Blog article card with reading time & tags
+│   ├── BlogList.tsx                # Interactive blog search & category filters
 │   ├── CartProvider.tsx            # Global cart state provider & calculations
-│   ├── Header.tsx                  # Responsive glass navbar with navigation & cart badge
+│   ├── CartView.tsx                # Interactive cart drawer & checkout calculation
 │   ├── Footer.tsx                  # Deep forest-green luxury footer
 │   ├── FooterRevealWrapper.tsx     # Curtain-reveal scroll transition
+│   ├── Header.tsx                  # Responsive glass navbar with navigation & cart badge
+│   ├── HealthBenefitsSlider.tsx    # Interactive health wellness benefits carousel
+│   ├── HealthTopicsGrid.tsx        # Grid showcase of cardamom health benefits
+│   ├── JsonLd.tsx                  # SEO Structured Data component
+│   ├── ProductCard.tsx             # Universal product card with variant selector
+│   ├── RecipeCard.tsx              # Culinary recipe card with cook time & difficulty
+│   ├── RecipesList.tsx             # Interactive recipes catalog with search
 │   └── ShinyButton.tsx             # Shimmer-effect royal gold CTA button
 ├── data/
-│   ├── websiteData.ts              # Complete single source of truth (products, recipes, blogs)
-│   └── websiteData.json            # Structured JSON reference
+│   └── websiteData.ts              # Complete single source of truth (products, recipes, blogs)
 ├── public/
+│   ├── .htaccess                   # Apache 301 canonical redirects (www & non-www)
+│   ├── _redirects                  # Netlify/Cloudflare static 301 redirects
 │   ├── .nojekyll                   # Bypasses Jekyll on GitHub Pages to serve _next/ assets
+│   ├── apple-touch-icon.png        # Apple touch icon for mobile bookmarking
 │   ├── images/                     # Logos, hero backgrounds, badge icons
 │   ├── purple/, pink/, green/...   # High-resolution grade package photography
 │   └── xreadme/                    # README assets (old-to-new.jpg, old.png, new.png)
@@ -180,7 +199,7 @@ emperorakbar-web-redesign/
 | `/csr` | Corporate Social Responsibility & Farmer Welfare | Static |
 | `/faq` | Interactive Frequently Asked Questions | Static |
 | `/privacy-policy` | Privacy Policy Statement | Static |
-| `/terms-of-service` | Terms & Conditions | Static |
+| `/terms-and-conditions` | Terms & Conditions | Static |
 | `/shipping-policy` | Shipping and Delivery Guidelines | Static |
 | `/return-policy` | Return and Refund Guidelines | Static |
 

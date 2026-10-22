@@ -43,9 +43,9 @@ export default function FeaturedGradeSection() {
 
               {/* Title & Specs */}
               <div className="flex-1">
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-[#6b2c58] uppercase tracking-wide leading-tight">
-                  Purple Grade
-                </h3>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-[#6b2c58] uppercase tracking-wide leading-tight">
+                  Purple Grade (8mm &amp; Above)
+                </h2>
                 <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-stone-500 font-bold tracking-wider text-[11px] sm:text-xs uppercase mt-1">
                   <span className="text-[#6b2c58] bg-[#6b2c58]/5 px-2 py-0.5 rounded">
                     8MM &amp; ABOVE

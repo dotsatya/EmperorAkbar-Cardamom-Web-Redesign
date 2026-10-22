@@ -22,10 +22,13 @@ export default function HeroSection() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 w-full flex flex-col lg:flex-row items-center">
         {/* Text Content */}
         <div className="w-full lg:w-1/2 text-white">
-          <span className="text-[#d4af37] font-medium tracking-[0.2em] text-xs md:text-sm uppercase mb-4 block">
-            Premium Alleppey Green Cardamom
+          <span className="text-stone-300 font-medium tracking-[0.2em] text-xs md:text-sm uppercase mb-3 block">
+            Premium GI-Tagged Alleppey Origin
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-serif font-bold leading-tight mb-4 md:mb-6 text-white">
+            <span className="block text-lg sm:text-xl lg:text-2xl font-sans font-semibold tracking-[0.2em] text-[#d4af37] uppercase mb-2">
+              Emperor Akbar Cardamom
+            </span>
             THE GREEN <br /> GOLD OF INDIA
           </h1>
           <p className="text-lg md:text-xl lg:text-2xl font-light mb-4">

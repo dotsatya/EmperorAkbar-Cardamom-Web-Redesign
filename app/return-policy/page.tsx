@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Return & Refund Policy | Emperor Akbar Cardamom",
   description:
     "Information regarding returns, exchanges, EU right of withdrawal, and quality satisfaction guarantee for Emperor Akbar Cardamom.",
+  alternates: {
+    canonical: "/return-policy/",
+  },
 };
 
 export default function ReturnPolicyPage() {

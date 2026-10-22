@@ -269,7 +269,7 @@ export const websiteData = {
         status: "sale",
         image: Photos.purpleSeed[0].src,
         images: Photos.purpleSeed,
-        url: "/collections/cardamom-packs/products/aroma-lock-purple-grade-cardamom-packs",
+        url: "/product/purple-grade",
         taxInfo: "Incl. of all taxes.",
         shippingInfo: "Shipping calculated at checkout.",
         brand: "Emperor Akbar Cardamom",
@@ -299,7 +299,7 @@ export const websiteData = {
         status: "sold-out",
         image: Photos.pinkSeed[0].src,
         images: Photos.pinkSeed,
-        url: "/collections/cardamom-packs/products/aroma-lock-pink-grade-cardamom-packs",
+        url: "/product/pink-grade",
         taxInfo: "Incl. of all taxes.",
         shippingInfo: "Shipping calculated at checkout.",
         brand: "Emperor Akbar Cardamom",
@@ -328,7 +328,7 @@ export const websiteData = {
         status: "sale",
         image: Photos.greenSeed[0].src,
         images: Photos.greenSeed,
-        url: "/collections/cardamom-packs/products/aroma-lock-green-grade-cardamom-packs",
+        url: "/product/green-grade",
         taxInfo: "Incl. of all taxes.",
         shippingInfo: "Shipping calculated at checkout.",
         brand: "Emperor Akbar Cardamom",
@@ -357,7 +357,7 @@ export const websiteData = {
         status: "sold-out",
         image: Photos.orangeSeed[0].src,
         images: Photos.orangeSeed,
-        url: "/collections/cardamom-packs/products/aroma-lock-orange-grade-cardamom-packs",
+        url: "/product/orange-grade",
         taxInfo: "Incl. of all taxes.",
         shippingInfo: "Shipping calculated at checkout.",
         brand: "Emperor Akbar Cardamom",
@@ -386,13 +386,13 @@ export const websiteData = {
         status: "sale",
         image: Photos.redSeed[0].src,
         images: Photos.redSeed,
-        url: "/collections/cardamom-packs/products/aroma-lock-red-grade-cardamom-packs",
+        url: "/product/red-grade",
         taxInfo: "Incl. of all taxes.",
         shippingInfo: "Shipping calculated at checkout.",
         brand: "Emperor Akbar Cardamom",
         vendor: "Emperor Akbar Cardamom",
         origin: "South India",
-        speciality: "GGI-tagged Alleppey Green Aroma Lock Cardamom",
+        speciality: "GI-tagged Alleppey Green Aroma Lock Cardamom",
         usage: "Versatile spice, ideal for industrial use",
         manufacturer: "Samex India Pvt. Ltd.",
         packedBy: "Samex India Pvt. Ltd. Dist. Theni, Tamil Nadu, India",
@@ -435,7 +435,7 @@ export const websiteData = {
         description:
           "We collaborated with Shimi’s Kitchen to create a soft and aromatic Cardamom Rasmalai that brings together the creaminess of whipped cream and the warm, lingering aroma of Emperor Akbar Cardamom. A moist eggless vanilla sponge, soaked in saffron-cardamom rasmalai milk, layered with lightly sweetened whipped cream and finished with pistachios, almonds, and saffron come together in a dessert that feels indulgent yet effortlessly simple. With the Emperor Akbar Cardamom added at the right moment, the rasmalai takes on an aromatic depth that lifts every bite and turns a regular festive sweet into a quiet moment of luxury.",
 
-        url: "/blogs/recipes/cardamom-rasmalai-by-shimi-s-kitchen",
+        url: "/recipes/cardamom-rasmalai-by-shimi-s-kitchen",
         image: rasmalai,
 
         tags: ["cake", "dessert", "festive recipe", "indian dessert"],
@@ -624,7 +624,7 @@ export const websiteData = {
         description:
           "We collaborated with Shimi’s Kitchen to create a smooth and aromatic Cardamom Pistachio Latte that brings together the creaminess of pistachio and the warm, lingering fragrance of cardamom. A chilled milk base, rich pistachio cream, and a shot of espresso infused with Emperor Akbar Cardamom come together in a drink that feels indulgent yet effortlessly simple.",
 
-        url: "/blogs/recipes/cardamom-pistachio-latte-by-shimi-s-kitchen",
+        url: "/recipes/cardamom-pistachio-latte-by-shimi-s-kitchen",
         image: Pistachio,
 
         tags: ["easy to cook", "milk", "recipe"],
@@ -715,7 +715,7 @@ export const websiteData = {
         description:
           "We collaborated with Shimi’s Kitchen to bring you a comforting and fragrant Elaichi Milk Tea, a classic chai that blends the richness of milk with the warmth of tea and the unmistakable aroma of Emperor Akbar Cardamom. Simple, familiar, and deeply satisfying, this recipe turns an everyday cup into a more elevated ritual.",
 
-        url: "/blogs/recipes/elaichi-milk-tea-by-shimi-s-kitchen",
+        url: "/recipes/elaichi-milk-tea-by-shimi-s-kitchen",
         image: Milk_Tea,
 
         tags: ["easy to cook", "milk", "healthy", "recipe"],
@@ -801,7 +801,7 @@ export const websiteData = {
         description:
           "We collaborated with Shimi’s Kitchen to create a rich and elegant Elaichi Payasam that brings together festive tradition and the quiet luxury of cardamom. Slow-cooked milk, soft basmati rice, golden cashews, and plump raisins come together in a dessert that feels indulgent yet deeply rooted in home cooking.",
 
-        url: "/blogs/recipes/elaichi-payasam-by-shimi-s-kitchen",
+        url: "/recipes/elaichi-payasam-by-shimi-s-kitchen",
         image: simui,
 
         tags: ["indian dessert", "kheer", "rice", "milk", "festive recipe"],
@@ -903,7 +903,7 @@ export const websiteData = {
         description:
           "We worked with Shimi’s Kitchen to bring you a comforting Elaichi Wala Doodh recipe that celebrates simplicity, warmth, and tradition in every cup. Made with full-fat milk and gently infused with Emperor Akbar Cardamom, this drink carries a soft fragrance and a creamy richness that feels both nourishing and familiar.",
 
-        url: "/blogs/recipes/elaichi-wala-doodh-by-shimi-s-kitchen",
+        url: "/recipes/elaichi-wala-doodh-by-shimi-s-kitchen",
         image: Elichi_Doodh,
 
         tags: ["milk", "healthy", "easy to cook", "recipe"],
@@ -1006,7 +1006,7 @@ export const websiteData = {
         description:
           "We collaborated with Shimi’s Kitchen to create a simple yet refined Cardamom Black Coffee that brings together the boldness of coffee and the delicate warmth of cardamom. With Emperor Akbar Cardamom lightly infused into the water before brewing, this cup gains a fragrant depth that softens the intensity of black coffee without taking away its character.",
 
-        url: "/blogs/recipes/cardamom-black-coffee-by-shimi-s-kitchen",
+        url: "/recipes/cardamom-black-coffee-by-shimi-s-kitchen",
         image: black_coffee,
 
         tags: ["easy to cook", "healthy", "recipe"],
@@ -1104,7 +1104,7 @@ export const websiteData = {
         description:
           "We collaborated with the talented Shumaila, the creator behind Shimi’s Kitchen, to bring you a rich and aromatic Hyderabadi Chicken Dum Biryani recipe that celebrates tradition in every layer. Fragrant, flavorful, and deeply satisfying, this biryani comes alive with the warmth of spices, the richness of marinated chicken, and the unmistakable character of Emperor Akbar Cardamom. Perfect for family gatherings, special occasions, or any meal that calls for something memorable.",
 
-        url: "/blogs/recipes/hyderabadi-chicken-dum-biryani-by-shimi-s-kitchen",
+        url: "/recipes/hyderabadi-chicken-dum-biryani-by-shimi-s-kitchen",
         image: biriyani,
 
         tags: ["recipe", "festive recipe"],
@@ -1280,7 +1280,7 @@ export const websiteData = {
         slug: "cardamom-market-analysis-august-2026-quality-trends-demand-growth-and-price-forecast-for-indian-green-cardamom",
         description:
           "A comprehensive market report on Alleppey Green Cardamom from India's leading export house. Explore crop outlook, harvest quality, demand trends, grade-wise pricing, and sourcing opportunities.",
-        url: "/blogs/p/cardamom-market-analysis-august-2026-quality-trends-demand-growth-and-price-forecast-for-indian-green-cardamom",
+        url: "/blog/cardamom-market-analysis-august-2026-quality-trends-demand-growth-and-price-forecast-for-indian-green-cardamom",
         image: blog1,
         youtubeUrl: "https://www.youtube.com/watch?v=KQpJzbeQ5yg",
         tags: [ "alleppey green cardamom"],
@@ -1526,8 +1526,8 @@ export const websiteData = {
 
         relatedLinks: [
           {
-            label: "Shop Emperor Akbar Cardamom",
-            url: "/collections/cardamom-packs",
+            label: "How to Identify Fresh, High-Quality Cardamom: 3 Simple Checks",
+            url: "/blog/how-to-identify-fresh-high-quality-cardamom-3-simple-checks-before-you-buy",
           },
         ],
       },
@@ -1540,7 +1540,7 @@ export const websiteData = {
         slug: "how-to-identify-fresh-high-quality-cardamom-3-simple-checks-before-you-buy",
         description:
           "Learn how aroma, pod fullness, and natural green colour can help you identify fresh, high-quality cardamom before buying.",
-        url: "/blogs/p/how-to-identify-fresh-high-quality-cardamom-3-simple-checks-before-you-buy",
+        url: "/blog/how-to-identify-fresh-high-quality-cardamom-3-simple-checks-before-you-buy",
         image: blog2,
         tags: [ "healthy", "spice"],
 
@@ -1638,7 +1638,7 @@ export const websiteData = {
         relatedLinks: [
           {
             label: "Why Origin Matters in Green Cardamom",
-            url: "/blogs/p/why-origin-matters-in-green-cardamom",
+            url: "/blog/why-origin-matters-in-green-cardamom",
           },
         ],
       },
@@ -1651,7 +1651,7 @@ export const websiteData = {
         slug: "cardamom-in-baking-the-spice-your-cakes-and-cookies-have-been-missing",
         description:
           "Discover how cardamom adds warm, floral, and citrus notes to cakes, cookies, breads, custards, and other baked treats.",
-        url: "/blogs/p/cardamom-in-baking-the-spice-your-cakes-and-cookies-have-been-missing",
+        url: "/blog/cardamom-in-baking-the-spice-your-cakes-and-cookies-have-been-missing",
         image: blog3,
         tags: [ "spice", "healthy"],
 
@@ -1766,8 +1766,8 @@ export const websiteData = {
 
         relatedLinks: [
           {
-            label: "Why the World's Best Chefs Trust Only One Cardamom",
-            url: "/blogs/p/why-the-worlds-best-chefs-trust-only-one-cardamom",
+            label: "Why Origin Matters in Green Cardamom",
+            url: "/blog/why-origin-matters-in-green-cardamom",
           },
         ],
       },
@@ -1779,7 +1779,7 @@ export const websiteData = {
         slug: "why-origin-matters-in-green-cardamom",
         description:
           "Explore how growing conditions, rainfall, altitude, estate cultivation, handpicking, and grading influence green cardamom quality.",
-        url: "/blogs/p/why-origin-matters-in-green-cardamom",
+        url: "/blog/why-origin-matters-in-green-cardamom",
         image: blog4,
         tags: ["buying cardamom", "alleppey green cardamom"],
 
@@ -1889,19 +1889,10 @@ export const websiteData = {
 
         relatedLinks: [
           {
-            label: "What Is Alleppey Green Cardamom and Why Is It So Special?",
-            url: "/blogs/p/the-colour-grading-guide-to-buying-cardamom",
+            label: "Explore the Cardamom Colour & Grading Guide",
+            url: "/cardamom-grades",
           },
         ],
-
-        socialLinks: {
-          facebook:
-            "https://www.facebook.com/sharer.php?u=https://www.emperorakbar.com/blogs/p/why-origin-matters-in-green-cardamom",
-          twitter:
-            "https://twitter.com/share?text=Why%20Origin%20Matters%20in%20Green%20Cardamom&url=https://www.emperorakbar.com/blogs/p/why-origin-matters-in-green-cardamom",
-          pinterest:
-            "https://pinterest.com/pin/create/button/?url=https://www.emperorakbar.com/blogs/p/why-origin-matters-in-green-cardamom",
-        },
       },
 
       // BLOG 5
@@ -1912,7 +1903,7 @@ export const websiteData = {
         slug: "cardamom-rakhi-a-first-of-its-kind-rakhi-that-brings-aroma-tradition-and-blessings-together",
         description:
           "Discover a handcrafted Raksha Bandhan rakhi made with natural cardamom pods, bringing together Indian traditions, aroma, craftsmanship, and meaningful blessings.",
-        url: "/blogs/p/cardamom-rakhi-a-first-of-its-kind-rakhi-that-brings-aroma-tradition-and-blessings-together",
+        url: "/blog/cardamom-rakhi-a-first-of-its-kind-rakhi-that-brings-aroma-tradition-and-blessings-together",
         image: blog5,
         tags: [ "spice", "healthy"],
 
@@ -1976,8 +1967,8 @@ export const websiteData = {
 
         relatedLinks: [
           {
-            label: "Shop the Cardamom",
-            url: "/shop",
+            label: "Cardamom in Baking: The Spice Your Cakes and Cookies Have Been Missing",
+            url: "/blog/cardamom-in-baking-the-spice-your-cakes-and-cookies-have-been-missing",
           },
         ],
       },
@@ -2554,5 +2545,3 @@ export const websiteData = {
     ],
   },
 };
-
-export const Products = websiteData.shop.products;

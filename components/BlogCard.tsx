@@ -74,7 +74,7 @@ export default function BlogCard({ blog, className = "", onClick }: BlogCardProp
           Article &bull; {authorName}
         </span>
 
-        <h3 className="font-serif font-bold text-base sm:text-lg text-stone-900 leading-snug group-hover:text-[#d4af37] transition-colors mb-1.5 sm:mb-2 line-clamp-2">
+        <h3 className="font-bold sm:text-lg text-stone-900 leading-snug group-hover:text-[#d4af37] transition-colors mb-1.5 sm:mb-2 line-clamp-2">
           {blog.title}
         </h3>
 
@@ -104,7 +104,11 @@ export default function BlogCard({ blog, className = "", onClick }: BlogCardProp
   }
 
   return (
-    <Link href={href} className="block h-full">
+    <Link
+      href={href}
+      aria-label={`Read blog: ${blog.title}`}
+      className="block h-full"
+    >
       {cardContent}
     </Link>
   );

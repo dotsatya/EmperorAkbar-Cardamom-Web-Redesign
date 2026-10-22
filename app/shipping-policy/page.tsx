@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Shipping & Delivery Policy | Emperor Akbar Cardamom",
   description:
     "Learn about our dispatch times, domestic and international shipping details, tracking, and customs advisory for Emperor Akbar Cardamom.",
+  alternates: {
+    canonical: "/shipping-policy/",
+  },
 };
 
 export default function ShippingPolicyPage() {

@@ -76,7 +76,7 @@ export default function RecipeCard({ recipe, className = "", onClick }: RecipeCa
           By {authorName}
         </span>
 
-        <h3 className="font-serif font-bold text-base sm:text-lg text-stone-900 leading-snug group-hover:text-[#d4af37] transition-colors mb-1.5 sm:mb-2 line-clamp-1">
+        <h3 className="font-serif font-bold  sm:text-lg text-stone-900 leading-snug group-hover:text-[#d4af37] transition-colors mb-1.5 sm:mb-2 line-clamp-1">
           {displayTitle}
         </h3>
 
@@ -106,7 +106,11 @@ export default function RecipeCard({ recipe, className = "", onClick }: RecipeCa
   }
 
   return (
-    <Link href={href} className="block h-full">
+    <Link
+      href={href}
+      aria-label={`View recipe: ${displayTitle}`}
+      className="block h-full"
+    >
       {cardContent}
     </Link>
   );

@@ -1,24 +1,68 @@
-"use client";
 import React from "react";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { websiteData } from "@/data/websiteData";
 import HealthTopicsGrid from "@/components/HealthTopicsGrid";
 import ShinyButton from "@/components/ShinyButton";
-import { useRouter } from "next/navigation";
+import JsonLd from "@/components/JsonLd";
+
+export const metadata: Metadata = {
+  title: "Health Benefits of Cardamom | Doctor of Spices Wellness Guide",
+  description:
+    "Explore the science-backed medicinal and Ayurvedic benefits of green cardamom: digestion aid, oral health, antioxidant properties, and daily wellness.",
+  keywords: [
+    "health benefits of cardamom",
+    "green cardamom medicinal uses",
+    "doctor of spices",
+    "cardamom digestion",
+    "Ayurvedic benefits of elaichi",
+    "antioxidant spice",
+    "Emperor Akbar Cardamom wellness",
+  ],
+  alternates: {
+    canonical: "/health-benefits/",
+  },
+  openGraph: {
+    title: "Health Benefits of Green Cardamom | Emperor Akbar Cardamom",
+    description:
+      "Explore the medicinal properties of cardamom that make it Mother Nature's own doctor of spices.",
+    url: "https://www.emperorakbar.com/health-benefits/",
+    type: "website",
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://www.emperorakbar.com/",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Health Benefits",
+      item: "https://www.emperorakbar.com/health-benefits/",
+    },
+  ],
+};
 
 export default function HealthBenefitsPage() {
   const { healthData } = websiteData;
-  const router = useRouter();
 
   return (
     <div className="font-sans bg-[#f9f8f6] min-h-screen flex flex-col">
+      <JsonLd data={breadcrumbSchema} />
       {/* Hero Section */}
       <section className="relative w-full pt-32 pb-16 md:pt-40 md:pb-20 flex items-center overflow-hidden bg-stone-900">
         <div className="absolute inset-0 z-0">
           <Image
             src={healthData.hero.image}
-            alt="Health Benefits of Cardamom"
+            alt="Health Benefits of Alleppey Green Cardamom"
             fill
             className="object-cover opacity-60"
             priority
@@ -90,14 +134,11 @@ export default function HealthBenefitsPage() {
               {healthData.recipes.description}
             </p>
             <div className="mt-auto">
-              <ShinyButton
-                onClick={() => {
-                  router.push("/recipes");
-                }}
-                className="bg-stone-900 text-white hover:bg-stone-700"
-              >
-                {healthData.recipes.cta}
-              </ShinyButton>
+              <Link href="/recipes">
+                <ShinyButton className="bg-stone-900 text-white hover:bg-stone-700">
+                  {healthData.recipes.cta}
+                </ShinyButton>
+              </Link>
             </div>
           </div>
         </div>
@@ -115,15 +156,12 @@ export default function HealthBenefitsPage() {
           <p className="text-lg md:text-xl text-stone-600 mb-6">
             {healthData.product.description}
           </p>
-          <div className="mt-auto">
-            <ShinyButton
-              onClick={() => {
-                router.push("/shop");
-              }}
-              className="bg-[#d4af37] text-white hover:bg-[#c4a133]"
-            >
-              {healthData.product.cta}
-            </ShinyButton>
+          <div className="mt-auto flex justify-center">
+            <Link href="/shop">
+              <ShinyButton className="bg-[#d4af37] text-white hover:bg-[#c4a133]">
+                {healthData.product.cta}
+              </ShinyButton>
+            </Link>
           </div>
         </div>
       </section>
@@ -131,9 +169,9 @@ export default function HealthBenefitsPage() {
       {/* Disclaimer */}
       <section className="py-6 md:py-8 px-6 bg-[#f9f8f6]">
         <div className="max-w-3xl mx-auto text-center border-t border-stone-200 pt-6">
-          <h4 className="text-lg font-bold text-stone-800 mb-3">
+          <h3 className="text-lg font-bold text-stone-800 mb-3">
             {healthData.disclaimer.title}
-          </h4>
+          </h3>
           <p className="text-sm md:text-base text-stone-500 italic leading-relaxed">
             {healthData.disclaimer.description}
           </p>

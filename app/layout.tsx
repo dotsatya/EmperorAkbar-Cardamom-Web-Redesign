@@ -23,9 +23,75 @@ const greatVibes = Great_Vibes({
 });
 
 export const metadata: Metadata = {
-  title: "Emperor Akbar Cardamom - Premium GI Tagged",
+  metadataBase: new URL("https://www.emperorakbar.com"),
+  title: {
+    default: "Emperor Akbar Cardamom | World's Best GI-Tagged Alleppey Green Cardamom",
+    template: "%s | Emperor Akbar Cardamom",
+  },
   description:
-    "The worlds best, premium, authentic, fresh, natural green and most aromatic cardamom brand from India. No. 1 exporter.",
+    "Buy authentic GI-tagged Alleppey Green Cardamom with patented Aroma-Lock packaging. India's No. 1 exporter of premium whole cardamom pods directly from the Western Ghats.",
+  applicationName: "Emperor Akbar Cardamom",
+  keywords: [
+    "green cardamom",
+    "Alleppey green cardamom",
+    "Emperor Akbar cardamom",
+    "buy cardamom online",
+    "GI tagged cardamom",
+    "aroma lock cardamom",
+    "cardamom pods",
+    "choti elaichi",
+    "Indian spices",
+    "largest cardamom exporter India",
+    "premium cardamom grades",
+    "doctor of spices",
+  ],
+  authors: [{ name: "Samex India Pvt. Ltd.", url: "https://www.emperorakbar.com" }],
+  creator: "Samex India Pvt. Ltd.",
+  publisher: "Emperor Akbar Cardamom",
+  category: "Food & Grocery",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: "https://www.emperorakbar.com",
+    siteName: "Emperor Akbar Cardamom",
+    title: "Emperor Akbar Cardamom | World's Best GI-Tagged Alleppey Green Cardamom",
+    description:
+      "Buy authentic GI-tagged Alleppey Green Cardamom with patented Aroma-Lock packaging. India's No. 1 exporter of premium whole green cardamom pods.",
+    images: [
+      {
+        url: "/images/hero-bg.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Emperor Akbar Alleppey Green Cardamom",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Emperor Akbar Cardamom | World's Best GI-Tagged Alleppey Green Cardamom",
+    description:
+      "Buy authentic GI-tagged Alleppey Green Cardamom with patented Aroma-Lock packaging. India's No. 1 exporter of cardamom.",
+    images: ["/images/hero-bg.jpg"],
+    creator: "@emperorakbar",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  icons: {
+    icon: "/icon.png",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({

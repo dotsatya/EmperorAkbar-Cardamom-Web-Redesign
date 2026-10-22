@@ -1,9 +1,51 @@
-"use client";
-
 import React from "react";
+import type { Metadata } from "next";
 import Image from "next/image";
 import { ArrowUpRight, HeartHandshake, Eye } from "lucide-react";
 import { websiteData } from "@/data/websiteData";
+import JsonLd from "@/components/JsonLd";
+
+export const metadata: Metadata = {
+  title: "Corporate Social Responsibility (CSR) | Shubh Laabh Initiatives",
+  description:
+    "Learn about Emperor Akbar Cardamom's CSR initiatives, healthcare camps, community welfare programs, and the philosophy of Shubh Laabh.",
+  keywords: [
+    "cardamom CSR",
+    "Emperor Akbar community welfare",
+    "Shubh Laabh",
+    "healthcare camps Palitana",
+    "Samex India CSR",
+  ],
+  alternates: {
+    canonical: "/csr/",
+  },
+  openGraph: {
+    title: "Corporate Social Responsibility | Emperor Akbar Cardamom",
+    description:
+      "Devoted to enriching lives, supporting communities, and spreading goodness beyond business.",
+    url: "https://www.emperorakbar.com/csr/",
+    type: "website",
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://www.emperorakbar.com/",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "CSR",
+      item: "https://www.emperorakbar.com/csr/",
+    },
+  ],
+};
 
 export default function CSRPage() {
   const { csr } = websiteData;
@@ -13,6 +55,7 @@ export default function CSRPage() {
 
   return (
     <div className="font-sans bg-[#f9f8f6] min-h-screen flex flex-col">
+      <JsonLd data={breadcrumbSchema} />
       <main className="flex-1 pt-10 md:pt-16 pb-20 px-4 sm:px-6 max-w-7xl mx-auto w-full">
         {/* Page Header */}
         <div className="w-full text-center mb-10 md:mb-16">
@@ -34,7 +77,7 @@ export default function CSRPage() {
           {csr.sections.map((section, idx) => (
             <div
               key={section.id}
-              className="bg-white rounded-2xl md:rounded-3xl border border-stone-200/80 shadow-xs hover:shadow-lg transition-all duration-300 hover:-translate-y-1 p-5 sm:p-6 md:p-8 lg:p-10 cursor-pointer group flex flex-col justify-center"
+              className="bg-white rounded-2xl md:rounded-3xl border border-stone-200/80 shadow-xs hover:shadow-lg transition-all duration-300 hover:-translate-y-1 p-5 sm:p-6 md:p-8 lg:p-10 flex flex-col justify-center"
             >
               {/* Card Eyebrow & Badge */}
               <div className="flex items-center justify-between mb-4 sm:mb-5">
@@ -80,7 +123,6 @@ export default function CSRPage() {
                     href={section.policy.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
                     className="inline-flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 bg-[#1b4b36] hover:bg-[#113123] text-white font-bold text-xs uppercase tracking-widest rounded-full transition-all shadow-sm hover:shadow-md group/btn"
                   >
                     <span>View {section.policy.label}</span>
@@ -107,8 +149,7 @@ export default function CSRPage() {
         </div>
 
         {/* Philosophy Statement Banner */}
-        <div className="bg-white rounded-2xl md:rounded-3xl border border-stone-200/80
-         shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 p-6 sm:p-10 md:p-12 text-center max-w-7xl mx-auto">
+        <div className="bg-white rounded-2xl md:rounded-3xl border border-stone-200/80 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 p-6 sm:p-10 md:p-12 text-center max-w-7xl mx-auto">
           <p className="text-[11px] sm:text-xs text-[#d4af37] font-bold uppercase tracking-widest mb-3">
             Our Guiding Principle
           </p>

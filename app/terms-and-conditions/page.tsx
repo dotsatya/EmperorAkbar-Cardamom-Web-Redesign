@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Terms & Conditions | Emperor Akbar Cardamom",
   description:
     "Review the Terms and Conditions of Use and Service for Emperor Akbar Cardamom and Samex India Pvt. Ltd.",
+  alternates: {
+    canonical: "/terms-and-conditions/",
+  },
 };
 
 export default function TermsAndConditionsPage() {

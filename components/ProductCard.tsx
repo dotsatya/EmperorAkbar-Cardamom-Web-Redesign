@@ -85,6 +85,7 @@ export default function ProductCard({ product, className = "" }: ProductCardProp
   return (
     <Link
       href={`/product/${product.id}`}
+      aria-label={`Buy ${product.name}`}
       className={`bg-white rounded-2xl md:rounded-3xl p-3 sm:p-4 md:p-5 border border-stone-200/80 shadow-xs hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-row group cursor-pointer gap-3.5 sm:gap-4 md:gap-5 ${className}`}
     >
       {/* Product Image Thumbnail */}
@@ -112,7 +113,7 @@ export default function ProductCard({ product, className = "" }: ProductCardProp
           <>
             <Image
               src={images[currentIdx].src}
-              alt={`${product.grade} Grade`}
+              alt={`${product.name} - Emperor Akbar Cardamom`}
               fill
               className="object-cover mix-blend-multiply p-1 sm:p-2"
             />
@@ -173,7 +174,7 @@ export default function ProductCard({ product, className = "" }: ProductCardProp
         <div className="mt-auto flex items-center justify-between gap-2 pt-2">
           <div>
             <div className="flex items-baseline gap-1.5 sm:gap-2">
-              <span className="font-serif font-bold text-base sm:text-lg md:text-xl text-stone-900">
+              <span className="font-semibold sm:text-lg md:text-xl text-stone-900">
                 ₹{product.price}
               </span>
               {product.originalPrice > product.price && (
