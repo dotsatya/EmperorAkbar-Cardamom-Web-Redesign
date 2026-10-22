@@ -6,7 +6,7 @@ import { websiteData } from "@/data/websiteData";
 import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "CSR & Community Welfare | Emperor Akbar Cardamom",
+  title: "CSR & Community Welfare",
   description:
     "Explore Emperor Akbar Cardamom's CSR initiatives, healthcare camps, and social welfare programs rooted in the philosophy of Shubh Laabh.",
   keywords: [

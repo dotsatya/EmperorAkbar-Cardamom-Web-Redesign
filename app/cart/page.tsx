@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import CartView from "@/components/CartView";
 
 export const metadata: Metadata = {
-  title: "Your Shopping Cart | Emperor Akbar Cardamom",
+  title: "Your Shopping Cart",
   description: "View and manage items in your Emperor Akbar Cardamom cart.",
   alternates: {
     canonical: "/cart/",

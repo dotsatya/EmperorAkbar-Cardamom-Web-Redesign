@@ -20,6 +20,9 @@ export default function RecipesSection({ recipeData }: { recipeData: RecipeData 
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-stone-800 uppercase tracking-wide">
               What will you create with it?
             </h2>
+            <p className="text-stone-500 font-serif italic text-xs sm:text-sm mt-1 max-w-xl">
+              From comforting morning masala chai to festive desserts and rich biryanis, explore step-by-step recipes infused with aromatic green cardamom.
+            </p>
           </div>
           <Link href="/recipes">
             <button className="text-stone-900 border-b border-stone-900 pb-1 font-bold tracking-widest text-xs uppercase flex items-center gap-2 hover:text-[#172d1f] hover:border-[#172d1f]">

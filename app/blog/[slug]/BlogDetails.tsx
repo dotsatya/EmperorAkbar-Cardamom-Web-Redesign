@@ -12,6 +12,53 @@ import {
 import { websiteData } from "@/data/websiteData";
 import ShinyButton from "@/components/ShinyButton";
 
+interface Subsection {
+  heading?: string;
+  paragraphs?: string[];
+  bullets?: string[];
+}
+
+interface Section {
+  id?: string;
+  heading?: string;
+  paragraphs?: string[];
+  bullets?: string[];
+  subsections?: Subsection[];
+  takeaway?: string;
+}
+
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface CTALink {
+  label: string;
+  url: string;
+}
+
+interface RelatedLink {
+  label: string;
+  url: string;
+}
+
+interface BlogContentData {
+  introduction?: string[];
+  sections?: Section[];
+  video?: {
+    url?: string;
+    title?: string;
+    description?: string;
+  };
+  faqs?: FAQItem[];
+  closing?: string;
+  cta?: {
+    title?: string;
+    description?: string;
+    links?: CTALink[];
+  };
+}
+
 export default async function BlogDetails({
   params,
 }: {
@@ -24,8 +71,7 @@ export default async function BlogDetails({
     notFound();
   }
 
-  // Typecast to handle the new structured content object
-  const content = blog.content as any;
+  const content = blog.content as unknown as BlogContentData;
 
   return (
     <div className="font-sans bg-[#f9f8f6] min-h-screen pb-20">
@@ -97,7 +143,7 @@ export default async function BlogDetails({
       <div className="max-w-6xl mx-auto px-6">
         {/* Sections */}
         {content.sections &&
-          content.sections.map((section: any, idx: number) => (
+          content.sections.map((section: Section, idx: number) => (
             <section key={idx} id={section.id} className="mb-16">
               {section.heading && (
                 <h2 className="text-xl md:text-3xl font-serif font-bold text-[#1b4b36] mb-6 md:mb-8 border-b border-stone-200 pb-3 md:pb-4">
@@ -127,7 +173,7 @@ export default async function BlogDetails({
               )}
 
               {section.subsections &&
-                section.subsections.map((sub: any, subIdx: number) => (
+                section.subsections.map((sub: Subsection, subIdx: number) => (
                   <div
                     key={subIdx}
                     className="mb-8 md:mb-10 pl-4 md:pl-6 border-l-4 border-[#d4af37]/30"
@@ -185,7 +231,7 @@ export default async function BlogDetails({
               </p>
               <ShinyButton className="bg-white/10 hover:bg-white/20 text-white font-bold rounded-full">
                 <Link
-                  href={content.video.url}
+                  href={content.video.url || "#"}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center"
@@ -204,7 +250,7 @@ export default async function BlogDetails({
               Frequently Asked Questions
             </h2>
             <div className="space-y-4 md:space-y-6">
-              {content.faqs.map((faq: any, idx: number) => (
+              {content.faqs.map((faq: FAQItem, idx: number) => (
                 <div
                   key={idx}
                   className="bg-white p-5 md:p-8 rounded-2xl border border-stone-200/80 shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col group cursor-pointer hover:-translate-y-1"
@@ -238,7 +284,7 @@ export default async function BlogDetails({
               {content.cta.description}
             </p>
             {content.cta.links &&
-              content.cta.links.map((link: any, idx: number) => (
+              content.cta.links.map((link: CTALink, idx: number) => (
                 <ShinyButton
                   key={idx}
                   className="bg-[#1b4b36] hover:bg-[#113123] text-white"
@@ -258,7 +304,7 @@ export default async function BlogDetails({
               Explore More
             </h3>
             <div className="flex flex-col gap-4">
-              {blog.relatedLinks.map((link: any, idx: number) => (
+              {blog.relatedLinks.map((link: RelatedLink, idx: number) => (
                 <Link
                   key={idx}
                   href={link.url}

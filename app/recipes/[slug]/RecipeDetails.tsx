@@ -14,6 +14,44 @@ import {
 import { websiteData } from "@/data/websiteData";
 import ShinyButton from "@/components/ShinyButton";
 
+interface Ingredient {
+  name: string;
+  quantity: string;
+}
+
+interface IngredientGroup {
+  title?: string;
+  ingredients: Ingredient[];
+}
+
+interface Step {
+  title: string;
+  description?: string;
+  instructions?: string[];
+  tip?: string;
+}
+
+interface RecipeContentData {
+  introduction?: string[];
+  video?: {
+    url?: string;
+    title?: string;
+  };
+  recipeInfo?: {
+    preparationTime?: string;
+    cookingTime?: string;
+    servings?: string;
+    difficulty?: string;
+  };
+  ingredientGroups?: IngredientGroup[];
+  steps?: Step[];
+  closing?: string;
+  links?: {
+    author?: string;
+    video?: string;
+  };
+}
+
 export default async function RecipeDetails({
   params,
 }: {
@@ -26,8 +64,7 @@ export default async function RecipeDetails({
     notFound();
   }
 
-  // Typecast to handle the structured content object safely
-  const content = recipe.content as any;
+  const content = recipe.content as unknown as RecipeContentData;
   const { recipeInfo, ingredientGroups, steps } = content;
 
   return (
@@ -155,7 +192,7 @@ export default async function RecipeDetails({
             </h2>
             <div className="space-y-6 md:space-y-10 sticky top-12">
               {ingredientGroups &&
-                ingredientGroups.map((group: any, idx: number) => (
+                ingredientGroups.map((group: IngredientGroup, idx: number) => (
                   <div key={idx}>
                     {group.title && (
                       <h3 className="text-lg font-bold text-[#1b4b36] mb-4 uppercase tracking-widest">
@@ -163,7 +200,7 @@ export default async function RecipeDetails({
                       </h3>
                     )}
                     <ul className="space-y-4">
-                      {group.ingredients.map((ing: any, i: number) => (
+                      {group.ingredients.map((ing: Ingredient, i: number) => (
                         <li
                           key={i}
                           className="flex justify-between items-center py-1.5 md:py-2 border-b border-stone-200/50"
@@ -187,7 +224,7 @@ export default async function RecipeDetails({
             </h2>
             <div className="space-y-8 md:space-y-12">
               {steps &&
-                steps.map((step: any, idx: number) => (
+                steps.map((step: Step, idx: number) => (
                   <div key={idx} className="relative">
                     <h3 className="text-lg md:text-2xl font-serif font-bold text-[#1b4b36] mb-3 md:mb-4 flex items-start">
                       <span className="text-[#d4af37] mr-3 md:mr-4">{idx + 1}.</span>{" "}

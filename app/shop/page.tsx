@@ -4,7 +4,7 @@ import ProductCard from "@/components/ProductCard";
 import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Shop Premium Cardamom Pods & Grades | Emperor Akbar",
+  title: "Shop Premium Cardamom Pods & Grades",
   description:
     "Explore authentic GI-tagged Alleppey Green Cardamom pods. Choose from premium colour-coded grades 6mm to 8mm+ for everyday culinary uses.",
   keywords: [

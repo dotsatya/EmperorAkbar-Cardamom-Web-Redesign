@@ -29,12 +29,12 @@ export async function generateMetadata({
 
   const rawImg = recipe.image;
   const imgUrl = typeof rawImg === "string" ? rawImg : (rawImg as { src?: string })?.src || "/images/hero-bg.jpg";
-  const title = `${recipe.title} | Emperor Akbar Cardamom`;
+  const cleanTitle = recipe.title.split(" by ")[0];
   const description =
     `Learn how to make ${recipe.title}. A delicious culinary recipe infused with aromatic Alleppey green cardamom.`;
 
   return {
-    title,
+    title: cleanTitle,
     description,
     keywords: [
       ...(recipe.tags || []),
@@ -48,7 +48,7 @@ export async function generateMetadata({
       canonical: `/recipes/${slug}/`,
     },
     openGraph: {
-      title,
+      title: `${cleanTitle} | Emperor Akbar Cardamom`,
       description,
       url: `https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/recipes/${slug}/`,
       type: "article",
@@ -61,7 +61,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title,
+      title: `${cleanTitle} | Emperor Akbar Cardamom`,
       description,
       images: [imgUrl],
     },

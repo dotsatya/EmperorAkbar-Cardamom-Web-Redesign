@@ -3,7 +3,7 @@ import CardamomVisualizer from "@/components/cardamom-grades-components/Cardamom
 import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Cardamom Grades Guide & Pod Sizing | Emperor Akbar",
+  title: "Cardamom Grades Guide & Pod Sizing",
   description:
     "Learn about colour-coded green cardamom grades based on pod diameter from 6mm to 8mm+, flavour intensity, and culinary recommendations.",
   keywords: [

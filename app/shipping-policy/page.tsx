@@ -6,7 +6,7 @@ import PolicyLayout from "@/components/policy/PolicyLayout";
 import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Shipping & Delivery Policy | Emperor Akbar Cardamom",
+  title: "Shipping & Delivery Policy",
   description:
     "Learn about our dispatch times, domestic and international shipping details, tracking, and customs advisory for Emperor Akbar Cardamom.",
   alternates: {

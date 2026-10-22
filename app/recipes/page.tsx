@@ -4,7 +4,7 @@ import RecipesList from "@/components/RecipesList";
 import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Cardamom Recipes & Culinary Dishes | Emperor Akbar",
+  title: "Cardamom Recipes & Culinary Dishes",
   description:
     "Explore authentic sweet and savoury recipes made with aromatic Alleppey green cardamom, from traditional chai and payasam to biryani.",
   keywords: [

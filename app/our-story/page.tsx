@@ -6,7 +6,7 @@ import StoryBlock from "./StoryBlock";
 import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Our Story & Heritage | Emperor Akbar Cardamom",
+  title: "Our Story & Heritage",
   description:
     "Explore the legacy of Emperor Akbar Cardamom and Samex India, delivering GI-tagged Alleppey Green Cardamom with authentic spice heritage.",
   keywords: [

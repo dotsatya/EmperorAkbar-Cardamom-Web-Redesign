@@ -6,7 +6,7 @@ import PolicyLayout from "@/components/policy/PolicyLayout";
 import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Emperor Akbar Cardamom",
+  title: "Privacy Policy",
   description:
     "Learn how Emperor Akbar Cardamom collects, uses, and protects your personal and order information.",
   alternates: {

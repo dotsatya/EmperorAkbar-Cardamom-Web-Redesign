@@ -8,7 +8,7 @@ import ShinyButton from "@/components/ShinyButton";
 import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Health Benefits of Green Cardamom | Doctor of Spices",
+  title: "Health Benefits of Green Cardamom",
   description:
     "Explore the evidence-based wellness and Ayurvedic benefits of green cardamom, from digestive support to oral health and antioxidants.",
   keywords: [

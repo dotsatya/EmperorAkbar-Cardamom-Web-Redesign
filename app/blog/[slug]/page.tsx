@@ -29,13 +29,14 @@ export async function generateMetadata({
 
   const rawImg = blog.image;
   const imgUrl = typeof rawImg === "string" ? rawImg : (rawImg as { src?: string })?.src || "/images/hero-bg.jpg";
-  const title = `${blog.title.length > 38 ? blog.title.slice(0, 38) + "..." : blog.title} | Emperor Akbar Cardamom`;
+  const truncatedTitle = blog.title.length > 38 ? blog.title.slice(0, 38) + "..." : blog.title;
+  const fullTitle = `${truncatedTitle} | Emperor Akbar Cardamom`;
   const description =
     blog.description ||
     "Read in-depth insights, cooking tips, and origin stories from Emperor Akbar Cardamom.";
 
   return {
-    title,
+    title: truncatedTitle,
     description,
     keywords: [
       ...(blog.tags || []),
@@ -48,7 +49,7 @@ export async function generateMetadata({
       canonical: `/blog/${slug}/`,
     },
     openGraph: {
-      title,
+      title: fullTitle,
       description,
       url: `https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/blog/${slug}/`,
       type: "article",
@@ -61,7 +62,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title,
+      title: fullTitle,
       description,
       images: [imgUrl],
     },

@@ -6,7 +6,7 @@ import PolicyLayout from "@/components/policy/PolicyLayout";
 import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Return & Refund Policy | Emperor Akbar Cardamom",
+  title: "Return & Refund Policy",
   description:
     "Information regarding returns, exchanges, EU right of withdrawal, and quality satisfaction guarantee for Emperor Akbar Cardamom.",
   alternates: {

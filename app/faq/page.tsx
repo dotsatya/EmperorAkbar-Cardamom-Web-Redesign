@@ -4,7 +4,7 @@ import { websiteData } from "@/data/websiteData";
 import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Cardamom FAQ: Storage, Grades & Usage | Emperor Akbar",
+  title: "Cardamom FAQ: Storage, Grades & Usage",
   description:
     "Find answers to common questions about green cardamom grades, proper storage methods, pod sizing, and aroma freshness preservation.",
   keywords: [

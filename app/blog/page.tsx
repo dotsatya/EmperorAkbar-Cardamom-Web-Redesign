@@ -4,7 +4,7 @@ import BlogList from "@/components/BlogList";
 import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Cardamom Insights & Market Trends | Emperor Akbar",
+  title: "Cardamom Insights & Market Trends",
   description:
     "Read expert articles on green cardamom market trends, quality checks, baking ideas, Alleppey GI origin history, and culinary tips.",
   keywords: [

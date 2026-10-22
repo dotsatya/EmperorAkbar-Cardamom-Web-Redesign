@@ -30,11 +30,12 @@ export async function generateMetadata({
   const rawImg = product.image;
   const imgUrl = typeof rawImg === "string" ? rawImg : (rawImg as { src?: string })?.src || "/images/hero-bg.jpg";
 
-  const title = `${product.name} | Emperor Akbar Cardamom`;
+  const cleanTitle = product.name;
+  const fullTitle = `${product.name} | Emperor Akbar Cardamom`;
   const description = `${product.name} (${product.size}). Authentic GI-tagged Alleppey Green Cardamom with natural aroma oils and rich flavour.`;
 
   return {
-    title,
+    title: cleanTitle,
     description,
     keywords: [
       product.name,
@@ -48,7 +49,7 @@ export async function generateMetadata({
       canonical: `/product/${id}/`,
     },
     openGraph: {
-      title,
+      title: fullTitle,
       description,
       url: `https://dotsatya.github.io/EmperorAkbar-Cardamom-Web-Redesign/product/${id}/`,
       type: "website",
@@ -61,7 +62,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title,
+      title: fullTitle,
       description,
       images: [imgUrl],
     },

@@ -77,6 +77,9 @@ export default function FeaturedGradeSection() {
                 </strong>
                 , reflects the distinctive, world-class standard of Emperor Akbar Cardamom.
               </blockquote>
+              <p className="text-stone-600 text-xs sm:text-sm mt-3 leading-relaxed">
+                Selected exclusively from pods measuring 8 mm and larger, our Purple Grade represents the pinnacle of Alleppey green cardamom — plump, vibrant green, and filled with glistening oil-rich black seeds that impart superior fragrance and depth to gourmet dishes.
+              </p>
             </div>
 
             {/* Action Buttons */}

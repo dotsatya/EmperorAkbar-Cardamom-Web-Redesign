@@ -6,7 +6,7 @@ import PolicyLayout from "@/components/policy/PolicyLayout";
 import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions | Emperor Akbar Cardamom",
+  title: "Terms & Conditions",
   description:
     "Review the Terms and Conditions of Use and Service for Emperor Akbar Cardamom and Samex India Pvt. Ltd.",
   alternates: {
