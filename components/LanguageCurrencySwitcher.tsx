@@ -2,8 +2,19 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Script from "next/script";
-import { Globe, Coins, Check, X, Search, ChevronDown, Sparkles } from "lucide-react";
-import { useCurrency, SUPPORTED_CURRENCIES } from "@/components/CurrencyProvider";
+import {
+  Globe,
+  Coins,
+  Check,
+  X,
+  Search,
+  ChevronDown,
+  Sparkles,
+} from "lucide-react";
+import {
+  useCurrency,
+  SUPPORTED_CURRENCIES,
+} from "@/components/CurrencyProvider";
 
 export type Language = {
   code: string;
@@ -15,56 +26,332 @@ export type Language = {
 
 export const SUPPORTED_LANGUAGES: Language[] = [
   // Primary
-  { code: "en", name: "English", nativeName: "English", flag: "🇬🇧", category: "international" },
+  {
+    code: "en",
+    name: "English",
+    nativeName: "English",
+    flag: "🇬🇧",
+    category: "international",
+  },
 
   // All 22+ Scheduled and Major Indian Languages
-  { code: "hi", name: "Hindi", nativeName: "हिन्दी", flag: "🇮🇳", category: "indian" },
-  { code: "bn", name: "Bengali", nativeName: "বাংলা", flag: "🇮🇳", category: "indian" },
-  { code: "te", name: "Telugu", nativeName: "తెలుగు", flag: "🇮🇳", category: "indian" },
-  { code: "mr", name: "Marathi", nativeName: "मराठी", flag: "🇮🇳", category: "indian" },
-  { code: "ta", name: "Tamil", nativeName: "தமிழ்", flag: "🇮🇳", category: "indian" },
-  { code: "gu", name: "Gujarati", nativeName: "ગુજરાતી", flag: "🇮🇳", category: "indian" },
-  { code: "kn", name: "Kannada", nativeName: "ಕನ್ನಡ", flag: "🇮🇳", category: "indian" },
-  { code: "ml", name: "Malayalam", nativeName: "മലയാളം", flag: "🇮🇳", category: "indian" },
-  { code: "pa", name: "Punjabi", nativeName: "ਪੰਜਾਬੀ", flag: "🇮🇳", category: "indian" },
-  { code: "or", name: "Odia", nativeName: "ଓଡ଼ିଆ", flag: "🇮🇳", category: "indian" },
-  { code: "as", name: "Assamese", nativeName: "অসমীয়া", flag: "🇮🇳", category: "indian" },
-  { code: "ur", name: "Urdu", nativeName: "اردو", flag: "🇮🇳", category: "indian" },
-  { code: "sa", name: "Sanskrit", nativeName: "संस्कृतम्", flag: "🇮🇳", category: "indian" },
-  { code: "mai", name: "Maithili", nativeName: "मैथिली", flag: "🇮🇳", category: "indian" },
-  { code: "bho", name: "Bhojpuri", nativeName: "भोजपुरी", flag: "🇮🇳", category: "indian" },
-  { code: "gom", name: "Konkani", nativeName: "कोंकणी", flag: "🇮🇳", category: "indian" },
-  { code: "sd", name: "Sindhi", nativeName: "سنڌي", flag: "🇮🇳", category: "indian" },
-  { code: "ne", name: "Nepali", nativeName: "नेपाली", flag: "🇮🇳", category: "indian" },
-  { code: "doi", name: "Dogri", nativeName: "डोगरी", flag: "🇮🇳", category: "indian" },
-  { code: "ks", name: "Kashmiri", nativeName: "کٲشُر", flag: "🇮🇳", category: "indian" },
-  { code: "mni-Mtei", name: "Manipuri (Meitei)", nativeName: "মৈতৈলোন্", flag: "🇮🇳", category: "indian" },
-  { code: "sat", name: "Santali", nativeName: "ᱥᱟᱱᱛᱟᱲᱤ", flag: "🇮🇳", category: "indian" },
+  {
+    code: "hi",
+    name: "Hindi",
+    nativeName: "हिन्दी",
+    flag: "🇮🇳",
+    category: "indian",
+  },
+  {
+    code: "bn",
+    name: "Bengali",
+    nativeName: "বাংলা",
+    flag: "🇮🇳",
+    category: "indian",
+  },
+  {
+    code: "te",
+    name: "Telugu",
+    nativeName: "తెలుగు",
+    flag: "🇮🇳",
+    category: "indian",
+  },
+  {
+    code: "mr",
+    name: "Marathi",
+    nativeName: "मराठी",
+    flag: "🇮🇳",
+    category: "indian",
+  },
+  {
+    code: "ta",
+    name: "Tamil",
+    nativeName: "தமிழ்",
+    flag: "🇮🇳",
+    category: "indian",
+  },
+  {
+    code: "gu",
+    name: "Gujarati",
+    nativeName: "ગુજરાતી",
+    flag: "🇮🇳",
+    category: "indian",
+  },
+  {
+    code: "kn",
+    name: "Kannada",
+    nativeName: "ಕನ್ನಡ",
+    flag: "🇮🇳",
+    category: "indian",
+  },
+  {
+    code: "ml",
+    name: "Malayalam",
+    nativeName: "മലയാളം",
+    flag: "🇮🇳",
+    category: "indian",
+  },
+  {
+    code: "pa",
+    name: "Punjabi",
+    nativeName: "ਪੰਜਾਬੀ",
+    flag: "🇮🇳",
+    category: "indian",
+  },
+  {
+    code: "or",
+    name: "Odia",
+    nativeName: "ଓଡ଼ିଆ",
+    flag: "🇮🇳",
+    category: "indian",
+  },
+  {
+    code: "as",
+    name: "Assamese",
+    nativeName: "অসমীয়া",
+    flag: "🇮🇳",
+    category: "indian",
+  },
+  {
+    code: "ur",
+    name: "Urdu",
+    nativeName: "اردو",
+    flag: "🇮🇳",
+    category: "indian",
+  },
+  {
+    code: "sa",
+    name: "Sanskrit",
+    nativeName: "संस्कृतम्",
+    flag: "🇮🇳",
+    category: "indian",
+  },
+  {
+    code: "mai",
+    name: "Maithili",
+    nativeName: "मैथिली",
+    flag: "🇮🇳",
+    category: "indian",
+  },
+  {
+    code: "bho",
+    name: "Bhojpuri",
+    nativeName: "भोजपुरी",
+    flag: "🇮🇳",
+    category: "indian",
+  },
+  {
+    code: "gom",
+    name: "Konkani",
+    nativeName: "कोंकणी",
+    flag: "🇮🇳",
+    category: "indian",
+  },
+  {
+    code: "sd",
+    name: "Sindhi",
+    nativeName: "سنڌي",
+    flag: "🇮🇳",
+    category: "indian",
+  },
+  {
+    code: "ne",
+    name: "Nepali",
+    nativeName: "नेपाली",
+    flag: "🇮🇳",
+    category: "indian",
+  },
+  {
+    code: "doi",
+    name: "Dogri",
+    nativeName: "डोगरी",
+    flag: "🇮🇳",
+    category: "indian",
+  },
+  {
+    code: "ks",
+    name: "Kashmiri",
+    nativeName: "کٲشُر",
+    flag: "🇮🇳",
+    category: "indian",
+  },
+  {
+    code: "mni-Mtei",
+    name: "Manipuri (Meitei)",
+    nativeName: "মৈতৈলোন্",
+    flag: "🇮🇳",
+    category: "indian",
+  },
+  {
+    code: "sat",
+    name: "Santali",
+    nativeName: "ᱥᱟᱱᱛᱟᱲᱤ",
+    flag: "🇮🇳",
+    category: "indian",
+  },
 
   // Key International Languages
-  { code: "ar", name: "Arabic", nativeName: "العربية", flag: "🇦🇪", category: "international" },
-  { code: "es", name: "Spanish", nativeName: "Español", flag: "🇪🇸", category: "international" },
-  { code: "fr", name: "French", nativeName: "Français", flag: "🇫🇷", category: "international" },
-  { code: "de", name: "German", nativeName: "Deutsch", flag: "🇩🇪", category: "international" },
-  { code: "ru", name: "Russian", nativeName: "Русский", flag: "🇷🇺", category: "international" },
-  { code: "ja", name: "Japanese", nativeName: "日本語", flag: "🇯🇵", category: "international" },
-  { code: "zh-CN", name: "Chinese (Simplified)", nativeName: "简体中文", flag: "🇨🇳", category: "international" },
-  { code: "zh-TW", name: "Chinese (Traditional)", nativeName: "繁體中文", flag: "🇹🇼", category: "international" },
-  { code: "it", name: "Italian", nativeName: "Italiano", flag: "🇮🇹", category: "international" },
-  { code: "pt", name: "Portuguese", nativeName: "Português", flag: "🇵🇹", category: "international" },
-  { code: "tr", name: "Turkish", nativeName: "Türkçe", flag: "🇹🇷", category: "international" },
-  { code: "nl", name: "Dutch", nativeName: "Nederlands", flag: "🇳🇱", category: "international" },
-  { code: "ko", name: "Korean", nativeName: "한국어", flag: "🇰🇷", category: "international" },
-  { code: "fa", name: "Persian", nativeName: "فارسی", flag: "🇮🇷", category: "international" },
-  { code: "id", name: "Indonesian", nativeName: "Bahasa Indonesia", flag: "🇮🇩", category: "international" },
-  { code: "ms", name: "Malay", nativeName: "Bahasa Melayu", flag: "🇲🇾", category: "international" },
-  { code: "th", name: "Thai", nativeName: "ไทย", flag: "🇹🇭", category: "international" },
-  { code: "vi", name: "Vietnamese", nativeName: "Tiếng Việt", flag: "🇻🇳", category: "international" },
-  { code: "pl", name: "Polish", nativeName: "Polski", flag: "🇵🇱", category: "international" },
-  { code: "sv", name: "Swedish", nativeName: "Svenska", flag: "🇸🇪", category: "international" },
-  { code: "el", name: "Greek", nativeName: "Ελληνικά", flag: "🇬🇷", category: "international" },
-  { code: "he", name: "Hebrew", nativeName: "עברית", flag: "🇮🇱", category: "international" },
-  { code: "uk", name: "Ukrainian", nativeName: "Українська", flag: "🇺🇦", category: "international" },
+  {
+    code: "ar",
+    name: "Arabic",
+    nativeName: "العربية",
+    flag: "🇦🇪",
+    category: "international",
+  },
+  {
+    code: "es",
+    name: "Spanish",
+    nativeName: "Español",
+    flag: "🇪🇸",
+    category: "international",
+  },
+  {
+    code: "fr",
+    name: "French",
+    nativeName: "Français",
+    flag: "🇫🇷",
+    category: "international",
+  },
+  {
+    code: "de",
+    name: "German",
+    nativeName: "Deutsch",
+    flag: "🇩🇪",
+    category: "international",
+  },
+  {
+    code: "ru",
+    name: "Russian",
+    nativeName: "Русский",
+    flag: "🇷🇺",
+    category: "international",
+  },
+  {
+    code: "ja",
+    name: "Japanese",
+    nativeName: "日本語",
+    flag: "🇯🇵",
+    category: "international",
+  },
+  {
+    code: "zh-CN",
+    name: "Chinese (Simplified)",
+    nativeName: "简体中文",
+    flag: "🇨🇳",
+    category: "international",
+  },
+  {
+    code: "zh-TW",
+    name: "Chinese (Traditional)",
+    nativeName: "繁體中文",
+    flag: "🇹🇼",
+    category: "international",
+  },
+  {
+    code: "it",
+    name: "Italian",
+    nativeName: "Italiano",
+    flag: "🇮🇹",
+    category: "international",
+  },
+  {
+    code: "pt",
+    name: "Portuguese",
+    nativeName: "Português",
+    flag: "🇵🇹",
+    category: "international",
+  },
+  {
+    code: "tr",
+    name: "Turkish",
+    nativeName: "Türkçe",
+    flag: "🇹🇷",
+    category: "international",
+  },
+  {
+    code: "nl",
+    name: "Dutch",
+    nativeName: "Nederlands",
+    flag: "🇳🇱",
+    category: "international",
+  },
+  {
+    code: "ko",
+    name: "Korean",
+    nativeName: "한국어",
+    flag: "🇰🇷",
+    category: "international",
+  },
+  {
+    code: "fa",
+    name: "Persian",
+    nativeName: "فارسی",
+    flag: "🇮🇷",
+    category: "international",
+  },
+  {
+    code: "id",
+    name: "Indonesian",
+    nativeName: "Bahasa Indonesia",
+    flag: "🇮🇩",
+    category: "international",
+  },
+  {
+    code: "ms",
+    name: "Malay",
+    nativeName: "Bahasa Melayu",
+    flag: "🇲🇾",
+    category: "international",
+  },
+  {
+    code: "th",
+    name: "Thai",
+    nativeName: "ไทย",
+    flag: "🇹🇭",
+    category: "international",
+  },
+  {
+    code: "vi",
+    name: "Vietnamese",
+    nativeName: "Tiếng Việt",
+    flag: "🇻🇳",
+    category: "international",
+  },
+  {
+    code: "pl",
+    name: "Polish",
+    nativeName: "Polski",
+    flag: "🇵🇱",
+    category: "international",
+  },
+  {
+    code: "sv",
+    name: "Swedish",
+    nativeName: "Svenska",
+    flag: "🇸🇪",
+    category: "international",
+  },
+  {
+    code: "el",
+    name: "Greek",
+    nativeName: "Ελληνικά",
+    flag: "🇬🇷",
+    category: "international",
+  },
+  {
+    code: "he",
+    name: "Hebrew",
+    nativeName: "עברית",
+    flag: "🇮🇱",
+    category: "international",
+  },
+  {
+    code: "uk",
+    name: "Ukrainian",
+    nativeName: "Українська",
+    flag: "🇺🇦",
+    category: "international",
+  },
 ];
 
 declare global {
@@ -77,10 +364,14 @@ declare global {
 
 export default function LanguageCurrencySwitcher() {
   const { currency, currencies, setCurrency } = useCurrency();
-  const [activeModal, setActiveModal] = useState<"language" | "currency" | null>(null);
+  const [activeModal, setActiveModal] = useState<
+    "language" | "currency" | null
+  >(null);
   const [currentLang, setCurrentLang] = useState<string>("en");
   const [langSearch, setLangSearch] = useState("");
-  const [langCategory, setLangCategory] = useState<"all" | "indian" | "international">("all");
+  const [langCategory, setLangCategory] = useState<
+    "all" | "indian" | "international"
+  >("all");
   const [currencySearch, setCurrencySearch] = useState("");
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -97,7 +388,10 @@ export default function LanguageCurrencySwitcher() {
     if (cookieLang) {
       const match = cookieLang.split("/").filter(Boolean);
       const targetLang = match[match.length - 1];
-      if (targetLang && SUPPORTED_LANGUAGES.some((l) => l.code === targetLang)) {
+      if (
+        targetLang &&
+        SUPPORTED_LANGUAGES.some((l) => l.code === targetLang)
+      ) {
         setCurrentLang(targetLang);
       }
     } else {
@@ -111,7 +405,10 @@ export default function LanguageCurrencySwitcher() {
   // Close modals on clicking outside or pressing Escape
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+      if (
+        containerRef.current &&
+        !containerRef.current.contains(event.target as Node)
+      ) {
         setActiveModal(null);
       }
     };
@@ -139,7 +436,7 @@ export default function LanguageCurrencySwitcher() {
             pageLanguage: "en",
             autoDisplay: false,
           },
-          "google_translate_element"
+          "google_translate_element",
         );
       }
     };
@@ -160,11 +457,13 @@ export default function LanguageCurrencySwitcher() {
 
     if (langCode === "en") {
       // Clear translation cookie to restore original language
-      document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      document.cookie =
+        "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
       document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${hostname};`;
       document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.${hostname};`;
 
-      const selectEl = document.querySelector<HTMLSelectElement>(".goog-te-combo");
+      const selectEl =
+        document.querySelector<HTMLSelectElement>(".goog-te-combo");
       if (selectEl) {
         selectEl.value = "en";
         selectEl.dispatchEvent(new Event("change"));
@@ -178,7 +477,8 @@ export default function LanguageCurrencySwitcher() {
     document.cookie = `googtrans=/en/${langCode}; path=/; domain=${hostname};`;
     document.cookie = `googtrans=/en/${langCode}; path=/; domain=.${hostname};`;
 
-    const selectEl = document.querySelector<HTMLSelectElement>(".goog-te-combo");
+    const selectEl =
+      document.querySelector<HTMLSelectElement>(".goog-te-combo");
     if (selectEl) {
       selectEl.value = langCode;
       selectEl.dispatchEvent(new Event("change"));
@@ -193,12 +493,14 @@ export default function LanguageCurrencySwitcher() {
   };
 
   const activeLangObj =
-    SUPPORTED_LANGUAGES.find((l) => l.code === currentLang) || SUPPORTED_LANGUAGES[0];
+    SUPPORTED_LANGUAGES.find((l) => l.code === currentLang) ||
+    SUPPORTED_LANGUAGES[0];
 
   const filteredLanguages = SUPPORTED_LANGUAGES.filter((l) => {
     const matchesCategory =
       langCategory === "all" ||
-      (langCategory === "indian" && (l.category === "indian" || l.code === "en")) ||
+      (langCategory === "indian" &&
+        (l.category === "indian" || l.code === "en")) ||
       (langCategory === "international" && l.category === "international");
 
     const query = langSearch.toLowerCase().trim();
@@ -222,13 +524,17 @@ export default function LanguageCurrencySwitcher() {
   });
 
   const indianLanguagesCount = SUPPORTED_LANGUAGES.filter(
-    (l) => l.category === "indian"
+    (l) => l.category === "indian",
   ).length;
 
   return (
     <>
       {/* Hidden Google Translate Mount Point */}
-      <div id="google_translate_element" className="hidden" aria-hidden="true" />
+      <div
+        id="google_translate_element"
+        className="hidden"
+        aria-hidden="true"
+      />
       <Script
         src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
         strategy="afterInteractive"
@@ -246,7 +552,9 @@ export default function LanguageCurrencySwitcher() {
           <button
             type="button"
             onClick={() =>
-              setActiveModal((prev) => (prev === "language" ? null : "language"))
+              setActiveModal((prev) =>
+                prev === "language" ? null : "language",
+              )
             }
             className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer ${
               activeModal === "language"
@@ -279,7 +587,9 @@ export default function LanguageCurrencySwitcher() {
           <button
             type="button"
             onClick={() =>
-              setActiveModal((prev) => (prev === "currency" ? null : "currency"))
+              setActiveModal((prev) =>
+                prev === "currency" ? null : "currency",
+              )
             }
             className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer ${
               activeModal === "currency"
@@ -332,7 +642,6 @@ export default function LanguageCurrencySwitcher() {
               </button>
             </div>
 
-
             {/* Search Input */}
             <div className="p-2.5 border-b border-stone-100">
               <div className="relative flex items-center">
@@ -369,31 +678,38 @@ export default function LanguageCurrencySwitcher() {
                       }`}
                     >
                       <div className="flex items-center gap-2.5">
-                        <span className="text-lg leading-none">{lang.flag}</span>
+                        <span className="text-lg leading-none">
+                          {lang.flag}
+                        </span>
                         <div>
                           <div className="flex items-center gap-1.5">
                             <p
                               className={`text-xs ${
-                                isSelected ? "text-white font-bold" : "text-stone-900 font-bold"
+                                isSelected
+                                  ? "text-white font-bold"
+                                  : "text-stone-900 font-bold"
                               }`}
                             >
                               {lang.name}
                             </p>
-                            {lang.category === "indian" && lang.code !== "en" && (
-                              <span
-                                className={`text-[9px] px-1 py-0.2 rounded font-semibold uppercase tracking-wider ${
-                                  isSelected
-                                    ? "bg-white/20 text-[#ebd57b]"
-                                    : "bg-emerald-50 text-emerald-700 border border-emerald-200/50"
-                                }`}
-                              >
-                                Indian
-                              </span>
-                            )}
+                            {lang.category === "indian" &&
+                              lang.code !== "en" && (
+                                <span
+                                  className={`text-[9px] px-1 py-0.2 rounded font-semibold uppercase tracking-wider ${
+                                    isSelected
+                                      ? "bg-white/20 text-[#ebd57b]"
+                                      : "bg-emerald-50 text-emerald-700 border border-emerald-200/50"
+                                  }`}
+                                >
+                                  Indian
+                                </span>
+                              )}
                           </div>
                           <p
                             className={`text-[11px] ${
-                              isSelected ? "text-stone-200 font-medium" : "text-stone-500 font-normal"
+                              isSelected
+                                ? "text-stone-200 font-medium"
+                                : "text-stone-500 font-normal"
                             }`}
                           >
                             {lang.nativeName}
@@ -407,12 +723,6 @@ export default function LanguageCurrencySwitcher() {
                   );
                 })
               )}
-            </div>
-
-            {/* Footer notice */}
-            <div className="p-2 px-3 bg-stone-50/80 border-t border-stone-100 text-center text-[10px] text-stone-500 flex items-center justify-center gap-1">
-              <Sparkles className="w-3 h-3 text-[#d4af37]" />
-              <span>Full page translation powered by Google Translate</span>
             </div>
           </div>
         )}
