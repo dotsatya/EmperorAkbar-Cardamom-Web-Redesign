@@ -2,31 +2,69 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Script from "next/script";
-import { Globe, Coins, Check, X, Search, ChevronDown } from "lucide-react";
-import { useCurrency } from "@/components/CurrencyProvider";
+import { Globe, Coins, Check, X, Search, ChevronDown, Sparkles } from "lucide-react";
+import { useCurrency, SUPPORTED_CURRENCIES } from "@/components/CurrencyProvider";
 
 export type Language = {
   code: string;
   name: string;
   nativeName: string;
   flag: string;
+  category: "indian" | "international";
 };
 
 export const SUPPORTED_LANGUAGES: Language[] = [
-  { code: "en", name: "English", nativeName: "English", flag: "🇬🇧" },
-  { code: "ar", name: "Arabic", nativeName: "العربية", flag: "🇦🇪" },
-  { code: "hi", name: "Hindi", nativeName: "हिन्दी", flag: "🇮🇳" },
-  { code: "fr", name: "French", nativeName: "Français", flag: "🇫🇷" },
-  { code: "es", name: "Spanish", nativeName: "Español", flag: "🇪🇸" },
-  { code: "de", name: "German", nativeName: "Deutsch", flag: "🇩🇪" },
-  { code: "ru", name: "Russian", nativeName: "Русский", flag: "🇷🇺" },
-  { code: "ja", name: "Japanese", nativeName: "日本語", flag: "🇯🇵" },
-  { code: "zh-CN", name: "Chinese (Simplified)", nativeName: "简体中文", flag: "🇨🇳" },
-  { code: "it", name: "Italian", nativeName: "Italiano", flag: "🇮🇹" },
-  { code: "pt", name: "Portuguese", nativeName: "Português", flag: "🇵🇹" },
-  { code: "tr", name: "Turkish", nativeName: "Türkçe", flag: "🇹🇷" },
-  { code: "nl", name: "Dutch", nativeName: "Nederlands", flag: "🇳🇱" },
-  { code: "ko", name: "Korean", nativeName: "한국어", flag: "🇰🇷" },
+  // Primary
+  { code: "en", name: "English", nativeName: "English", flag: "🇬🇧", category: "international" },
+
+  // All 22+ Scheduled and Major Indian Languages
+  { code: "hi", name: "Hindi", nativeName: "हिन्दी", flag: "🇮🇳", category: "indian" },
+  { code: "bn", name: "Bengali", nativeName: "বাংলা", flag: "🇮🇳", category: "indian" },
+  { code: "te", name: "Telugu", nativeName: "తెలుగు", flag: "🇮🇳", category: "indian" },
+  { code: "mr", name: "Marathi", nativeName: "मराठी", flag: "🇮🇳", category: "indian" },
+  { code: "ta", name: "Tamil", nativeName: "தமிழ்", flag: "🇮🇳", category: "indian" },
+  { code: "gu", name: "Gujarati", nativeName: "ગુજરાતી", flag: "🇮🇳", category: "indian" },
+  { code: "kn", name: "Kannada", nativeName: "ಕನ್ನಡ", flag: "🇮🇳", category: "indian" },
+  { code: "ml", name: "Malayalam", nativeName: "മലയാളം", flag: "🇮🇳", category: "indian" },
+  { code: "pa", name: "Punjabi", nativeName: "ਪੰਜਾਬੀ", flag: "🇮🇳", category: "indian" },
+  { code: "or", name: "Odia", nativeName: "ଓଡ଼ିଆ", flag: "🇮🇳", category: "indian" },
+  { code: "as", name: "Assamese", nativeName: "অসমীয়া", flag: "🇮🇳", category: "indian" },
+  { code: "ur", name: "Urdu", nativeName: "اردو", flag: "🇮🇳", category: "indian" },
+  { code: "sa", name: "Sanskrit", nativeName: "संस्कृतम्", flag: "🇮🇳", category: "indian" },
+  { code: "mai", name: "Maithili", nativeName: "मैथिली", flag: "🇮🇳", category: "indian" },
+  { code: "bho", name: "Bhojpuri", nativeName: "भोजपुरी", flag: "🇮🇳", category: "indian" },
+  { code: "gom", name: "Konkani", nativeName: "कोंकणी", flag: "🇮🇳", category: "indian" },
+  { code: "sd", name: "Sindhi", nativeName: "سنڌي", flag: "🇮🇳", category: "indian" },
+  { code: "ne", name: "Nepali", nativeName: "नेपाली", flag: "🇮🇳", category: "indian" },
+  { code: "doi", name: "Dogri", nativeName: "डोगरी", flag: "🇮🇳", category: "indian" },
+  { code: "ks", name: "Kashmiri", nativeName: "کٲشُر", flag: "🇮🇳", category: "indian" },
+  { code: "mni-Mtei", name: "Manipuri (Meitei)", nativeName: "মৈতৈলোন্", flag: "🇮🇳", category: "indian" },
+  { code: "sat", name: "Santali", nativeName: "ᱥᱟᱱᱛᱟᱲᱤ", flag: "🇮🇳", category: "indian" },
+
+  // Key International Languages
+  { code: "ar", name: "Arabic", nativeName: "العربية", flag: "🇦🇪", category: "international" },
+  { code: "es", name: "Spanish", nativeName: "Español", flag: "🇪🇸", category: "international" },
+  { code: "fr", name: "French", nativeName: "Français", flag: "🇫🇷", category: "international" },
+  { code: "de", name: "German", nativeName: "Deutsch", flag: "🇩🇪", category: "international" },
+  { code: "ru", name: "Russian", nativeName: "Русский", flag: "🇷🇺", category: "international" },
+  { code: "ja", name: "Japanese", nativeName: "日本語", flag: "🇯🇵", category: "international" },
+  { code: "zh-CN", name: "Chinese (Simplified)", nativeName: "简体中文", flag: "🇨🇳", category: "international" },
+  { code: "zh-TW", name: "Chinese (Traditional)", nativeName: "繁體中文", flag: "🇹🇼", category: "international" },
+  { code: "it", name: "Italian", nativeName: "Italiano", flag: "🇮🇹", category: "international" },
+  { code: "pt", name: "Portuguese", nativeName: "Português", flag: "🇵🇹", category: "international" },
+  { code: "tr", name: "Turkish", nativeName: "Türkçe", flag: "🇹🇷", category: "international" },
+  { code: "nl", name: "Dutch", nativeName: "Nederlands", flag: "🇳🇱", category: "international" },
+  { code: "ko", name: "Korean", nativeName: "한국어", flag: "🇰🇷", category: "international" },
+  { code: "fa", name: "Persian", nativeName: "فارسی", flag: "🇮🇷", category: "international" },
+  { code: "id", name: "Indonesian", nativeName: "Bahasa Indonesia", flag: "🇮🇩", category: "international" },
+  { code: "ms", name: "Malay", nativeName: "Bahasa Melayu", flag: "🇲🇾", category: "international" },
+  { code: "th", name: "Thai", nativeName: "ไทย", flag: "🇹🇭", category: "international" },
+  { code: "vi", name: "Vietnamese", nativeName: "Tiếng Việt", flag: "🇻🇳", category: "international" },
+  { code: "pl", name: "Polish", nativeName: "Polski", flag: "🇵🇱", category: "international" },
+  { code: "sv", name: "Swedish", nativeName: "Svenska", flag: "🇸🇪", category: "international" },
+  { code: "el", name: "Greek", nativeName: "Ελληνικά", flag: "🇬🇷", category: "international" },
+  { code: "he", name: "Hebrew", nativeName: "עברית", flag: "🇮🇱", category: "international" },
+  { code: "uk", name: "Ukrainian", nativeName: "Українська", flag: "🇺🇦", category: "international" },
 ];
 
 declare global {
@@ -42,6 +80,7 @@ export default function LanguageCurrencySwitcher() {
   const [activeModal, setActiveModal] = useState<"language" | "currency" | null>(null);
   const [currentLang, setCurrentLang] = useState<string>("en");
   const [langSearch, setLangSearch] = useState("");
+  const [langCategory, setLangCategory] = useState<"all" | "indian" | "international">("all");
   const [currencySearch, setCurrencySearch] = useState("");
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -91,14 +130,13 @@ export default function LanguageCurrencySwitcher() {
     };
   }, []);
 
-  // Initialize Google Translate Element callback
+  // Initialize Google Translate Element callback with all languages enabled
   useEffect(() => {
     window.googleTranslateElementInit = () => {
       if (window.google?.translate?.TranslateElement) {
         new window.google.translate.TranslateElement(
           {
             pageLanguage: "en",
-            includedLanguages: SUPPORTED_LANGUAGES.map((l) => l.code).join(","),
             autoDisplay: false,
           },
           "google_translate_element"
@@ -157,19 +195,35 @@ export default function LanguageCurrencySwitcher() {
   const activeLangObj =
     SUPPORTED_LANGUAGES.find((l) => l.code === currentLang) || SUPPORTED_LANGUAGES[0];
 
-  const filteredLanguages = SUPPORTED_LANGUAGES.filter(
-    (l) =>
-      l.name.toLowerCase().includes(langSearch.toLowerCase()) ||
-      l.nativeName.toLowerCase().includes(langSearch.toLowerCase()) ||
-      l.code.toLowerCase().includes(langSearch.toLowerCase())
-  );
+  const filteredLanguages = SUPPORTED_LANGUAGES.filter((l) => {
+    const matchesCategory =
+      langCategory === "all" ||
+      (langCategory === "indian" && (l.category === "indian" || l.code === "en")) ||
+      (langCategory === "international" && l.category === "international");
 
-  const filteredCurrencies = currencies.filter(
-    (c) =>
-      c.code.toLowerCase().includes(currencySearch.toLowerCase()) ||
-      c.name.toLowerCase().includes(currencySearch.toLowerCase()) ||
-      c.symbol.toLowerCase().includes(currencySearch.toLowerCase())
-  );
+    const query = langSearch.toLowerCase().trim();
+    const matchesSearch =
+      query === "" ||
+      l.name.toLowerCase().includes(query) ||
+      l.nativeName.toLowerCase().includes(query) ||
+      l.code.toLowerCase().includes(query);
+
+    return matchesCategory && matchesSearch;
+  });
+
+  const filteredCurrencies = currencies.filter((c) => {
+    const query = currencySearch.toLowerCase().trim();
+    return (
+      query === "" ||
+      c.code.toLowerCase().includes(query) ||
+      c.name.toLowerCase().includes(query) ||
+      c.symbol.toLowerCase().includes(query)
+    );
+  });
+
+  const indianLanguagesCount = SUPPORTED_LANGUAGES.filter(
+    (l) => l.category === "indian"
+  ).length;
 
   return (
     <>
@@ -205,8 +259,10 @@ export default function LanguageCurrencySwitcher() {
             <Globe className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#ebd57b]" />
             <span className="flex items-center gap-1.5">
               <span>{activeLangObj.flag}</span>
-              <span className="hidden sm:inline font-bold uppercase tracking-wider text-[11px]">
-                {activeLangObj.code}
+              <span className="font-bold tracking-wider text-[11px]">
+                {activeLangObj.nativeName.length > 8
+                  ? activeLangObj.code.toUpperCase()
+                  : activeLangObj.nativeName}
               </span>
             </span>
             <ChevronDown
@@ -250,7 +306,7 @@ export default function LanguageCurrencySwitcher() {
 
         {/* Modal: Language Selection */}
         {activeModal === "language" && (
-          <div className="absolute bottom-14 left-0 w-[calc(100vw-2.5rem)] sm:w-84 max-w-[340px] max-h-[460px] bg-white/95 backdrop-blur-2xl border border-stone-200/90 rounded-2xl shadow-[0_16px_50px_rgba(0,0,0,0.2)] flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+          <div className="absolute bottom-14 left-0 w-[calc(100vw-2.5rem)] sm:w-96 max-w-[380px] max-h-[500px] bg-white/95 backdrop-blur-2xl border border-stone-200/90 rounded-2xl shadow-[0_16px_50px_rgba(0,0,0,0.2)] flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-200">
             {/* Header */}
             <div className="p-3.5 pb-2.5 border-b border-stone-100 flex items-center justify-between">
               <div className="flex items-center gap-2">
@@ -262,19 +318,20 @@ export default function LanguageCurrencySwitcher() {
                     Select Language
                   </h3>
                   <p className="text-[10px] text-stone-500 mt-0.5">
-                    Powered by Google Translate
+                    {indianLanguagesCount} Indian & Global Languages
                   </p>
                 </div>
               </div>
               <button
                 type="button"
                 onClick={() => setActiveModal(null)}
-                className="w-6 h-6 rounded-full flex items-center justify-center text-stone-400 hover:text-stone-800 hover:bg-stone-100 transition-colors"
+                className="w-6 h-6 rounded-full flex items-center justify-center text-stone-400 hover:text-stone-800 hover:bg-stone-100 transition-colors cursor-pointer"
                 aria-label="Close language selector"
               >
                 <X className="w-4 h-4" />
               </button>
             </div>
+
 
             {/* Search Input */}
             <div className="p-2.5 border-b border-stone-100">
@@ -282,7 +339,7 @@ export default function LanguageCurrencySwitcher() {
                 <Search className="w-3.5 h-3.5 text-stone-400 absolute left-2.5 pointer-events-none" />
                 <input
                   type="text"
-                  placeholder="Search language..."
+                  placeholder="Search Hindi, Tamil, Bengali, Arabic..."
                   value={langSearch}
                   onChange={(e) => setLangSearch(e.target.value)}
                   className="w-full bg-stone-50 border border-stone-200/80 rounded-xl pl-8 pr-3 py-1.5 text-xs text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-1 focus:ring-[#172d1f] focus:border-[#172d1f]"
@@ -292,10 +349,10 @@ export default function LanguageCurrencySwitcher() {
             </div>
 
             {/* Language List */}
-            <div className="overflow-y-auto max-h-[300px] p-1.5 space-y-0.5">
+            <div className="overflow-y-auto max-h-[300px] p-2 space-y-1">
               {filteredLanguages.length === 0 ? (
                 <div className="p-6 text-center text-xs text-stone-500">
-                  No languages found
+                  No languages matching &quot;{langSearch}&quot;
                 </div>
               ) : (
                 filteredLanguages.map((lang) => {
@@ -308,22 +365,35 @@ export default function LanguageCurrencySwitcher() {
                       className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-left transition-all duration-150 cursor-pointer ${
                         isSelected
                           ? "bg-[#172d1f] text-white font-semibold shadow-xs"
-                          : "text-stone-700 hover:bg-stone-100/80"
+                          : "text-stone-700 hover:bg-stone-100/90"
                       }`}
                     >
                       <div className="flex items-center gap-2.5">
                         <span className="text-lg leading-none">{lang.flag}</span>
                         <div>
+                          <div className="flex items-center gap-1.5">
+                            <p
+                              className={`text-xs ${
+                                isSelected ? "text-white font-bold" : "text-stone-900 font-bold"
+                              }`}
+                            >
+                              {lang.name}
+                            </p>
+                            {lang.category === "indian" && lang.code !== "en" && (
+                              <span
+                                className={`text-[9px] px-1 py-0.2 rounded font-semibold uppercase tracking-wider ${
+                                  isSelected
+                                    ? "bg-white/20 text-[#ebd57b]"
+                                    : "bg-emerald-50 text-emerald-700 border border-emerald-200/50"
+                                }`}
+                              >
+                                Indian
+                              </span>
+                            )}
+                          </div>
                           <p
-                            className={`text-xs ${
-                              isSelected ? "text-white font-bold" : "text-stone-900 font-medium"
-                            }`}
-                          >
-                            {lang.name}
-                          </p>
-                          <p
-                            className={`text-[10px] ${
-                              isSelected ? "text-stone-300" : "text-stone-500"
+                            className={`text-[11px] ${
+                              isSelected ? "text-stone-200 font-medium" : "text-stone-500 font-normal"
                             }`}
                           >
                             {lang.nativeName}
@@ -337,6 +407,12 @@ export default function LanguageCurrencySwitcher() {
                   );
                 })
               )}
+            </div>
+
+            {/* Footer notice */}
+            <div className="p-2 px-3 bg-stone-50/80 border-t border-stone-100 text-center text-[10px] text-stone-500 flex items-center justify-center gap-1">
+              <Sparkles className="w-3 h-3 text-[#d4af37]" />
+              <span>Full page translation powered by Google Translate</span>
             </div>
           </div>
         )}
@@ -362,7 +438,7 @@ export default function LanguageCurrencySwitcher() {
               <button
                 type="button"
                 onClick={() => setActiveModal(null)}
-                className="w-6 h-6 rounded-full flex items-center justify-center text-stone-400 hover:text-stone-800 hover:bg-stone-100 transition-colors"
+                className="w-6 h-6 rounded-full flex items-center justify-center text-stone-400 hover:text-stone-800 hover:bg-stone-100 transition-colors cursor-pointer"
                 aria-label="Close currency selector"
               >
                 <X className="w-4 h-4" />

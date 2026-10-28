@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { Search, User, ShoppingCart, Menu, X } from "lucide-react";
 import { Photos } from "@/data/websiteData";
 import { useCart } from "@/components/CartProvider";
+import SearchModal from "@/components/SearchModal";
 
 const NAV_LINKS = [
   { name: "Home", href: "/" },
@@ -22,8 +23,22 @@ const NAV_LINKS = [
 function HeaderContent() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const pathname = usePathname();
   const { cartCount } = useCart();
+
+  // Global keyboard shortcut to open search (Cmd+K / Ctrl+K)
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+        e.preventDefault();
+        setIsSearchOpen((prev) => !prev);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   // Scroll listener to toggle hanging badge vs contained header logo
   useEffect(() => {
@@ -134,8 +149,9 @@ function HeaderContent() {
         <div className="flex items-center gap-5 text-stone-700">
           <button
             type="button"
-            aria-label="Search site"
-            className="hover:text-black transition-transform duration-200 hover:scale-105 p-1"
+            onClick={() => setIsSearchOpen(true)}
+            aria-label="Search cardamom grades and products (Ctrl+K)"
+            className="hover:text-black transition-transform duration-200 hover:scale-105 p-1 cursor-pointer"
           >
             <Search className="w-5 h-5" />
           </button>
@@ -190,6 +206,19 @@ function HeaderContent() {
             }`}
         >
           <nav className="flex flex-col items-stretch px-6 gap-1 text-center font-medium text-stone-700">
+            {/* Mobile Search Button */}
+            <button
+              type="button"
+              onClick={() => {
+                setMobileMenuOpen(false);
+                setIsSearchOpen(true);
+              }}
+              className="flex items-center justify-center gap-2 w-full py-2.5 px-4 mb-2 bg-stone-100 hover:bg-stone-200 text-stone-800 rounded-xl text-xs font-semibold transition-colors cursor-pointer"
+            >
+              <Search className="w-4 h-4 text-stone-500" />
+              <span>Search grades, products, recipes...</span>
+            </button>
+
             {NAV_LINKS.map((link, index) => {
               const isActive = isLinkActive(link.href);
               return (
@@ -217,6 +246,12 @@ function HeaderContent() {
           </nav>
         </div>
       </header>
+
+      {/* Cardamom Grades & Site Search Modal */}
+      <SearchModal
+        isOpen={isSearchOpen}
+        onClose={() => setIsSearchOpen(false)}
+      />
     </>
   );
 }
