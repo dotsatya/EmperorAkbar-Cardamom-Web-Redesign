@@ -3,10 +3,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useCart } from "@/components/CartProvider";
+import { useCurrency } from "@/components/CurrencyProvider";
 import { Trash2, ChevronRight, ArrowLeft } from "lucide-react";
 
 export default function CartView() {
   const { items, updateQuantity, removeFromCart, cartTotal } = useCart();
+  const { formatPrice } = useCurrency();
 
   return (
     <div className="font-sans bg-bg-primary min-h-screen flex flex-col">
@@ -78,7 +80,7 @@ export default function CartView() {
                         {item.weight}
                       </p>
                       <span className="text-lg sm:text-xl font-bold text-[#c59d5f]">
-                        Rs. {item.price.toFixed(2)}
+                        {formatPrice(item.price)}
                       </span>
                     </div>
                   </div>
@@ -130,7 +132,7 @@ export default function CartView() {
                   <div className="flex justify-between items-center">
                     <span>Subtotal</span>
                     <span className="text-stone-900 font-bold">
-                      Rs. {cartTotal.toFixed(2)}
+                      {formatPrice(cartTotal)}
                     </span>
                   </div>
                   <div className="flex justify-between items-center">
@@ -144,7 +146,7 @@ export default function CartView() {
                 <div className="flex justify-between items-center mb-8">
                   <span className="text-lg font-bold text-stone-900">Total</span>
                   <span className="text-2xl font-extrabold text-[#c59d5f]">
-                    Rs. {cartTotal.toFixed(2)}
+                    {formatPrice(cartTotal)}
                   </span>
                 </div>
 

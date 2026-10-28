@@ -8,6 +8,7 @@ import { websiteData } from "@/data/websiteData";
 import ProductGallery from "@/app/product/[id]/ProductGallery";
 import { StaticImageData } from "next/image";
 import { useCart } from "@/components/CartProvider";
+import { useCurrency } from "@/components/CurrencyProvider";
 import ShinyButton from "@/components/ShinyButton";
 
 export default function ProductDetails({
@@ -18,6 +19,7 @@ export default function ProductDetails({
   const { id } = use(params);
   const router = useRouter();
   const { addToCart } = useCart();
+  const { formatPrice } = useCurrency();
   const [isAdded, setIsAdded] = useState(false);
 
   const product = websiteData.shop.products.find(
@@ -89,11 +91,11 @@ export default function ProductDetails({
 
             <div className="flex items-center gap-3 md:gap-4 mb-2 md:mb-3">
               <span className="text-2xl md:text-3xl font-bold text-stone-800 drop-shadow-sm">
-               ₹ {product.price.toFixed(2)}
+                {formatPrice(product.price)}
               </span>
               {product.originalPrice > product.price && (
                 <span className="text-lg md:text-xl text-red-400/80 font-medium line-through">
-                  ₹ {product.originalPrice.toFixed(2)}
+                  {formatPrice(product.originalPrice)}
                 </span>
               )}
             </div>

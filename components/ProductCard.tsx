@@ -5,6 +5,7 @@ import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight, Check } from "lucide-react";
 import { useCart } from "@/components/CartProvider";
+import { useCurrency } from "@/components/CurrencyProvider";
 
 export const gradeColors: Record<string, string> = {
   Purple: "#6b2c58",
@@ -38,6 +39,7 @@ export default function ProductCard({ product, className = "" }: ProductCardProp
   const [currentIdx, setCurrentIdx] = useState(0);
   const [isAdded, setIsAdded] = useState(false);
   const { addToCart } = useCart();
+  const { formatPrice } = useCurrency();
 
   const images = product.images || [];
   const hasImages = images.length > 0;
@@ -176,11 +178,11 @@ export default function ProductCard({ product, className = "" }: ProductCardProp
           <div>
             <div className="flex items-baseline gap-1.5 sm:gap-2">
               <span className="font-semibold sm:text-lg md:text-xl text-stone-900">
-                ₹{product.price}
+                {formatPrice(product.price)}
               </span>
               {product.originalPrice > product.price && (
                 <span className="text-[11px] sm:text-xs md:text-sm text-stone-400 line-through">
-                  ₹{product.originalPrice}
+                  {formatPrice(product.originalPrice)}
                 </span>
               )}
             </div>

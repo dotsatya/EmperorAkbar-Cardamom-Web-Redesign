@@ -6,6 +6,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FooterRevealWrapper from "@/components/FooterRevealWrapper";
 import { CartProvider } from "@/components/CartProvider";
+import { CurrencyProvider } from "@/components/CurrencyProvider";
+import LanguageCurrencySwitcher from "@/components/LanguageCurrencySwitcher";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -120,17 +122,20 @@ export default function RootLayout({
         style={{ paddingBottom: "var(--footer-height, 0px)" }}
         suppressHydrationWarning
       >
-        <CartProvider>
+        <CurrencyProvider>
+          <CartProvider>
           <div className="relative z-10 bg-bg-primary min-h-screen flex flex-col shadow-[0_25px_50px_rgba(0,0,0,0.25)] mb-0">
             <Header />
 
             <main className="flex flex-col flex-1">{children}</main>
+            <LanguageCurrencySwitcher />
           </div>
 
           <FooterRevealWrapper>
             <Footer />
           </FooterRevealWrapper>
-        </CartProvider>
+          </CartProvider>
+        </CurrencyProvider>
       </body>
     </html>
   );
