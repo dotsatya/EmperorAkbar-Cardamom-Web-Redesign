@@ -10,6 +10,7 @@ import {
   Search,
   ChevronDown,
   Sparkles,
+  Loader,
 } from "lucide-react";
 import {
   useCurrency,
@@ -599,7 +600,7 @@ export default function LanguageCurrencySwitcher() {
               Switching to {targetLangObj.name}...
             </p>
             <div className="flex items-center gap-2 text-xs font-semibold text-[#172d1f] bg-[#172d1f]/5 px-3 py-1.5 rounded-full border border-[#172d1f]/10">
-              <Sparkles className="w-3.5 h-3.5 text-[#d4af37] animate-spin" />
+              <Loader className="w-3.5 h-3.5 text-[#d4af37] animate-spin" />
               <span>Translating page...</span>
             </div>
           </div>
