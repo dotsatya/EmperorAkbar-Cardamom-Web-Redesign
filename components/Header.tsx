@@ -81,6 +81,7 @@ function HeaderContent() {
 
       <header
         role="banner"
+        suppressHydrationWarning
         className={`fixed top-0 left-0 right-0 w-full z-50 px-4 sm:px-6 md:px-12 
           border-b border-stone-200/80 bg-white/95 backdrop-blur-md
           flex items-center justify-between text-stone-800 h-[82px] transition-shadow duration-300 ${
@@ -205,7 +206,10 @@ function HeaderContent() {
                 : "max-h-0 py-0 opacity-0 pointer-events-none"
             }`}
         >
-          <nav className="flex flex-col items-stretch px-6 gap-1 text-center font-medium text-stone-700">
+          <nav
+            suppressHydrationWarning
+            className="flex flex-col items-stretch px-6 gap-1 text-center font-medium text-stone-700"
+          >
             {/* Mobile Search Button */}
             <button
               type="button"
