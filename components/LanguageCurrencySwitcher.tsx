@@ -373,7 +373,19 @@ export default function LanguageCurrencySwitcher() {
     "all" | "indian" | "international"
   >("all");
   const [currencySearch, setCurrencySearch] = useState("");
+  const [isTranslating, setIsTranslating] = useState(false);
+  const [targetLangObj, setTargetLangObj] = useState<Language | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const observerRef = useRef<MutationObserver | null>(null);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Clean up observer and timer on unmount
+  useEffect(() => {
+    return () => {
+      observerRef.current?.disconnect();
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
+  }, []);
 
   // Initialize current language from googtrans cookie or localStorage
   useEffect(() => {
@@ -442,10 +454,21 @@ export default function LanguageCurrencySwitcher() {
     };
   }, []);
 
-  // Handle language switch using Google Translate cookie and DOM event
+  // Handle language switch seamlessly without exposing intermediate English reset
   const handleLanguageSelect = (langCode: string) => {
-    setCurrentLang(langCode);
+    if (langCode === currentLang) {
+      setActiveModal(null);
+      return;
+    }
+
+    const nextLang =
+      SUPPORTED_LANGUAGES.find((l) => l.code === langCode) ||
+      SUPPORTED_LANGUAGES[0];
+
     setActiveModal(null);
+    setTargetLangObj(nextLang);
+    setIsTranslating(true);
+    setCurrentLang(langCode);
 
     try {
       localStorage.setItem("emperorakbar-language", langCode);
@@ -454,6 +477,9 @@ export default function LanguageCurrencySwitcher() {
     }
 
     const hostname = window.location.hostname;
+
+    if (observerRef.current) observerRef.current.disconnect();
+    if (timerRef.current) clearTimeout(timerRef.current);
 
     if (langCode === "en") {
       // Clear translation cookie to restore original language
@@ -468,7 +494,10 @@ export default function LanguageCurrencySwitcher() {
         selectEl.value = "en";
         selectEl.dispatchEvent(new Event("change"));
       }
-      window.location.reload();
+
+      setTimeout(() => {
+        window.location.reload();
+      }, 400);
       return;
     }
 
@@ -482,6 +511,29 @@ export default function LanguageCurrencySwitcher() {
     if (selectEl) {
       selectEl.value = langCode;
       selectEl.dispatchEvent(new Event("change"));
+
+      // Setup MutationObserver to detect when Google finishes updating the DOM text nodes
+      let debounceTimer: NodeJS.Timeout;
+      const observer = new MutationObserver(() => {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => {
+          observer.disconnect();
+          setIsTranslating(false);
+        }, 300);
+      });
+
+      observerRef.current = observer;
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true,
+        characterData: true,
+      });
+
+      // Safety fallback: guaranteed unmount after 1.2s max
+      timerRef.current = setTimeout(() => {
+        observer.disconnect();
+        setIsTranslating(false);
+      }, 1200);
     } else {
       window.location.reload();
     }
@@ -529,6 +581,31 @@ export default function LanguageCurrencySwitcher() {
 
   return (
     <>
+      {/* Seamless Translation Transition Overlay (hides intermediate English reset) */}
+      {isTranslating && targetLangObj && (
+        <div
+          className="fixed inset-0 z-[99999] flex flex-col items-center justify-center bg-white/80 backdrop-blur-md transition-opacity duration-300 pointer-events-auto select-none animate-in fade-in duration-200"
+          role="status"
+          aria-live="polite"
+        >
+          <div className="flex flex-col items-center p-6 sm:p-8 rounded-3xl bg-white/95 border border-stone-200/90 shadow-[0_20px_60px_rgba(0,0,0,0.18)] max-w-xs text-center animate-in zoom-in-95 duration-200">
+            <span className="text-4xl sm:text-5xl mb-3 drop-shadow-sm animate-pulse">
+              {targetLangObj.flag}
+            </span>
+            <h3 className="text-base sm:text-lg font-bold text-stone-900 mb-0.5">
+              {targetLangObj.nativeName}
+            </h3>
+            <p className="text-xs text-stone-500 font-medium mb-4">
+              Switching to {targetLangObj.name}...
+            </p>
+            <div className="flex items-center gap-2 text-xs font-semibold text-[#172d1f] bg-[#172d1f]/5 px-3 py-1.5 rounded-full border border-[#172d1f]/10">
+              <Sparkles className="w-3.5 h-3.5 text-[#d4af37] animate-spin" />
+              <span>Translating page...</span>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Hidden Google Translate Mount Point */}
       <div
         id="google_translate_element"

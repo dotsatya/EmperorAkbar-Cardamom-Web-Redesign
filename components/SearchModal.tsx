@@ -13,8 +13,11 @@ import {
   BookOpen,
   CheckCircle2,
   ExternalLink,
+  Clock,
+  Trash2,
+  Zap,
 } from "lucide-react";
-import { websiteData } from "@/data/websiteData";
+import { websiteData, Photos } from "@/data/websiteData";
 import { useCurrency } from "@/components/CurrencyProvider";
 
 interface SearchModalProps {
@@ -89,11 +92,72 @@ const QUICK_PAGES = [
   },
 ];
 
+const DEFAULT_RECENT_SEARCHES = ["Purple Grade 8mm", "Cardamom Rasmalai", "Green 7mm"];
+
 export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
   const [query, setQuery] = useState("");
+  const [recentSearches, setRecentSearches] = useState<string[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
   const modalRef = useRef<HTMLDivElement>(null);
   const { formatPrice } = useCurrency();
+
+  // Load recent searches from localStorage
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem("emperorakbar-recent-searches");
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          setRecentSearches(parsed);
+          return;
+        }
+      }
+      setRecentSearches(DEFAULT_RECENT_SEARCHES);
+    } catch (e) {
+      console.error("Failed to load recent searches", e);
+      setRecentSearches(DEFAULT_RECENT_SEARCHES);
+    }
+  }, []);
+
+  // Save a search term to recent searches
+  const saveRecentSearch = (term: string) => {
+    const trimmed = term.trim();
+    if (!trimmed || trimmed.length < 2) return;
+
+    setRecentSearches((prev) => {
+      const filtered = prev.filter((item) => item.toLowerCase() !== trimmed.toLowerCase());
+      const updated = [trimmed, ...filtered].slice(0, 8); // Keep top 8
+      try {
+        localStorage.setItem("emperorakbar-recent-searches", JSON.stringify(updated));
+      } catch (e) {
+        console.error("Failed to save recent search", e);
+      }
+      return updated;
+    });
+  };
+
+  // Remove a single recent search
+  const removeRecentSearch = (term: string) => {
+    setRecentSearches((prev) => {
+      const updated = prev.filter((item) => item !== term);
+      try {
+        localStorage.setItem("emperorakbar-recent-searches", JSON.stringify(updated));
+      } catch (e) {
+        console.error("Failed to update recent searches", e);
+      }
+      return updated;
+    });
+  };
+
+  // Clear all recent searches
+  const clearAllRecentSearches = () => {
+    setRecentSearches([]);
+    try {
+      localStorage.removeItem("emperorakbar-recent-searches");
+    } catch (e) {
+      console.error("Failed to clear recent searches", e);
+    }
+  };
 
   // Dynamically derive cardamom grades directly from websiteData
   const allCardamomGrades = useMemo(() => {
@@ -158,6 +222,13 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, [isOpen, onClose]);
+
+  // Apply a search term (e.g. clicking demo or recent search)
+  const applySearchTerm = (term: string) => {
+    setQuery(term);
+    saveRecentSearch(term);
+    inputRef.current?.focus();
+  };
 
   // Filter cardamom grades using query
   const filteredGrades = useMemo(() => {
@@ -252,6 +323,11 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" && query.trim()) {
+                saveRecentSearch(query);
+              }
+            }}
             placeholder="Search cardamom grade (Purple, Pink, 8mm, Green), recipes..."
             className="w-full bg-transparent text-sm sm:text-base text-stone-900 placeholder-stone-400 font-medium focus:outline-none"
           />
@@ -284,7 +360,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
             <button
               key={g.grade}
               type="button"
-              onClick={() => setQuery(g.grade)}
+              onClick={() => applySearchTerm(g.grade)}
               className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold transition-all shrink-0 cursor-pointer ${
                 query.toLowerCase().trim() === g.grade.toLowerCase()
                   ? `${g.bgClass} text-white shadow-xs`
@@ -305,7 +381,119 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
 
         {/* Search Results / Content Container */}
         <div className="overflow-y-auto p-4 sm:p-6 space-y-6 flex-1">
-          {/* 1. Cardamom Grades Highlight Section */}
+          {/* SECTION A: RECENTLY SEARCHED TEXT */}
+          {recentSearches.length > 0 && (
+            <div>
+              <div className="flex items-center justify-between mb-2">
+                <div className="flex items-center gap-1.5 text-xs font-bold text-stone-500 uppercase tracking-wider">
+                  <Clock className="w-3.5 h-3.5 text-[#d4af37]" />
+                  <span>Recently Searched</span>
+                </div>
+                <button
+                  type="button"
+                  onClick={clearAllRecentSearches}
+                  className="text-[11px] font-semibold text-stone-400 hover:text-stone-700 transition-colors cursor-pointer"
+                >
+                  Clear all
+                </button>
+              </div>
+
+              <div className="flex flex-wrap gap-1.5">
+                {recentSearches.map((term) => (
+                  <div
+                    key={term}
+                    onClick={() => applySearchTerm(term)}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-stone-100 hover:bg-[#172d1f]/10 text-stone-800 text-xs font-medium transition-all cursor-pointer group border border-stone-200/60"
+                  >
+                    <Clock className="w-3 h-3 text-stone-400 group-hover:text-[#172d1f]" />
+                    <span className="group-hover:text-[#172d1f] font-semibold">
+                      {term}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        removeRecentSearch(term);
+                      }}
+                      className="ml-0.5 text-stone-400 hover:text-stone-700 hover:bg-stone-200 rounded-full p-0.5 transition-colors cursor-pointer"
+                      aria-label={`Remove ${term} from recent searches`}
+                    >
+                      <X className="w-3 h-3" />
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* SECTION B: 2 INTERACTIVE DEMOS */}
+          {!query && (
+            <div>
+              <div className="flex items-center justify-between mb-2.5">
+                <div className="flex items-center gap-1.5 text-xs font-bold text-stone-500 uppercase tracking-wider">
+                  <Zap className="w-3.5 h-3.5 text-[#d4af37]" />
+                  <span>Featured Demos (Click to Try)</span>
+                </div>
+                <span className="text-[11px] text-stone-400 font-medium">
+                  2 Instant Search Demos
+                </span>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {/* DEMO 1: Cardamom Grade Demo */}
+                <button
+                  type="button"
+                  onClick={() => applySearchTerm("Purple Grade")}
+                  className="p-3.5 rounded-2xl border border-[#6b2c58]/30 bg-gradient-to-br from-[#6b2c58]/5 to-transparent hover:border-[#6b2c58] hover:shadow-md transition-all text-left flex items-start gap-3 group cursor-pointer"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-[#6b2c58] text-white flex items-center justify-center shrink-0 shadow-sm group-hover:scale-105 transition-transform">
+                    <Layers className="w-5 h-5 text-white" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center justify-between gap-1 mb-1">
+                      <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-[#6b2c58]/10 text-[#6b2c58] uppercase tracking-wider">
+                        Demo 1 • Grade
+                      </span>
+                      <ArrowRight className="w-3.5 h-3.5 text-[#6b2c58] group-hover:translate-x-1 transition-transform" />
+                    </div>
+                    <h4 className="text-xs font-bold text-stone-900 group-hover:text-[#6b2c58]">
+                      Purple Grade (8mm+)
+                    </h4>
+                    <p className="text-[11px] text-stone-500 line-clamp-1 mt-0.5">
+                      Celebrity Chef choice • Boldest pods
+                    </p>
+                  </div>
+                </button>
+
+                {/* DEMO 2: Culinary Recipe Demo */}
+                <button
+                  type="button"
+                  onClick={() => applySearchTerm("Rasmalai")}
+                  className="p-3.5 rounded-2xl border border-[#d4af37]/40 bg-gradient-to-br from-[#d4af37]/10 to-transparent hover:border-[#d4af37] hover:shadow-md transition-all text-left flex items-start gap-3 group cursor-pointer"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-[#172d1f] text-[#d4af37] flex items-center justify-center shrink-0 shadow-sm group-hover:scale-105 transition-transform">
+                    <Utensils className="w-5 h-5 text-[#d4af37]" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center justify-between gap-1 mb-1">
+                      <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-[#d4af37]/20 text-[#8a681d] uppercase tracking-wider">
+                        Demo 2 • Recipe
+                      </span>
+                      <ArrowRight className="w-3.5 h-3.5 text-[#8a681d] group-hover:translate-x-1 transition-transform" />
+                    </div>
+                    <h4 className="text-xs font-bold text-stone-900 group-hover:text-[#8a681d]">
+                      Cardamom Rasmalai
+                    </h4>
+                    <p className="text-[11px] text-stone-500 line-clamp-1 mt-0.5">
+                      Royal saffron cardamom milk dessert
+                    </p>
+                  </div>
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* SECTION C: CARDAMOM GRADES RESULTS */}
           {filteredGrades.length > 0 && (
             <div>
               <div className="flex items-center justify-between mb-3">
@@ -315,7 +503,10 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                 </h3>
                 <Link
                   href="/cardamom-grades"
-                  onClick={onClose}
+                  onClick={() => {
+                    saveRecentSearch(query || "Cardamom Grades");
+                    onClose();
+                  }}
                   className="text-xs font-semibold text-[#172d1f] hover:underline flex items-center gap-1"
                 >
                   <span>Grades Guide</span>
@@ -376,7 +567,10 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                         <div className="flex items-center gap-2 ml-auto">
                           <Link
                             href={grade.url}
-                            onClick={onClose}
+                            onClick={() => {
+                              saveRecentSearch(`${grade.grade} Grade`);
+                              onClose();
+                            }}
                             className="inline-flex items-center gap-1 text-xs font-bold text-white bg-[#172d1f] hover:bg-black px-2.5 py-1 rounded-lg transition-colors cursor-pointer"
                           >
                             <span>Shop</span>
@@ -391,7 +585,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
             </div>
           )}
 
-          {/* 2. Recipes Section (if matching) */}
+          {/* SECTION D: RECIPES SECTION (if matching) */}
           {filteredRecipes.length > 0 && (
             <div>
               <div className="flex items-center justify-between mb-3">
@@ -401,7 +595,10 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                 </h3>
                 <Link
                   href="/recipes"
-                  onClick={onClose}
+                  onClick={() => {
+                    saveRecentSearch(query || "Recipes");
+                    onClose();
+                  }}
                   className="text-xs font-semibold text-[#172d1f] hover:underline flex items-center gap-1"
                 >
                   <span>All Recipes</span>
@@ -414,7 +611,10 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                   <Link
                     key={recipe.id}
                     href={recipe.url}
-                    onClick={onClose}
+                    onClick={() => {
+                      saveRecentSearch(recipe.title);
+                      onClose();
+                    }}
                     className="p-3 rounded-2xl border border-stone-200/90 bg-white hover:border-[#172d1f]/40 hover:shadow-md transition-all duration-200 flex items-center gap-3 group"
                   >
                     {recipe.image && (
@@ -442,7 +642,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
             </div>
           )}
 
-          {/* 3. Helpful Guides & Pages */}
+          {/* SECTION E: HELPFUL GUIDES & PAGES */}
           {(query ? filteredPages : QUICK_PAGES.slice(0, 3)).length > 0 && (
             <div>
               <h3 className="text-xs font-bold text-stone-500 uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
@@ -457,7 +657,10 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                     <Link
                       key={page.url}
                       href={page.url}
-                      onClick={onClose}
+                      onClick={() => {
+                        saveRecentSearch(page.title);
+                        onClose();
+                      }}
                       className="p-2.5 px-3 rounded-xl hover:bg-stone-100/80 transition-colors flex items-center justify-between group"
                     >
                       <div className="flex items-center gap-3">
