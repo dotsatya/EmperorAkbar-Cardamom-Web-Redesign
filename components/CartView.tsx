@@ -12,8 +12,8 @@ export default function CartView() {
 
   return (
     <div className="font-sans bg-bg-primary min-h-screen flex flex-col">
-      <main className="flex-1 pt-10 md:pt-16 lg:pt-6 pb-20 px-6 max-w-7xl mx-auto w-full">
-        <div className=" hidden lg:inline-flex justify-left items-center gap-2 text-[10px] md:text-xs text-stone-500 font-bold uppercase tracking-widest mb-8">
+      <main className="flex-1 pt-6 sm:pt-10 md:pt-16 lg:pt-6 pb-16 sm:pb-20 px-4 sm:px-6 max-w-7xl mx-auto w-full">
+        <div className="hidden lg:inline-flex justify-left items-center gap-2 text-[10px] md:text-xs text-stone-500 font-bold uppercase tracking-widest mb-8">
           <Link href="/" className="hover:text-stone-900 transition-colors">
             Home
           </Link>
@@ -26,27 +26,27 @@ export default function CartView() {
           <ChevronRight className="w-3 h-3" />
         </div>
 
-        <div className="w-full text-right md:text-center mb-12">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-stone-800 uppercase tracking-wide mb-4">
+        <div className="w-full text-center md:text-center mb-8 sm:mb-12">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl font-serif font-bold text-stone-800 uppercase tracking-wide mb-3 sm:mb-4">
             Your Cart
           </h1>
-          <div className="w-24 h-1 bg-[#d4af37] ml-auto mr-0 md:mx-auto "></div>
+          <div className="w-16 sm:w-24 h-1 bg-[#d4af37] mx-auto"></div>
         </div>
 
         {items.length === 0 ? (
-          <div className="bg-white/40 backdrop-blur-xl border border-white/60 shadow-[0_8px_32px_rgba(0,0,0,0.04)] rounded-3xl p-12 text-center flex flex-col items-center justify-center">
-            <h2 className="text-2xl font-bold text-stone-800 mb-4">
+          <div className="bg-white/40 backdrop-blur-xl border border-white/60 shadow-[0_8px_32px_rgba(0,0,0,0.04)] rounded-2xl sm:rounded-3xl p-6 sm:p-10 md:p-12 text-center flex flex-col items-center justify-center">
+            <h2 className="text-lg sm:text-2xl font-bold text-stone-800 mb-2 sm:mb-3">
               Your cart is empty
             </h2>
-            <p className="text-stone-600 mb-8 max-w-md">
+            <p className="text-xs sm:text-sm text-stone-600 mb-6 sm:mb-8 max-w-xs sm:max-w-md leading-relaxed">
               Looks like you haven&apos;t added anything to your cart yet. Browse our
               collection of premium cardamom grades.
             </p>
             <Link
               href="/shop"
-              className="bg-gradient-to-r from-[#172d1f] to-[#2a4d36] text-white px-8 py-4 rounded-xl font-bold tracking-widest uppercase hover:from-black hover:to-[#172d1f] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 inline-flex items-center gap-2"
+              className="bg-gradient-to-r from-[#172d1f] to-[#2a4d36] text-white px-5 py-3 sm:px-8 sm:py-4 rounded-xl text-xs sm:text-sm font-bold tracking-wider sm:tracking-widest uppercase hover:from-black hover:to-[#172d1f] transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5 inline-flex items-center gap-2 whitespace-nowrap"
             >
-              <ArrowLeft className="w-4 h-4" /> Continue Shopping
+              <ArrowLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> Continue Shopping
             </Link>
           </div>
         ) : (
@@ -154,7 +154,7 @@ export default function CartView() {
                   Taxes and shipping calculated at checkout.
                 </p>
 
-                <button className="w-full bg-gradient-to-r from-[#172d1f] to-[#2a4d36] text-white py-4 rounded-xl font-bold tracking-widest uppercase hover:from-black hover:to-[#172d1f] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex justify-center items-center">
+                <button className="w-full bg-gradient-to-r from-[#172d1f] to-[#2a4d36] text-white py-3 sm:py-4 rounded-xl text-xs sm:text-sm font-bold tracking-wider sm:tracking-widest uppercase hover:from-black hover:to-[#172d1f] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex justify-center items-center">
                   Checkout
                 </button>
 

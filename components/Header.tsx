@@ -211,17 +211,6 @@ function HeaderContent() {
             className="flex flex-col items-stretch px-6 gap-1 text-center font-medium text-stone-700"
           >
             {/* Mobile Search Button */}
-            <button
-              type="button"
-              onClick={() => {
-                setMobileMenuOpen(false);
-                setIsSearchOpen(true);
-              }}
-              className="flex items-center justify-center gap-2 w-full py-2.5 px-4 mb-2 bg-stone-100 hover:bg-stone-200 text-stone-800 rounded-xl text-xs font-semibold transition-colors cursor-pointer"
-            >
-              <Search className="w-4 h-4 text-stone-500" />
-              <span>Search grades, products, recipes...</span>
-            </button>
 
             {NAV_LINKS.map((link, index) => {
               const isActive = isLinkActive(link.href);
@@ -247,6 +236,20 @@ function HeaderContent() {
                 </Link>
               );
             })}
+
+            {/* Mobile Account Link */}
+            <Link
+              href="/account"
+              aria-current={isLinkActive("/account") ? "page" : undefined}
+              className={`px-4 py-2.5 rounded-lg transition-all duration-200 flex items-center justify-center gap-2 mt-1 border-t border-stone-100 ${
+                isLinkActive("/account")
+                  ? "bg-[#172d1f] text-white font-semibold"
+                  : "hover:bg-stone-100 hover:text-black"
+              }`}
+            >
+              <User className="w-4 h-4" />
+              <span>My Account</span>
+            </Link>
           </nav>
         </div>
       </header>
