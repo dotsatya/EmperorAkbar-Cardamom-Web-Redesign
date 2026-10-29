@@ -16,6 +16,7 @@ import {
   Clock,
   Trash2,
   Zap,
+  CircleX,
 } from "lucide-react";
 import { websiteData, Photos } from "@/data/websiteData";
 import { useCurrency } from "@/components/CurrencyProvider";
@@ -347,8 +348,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
             className="px-2.5 py-1 text-xs font-semibold text-stone-500 bg-stone-100 rounded-lg hover:bg-stone-200 transition-colors cursor-pointer"
             aria-label="Close search dialog"
           >
-            Esc
-          </button>
+            <CircleX />          </button>
         </div>
 
         {/* Quick Grade Filter Chips from websiteData */}
@@ -426,72 +426,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
             </div>
           )}
 
-          {/* SECTION B: 2 INTERACTIVE DEMOS */}
-          {!query && (
-            <div>
-              <div className="flex items-center justify-between mb-2.5">
-                <div className="flex items-center gap-1.5 text-xs font-bold text-stone-500 uppercase tracking-wider">
-                  <Zap className="w-3.5 h-3.5 text-[#d4af37]" />
-                  <span>Featured Demos (Click to Try)</span>
-                </div>
-                <span className="text-[11px] text-stone-400 font-medium">
-                  2 Instant Search Demos
-                </span>
-              </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {/* DEMO 1: Cardamom Grade Demo */}
-                <button
-                  type="button"
-                  onClick={() => applySearchTerm("Purple Grade")}
-                  className="p-3.5 rounded-2xl border border-[#6b2c58]/30 bg-gradient-to-br from-[#6b2c58]/5 to-transparent hover:border-[#6b2c58] hover:shadow-md transition-all text-left flex items-start gap-3 group cursor-pointer"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-[#6b2c58] text-white flex items-center justify-center shrink-0 shadow-sm group-hover:scale-105 transition-transform">
-                    <Layers className="w-5 h-5 text-white" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center justify-between gap-1 mb-1">
-                      <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-[#6b2c58]/10 text-[#6b2c58] uppercase tracking-wider">
-                        Demo 1 • Grade
-                      </span>
-                      <ArrowRight className="w-3.5 h-3.5 text-[#6b2c58] group-hover:translate-x-1 transition-transform" />
-                    </div>
-                    <h4 className="text-xs font-bold text-stone-900 group-hover:text-[#6b2c58]">
-                      Purple Grade (8mm+)
-                    </h4>
-                    <p className="text-[11px] text-stone-500 line-clamp-1 mt-0.5">
-                      Celebrity Chef choice • Boldest pods
-                    </p>
-                  </div>
-                </button>
-
-                {/* DEMO 2: Culinary Recipe Demo */}
-                <button
-                  type="button"
-                  onClick={() => applySearchTerm("Rasmalai")}
-                  className="p-3.5 rounded-2xl border border-[#d4af37]/40 bg-gradient-to-br from-[#d4af37]/10 to-transparent hover:border-[#d4af37] hover:shadow-md transition-all text-left flex items-start gap-3 group cursor-pointer"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-[#172d1f] text-[#d4af37] flex items-center justify-center shrink-0 shadow-sm group-hover:scale-105 transition-transform">
-                    <Utensils className="w-5 h-5 text-[#d4af37]" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center justify-between gap-1 mb-1">
-                      <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-[#d4af37]/20 text-[#8a681d] uppercase tracking-wider">
-                        Demo 2 • Recipe
-                      </span>
-                      <ArrowRight className="w-3.5 h-3.5 text-[#8a681d] group-hover:translate-x-1 transition-transform" />
-                    </div>
-                    <h4 className="text-xs font-bold text-stone-900 group-hover:text-[#8a681d]">
-                      Cardamom Rasmalai
-                    </h4>
-                    <p className="text-[11px] text-stone-500 line-clamp-1 mt-0.5">
-                      Royal saffron cardamom milk dessert
-                    </p>
-                  </div>
-                </button>
-              </div>
-            </div>
-          )}
 
           {/* SECTION C: CARDAMOM GRADES RESULTS */}
           {filteredGrades.length > 0 && (
